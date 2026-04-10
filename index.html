@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/black.css" id="theme" />
 
-  <!-- highlight.js theme for pretty code blocks (matches NCAR dark palette) -->
+  <!-- highlight.js theme for pretty code blocks -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/monokai.css" />
 
   <!-- Poppins + JetBrains Mono from Google Fonts -->
@@ -27,15 +27,16 @@
 
       <!-- ============================================================ -->
       <!-- 1. TITLE — four cover variants as a vertical stack            -->
+      <!--    1a: Long title, WHITE   1b: Long title, BLUE              -->
+      <!--    1c: Short title, WHITE  1d: Short title, BLUE             -->
       <!-- ============================================================ -->
       <section>
 
-        <!-- 1a. Cover, full content -->
-        <section class="slide-cover" data-transition="fade">
+        <!-- 1a. Long title, WHITE cover -->
+        <section class="slide-cover slide-cover-white" data-transition="fade" data-background-image="assets/images/photo-cover.jpg">
           <div class="brand-bar">
-            <img src="assets/images/ncar-ral-stack.png" alt="NCAR RAL logo" />
+            <img src="assets/images/ncar-ral-wide-color.png" alt="NCAR RAL" />
           </div>
-
           <p class="eyebrow">September 15, 2025</p>
           <h1>Longer title and cover content lorem sit ipsum dolor nonummy aliquip</h1>
           <p class="subhead">Optional subhead duis aute irure reprehenderit velit esse dolor ex commodo</p>
@@ -57,12 +58,11 @@
           </p>
         </section>
 
-        <!-- 1b. Cover, alt with notes -->
-        <section class="slide-cover" data-transition="fade">
+        <!-- 1b. Long title, BLUE cover -->
+        <section class="slide-cover slide-cover-blue" data-transition="fade">
           <div class="brand-bar">
-            <img src="assets/images/ncar-ral-stack.png" alt="NCAR RAL logo" />
+            <img src="assets/images/ncar-ral-wide-white.png" alt="NCAR RAL" />
           </div>
-
           <p class="eyebrow">September 15, 2025</p>
           <h1>Longer title and cover content lorem sit ipsum dolor nonummy aliquip</h1>
           <p class="subhead">Optional subhead duis aute irure reprehenderit velit esse dolor ex commodo</p>
@@ -82,12 +82,11 @@
           </div>
         </section>
 
-        <!-- 1c. Cover, short title -->
-        <section class="slide-cover" data-transition="fade">
+        <!-- 1c. Short title, WHITE cover -->
+        <section class="slide-cover slide-cover-white" data-transition="fade" data-background-image="assets/images/photo-cover.jpg">
           <div class="brand-bar">
-            <img src="assets/images/ncar-ral-stack.png" alt="NCAR RAL logo" />
+            <img src="assets/images/ncar-ral-wide-color.png" alt="NCAR RAL" />
           </div>
-
           <p class="eyebrow">September 15, 2025</p>
           <h1>Shorter title and cover content lorem sit ipsum</h1>
 
@@ -102,19 +101,18 @@
           </div>
         </section>
 
-        <!-- 1d. Cover, reversed layout -->
-        <section class="slide-cover reversed" data-transition="fade">
+        <!-- 1d. Short title, BLUE cover -->
+        <section class="slide-cover slide-cover-blue reversed" data-transition="fade">
           <div class="brand-bar">
-            <img src="assets/images/ncar-ral-stack.png" alt="NCAR RAL logo" />
+            <img src="assets/images/ncar-ral-wide-white.png" alt="NCAR RAL" />
           </div>
-
           <p class="material-notes">
             Material notes duis aute irure in reprehenderit velit esse dolor ex commodo magna lorem sit ipsum
             dolor nonummy aliquip cilum ut labore et dolore. Mattis elementum gravida eget consequat imperdiet
             sed. Mi erat hac urna facilisis facilisis.
           </p>
 
-          <p class="eyebrow" style="margin-top: 40px;">September 15, 2025</p>
+          <p class="eyebrow" style="margin-top: 32px;">September 15, 2025</p>
           <h1>Shorter title and cover content lorem sit ipsum</h1>
 
           <div class="presenter-block">
@@ -126,19 +124,19 @@
       </section>
 
       <!-- ============================================================ -->
-      <!-- 2. Section divider — r-fit-text over full-bleed photo        -->
+      <!-- 2. Section divider — aurora photo replacing airplane         -->
       <!-- ============================================================ -->
       <section class="slide-section-divider"
-               data-background-image="assets/images/photo-section.jpg"
-               data-background-opacity="0.45"
+               data-background-image="assets/images/Aurora-in-Sweden_CAESAR.jpg"
+               data-background-opacity="0.5"
                data-background-transition="zoom">
         <h2 class="r-fit-text">Shorter page title lorem sit ipsum dolor</h2>
       </section>
 
       <!-- ============================================================ -->
-      <!-- 3. Content + stat boxes + photo                              -->
+      <!-- 3. Content + stat boxes + Derecho photo (overflow fixed)     -->
       <!-- ============================================================ -->
-      <section class="slide-content">
+      <section class="slide-content slide-with-image">
         <h2>Shorter page title lorem sit ipsum dolor</h2>
 
         <div class="with-image">
@@ -168,7 +166,7 @@
               </div>
             </div>
           </div>
-          <img src="assets/images/photo-content.jpg" alt="Supporting photograph" />
+          <img src="assets/images/Derecho_installed_2023_3.jpg" alt="Derecho supercomputer" />
         </div>
       </section>
 
@@ -242,7 +240,9 @@
           </div>
         </section>
 
-        <section class="slide-content two-col">
+        <section class="slide-content two-col"
+                 data-background-image="assets/images/behind_Derecho.jpg"
+                 data-background-opacity="0.12">
           <h2>Shorter page title lorem sit ipsum dolor</h2>
           <p class="intro">Lorem ipsum dolor sit amet consectetur</p>
 
@@ -340,9 +340,11 @@
       </section>
 
       <!-- ============================================================ -->
-      <!-- 7. Content intro only                                        -->
+      <!-- 7. Content intro only — with Milky Way background            -->
       <!-- ============================================================ -->
-      <section class="slide-content">
+      <section class="slide-content"
+               data-background-image="assets/images/4G4A1413-Pano.JPG"
+               data-background-opacity="0.15">
         <h2>Shorter page title lorem sit ipsum dolor</h2>
         <p class="intro">Lorem ipsum dolor amet consectetur</p>
         <p>
@@ -383,13 +385,19 @@
       </section>
 
       <!-- ============================================================ -->
-      <!-- 9. Bolder statement with r-fit-text                          -->
+      <!-- 9. Bolder statement — overflow fixed, MPAS bg                -->
       <!-- ============================================================ -->
-      <section class="slide-bolder-statement">
-        <p class="statement r-fit-text">
-          <span class="lead">Bolder statement</span>
-          Tellus enim enim ut suspendisse augue ut et.
-        </p>
+      <section class="slide-bolder-statement"
+               data-background-image="assets/images/MPAS-image.png"
+               data-background-opacity="0.2"
+               data-background-size="cover">
+        <div>
+          <p class="statement-lead">Bolder statement</p>
+          <p class="statement-body r-fit-text">
+            Tellus enim enim ut suspendisse augue ut et. Non vestibulum pellentesque pulvinar sed.
+            Sociis neque enim felis sodales sit maecenas amet.
+          </p>
+        </div>
       </section>
 
       <!-- ============================================================ -->
@@ -488,7 +496,7 @@ def hot_stations(obs, threshold=30.0):
       </section>
 
       <!-- ============================================================ -->
-      <!-- 13. Transitions demo                                         -->
+      <!-- 13. Transitions demo — vertical stack                        -->
       <!-- ============================================================ -->
       <section>
 
@@ -582,7 +590,7 @@ def hot_stations(obs, threshold=30.0):
 
   <!-- reveal.js core -->
   <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
-  <!-- Plugins: syntax highlighting + speaker notes -->
+  <!-- Plugins -->
   <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/highlight.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/notes/notes.js"></script>
 
@@ -591,18 +599,16 @@ def hot_stations(obs, threshold=30.0):
       hash: true,
       width: 1920,
       height: 1080,
+      center: true,
       margin: 0.04,
       minScale: 0.2,
       maxScale: 2.0,
       slideNumber: 'c/t',
       controls: true,
       progress: true,
-
-      // Default transitions (overridable per slide via data-transition)
       transition: 'slide',
       transitionSpeed: 'default',
       backgroundTransition: 'fade',
-
       plugins: [ RevealHighlight, RevealNotes ]
     });
   </script>

@@ -33,13 +33,12 @@
 
 .reveal .slides section {
   box-sizing: border-box;
-  padding: 72px 96px;
+  padding: 72px 0 72px 96px;
+  width: calc(100% - 96px);
   background: var(--ncar-navy-deep);
   height: 100%;
 }
 
-/* Backgrounds are painted via section background-color so the whole
- * 1920x1080 canvas is brand-navy regardless of zoom. */
 .reveal-viewport,
 .reveal {
   background: var(--ncar-navy-deep);
@@ -91,12 +90,14 @@
   bottom: 24px;
 }
 
-/* -------- Brand furniture (logo, wave) -------- */
+/* ======================================================================
+ * Brand furniture (logo)
+ * ====================================================================== */
 
 .brand-bar {
   position: absolute;
   top: 40px;
-  right: 96px;
+  left: 96px;
   display: flex;
   align-items: center;
   gap: 24px;
@@ -104,67 +105,61 @@
 }
 
 .brand-bar img {
-  height: 56px;
+  height: 96px;
   width: auto;
   display: block;
 }
 
-.wave-footer {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  width: 100%;
-  pointer-events: none;
-  z-index: 1;
-}
-
-/* -------- Layout: Cover slides (1 – 4) -------- */
+/* ======================================================================
+ * Layout: Cover slides (1 – 4) — shared base
+ * ====================================================================== */
 
 .slide-cover {
   position: relative;
-  background:
-    linear-gradient(180deg, rgba(1,24,55,0.85) 0%, rgba(1,24,55,0.6) 55%, rgba(1,24,55,0.95) 100%),
-    url("../assets/images/photo-cover.jpg") center/cover no-repeat,
-    var(--ncar-navy-deep);
+  /* padding-top: 190px !important; */ /* room for logo + spacing */
+  overflow: hidden;
 }
 
 .slide-cover .eyebrow {
   font-size: 22px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--ncar-cyan);
   font-weight: 600;
-  margin: 0 0 24px 0;
+  margin: 110px 0 20px 0;
+  position: relative;
+  z-index: 3;
 }
 
 .slide-cover h1 {
-  font-size: 72px;
-  max-width: 1500px;
-  margin-bottom: 16px;
+  font-size: 64px;
+  max-width: 1100px;
+  margin-bottom: 12px;
+  position: relative;
+  z-index: 3;
 }
 
 .slide-cover .subhead {
-  font-size: 30px;
-  color: var(--ncar-cream);
-  max-width: 1400px;
-  margin: 0 0 56px 0;
+  font-size: 26px;
+  max-width: 1000px;
+  margin: 0 0 36px 0;
+  position: relative;
+  z-index: 3;
 }
 
 .slide-cover .presenter-block {
-  font-size: 22px;
+  font-size: 20px;
   line-height: 1.5;
+  position: relative;
+  z-index: 3;
 }
 
 .slide-cover .presenter-block .name {
-  color: var(--ncar-white);
   font-weight: 600;
 }
 
 .slide-cover .credit-team {
-  margin-top: 18px;
-  font-size: 16px;
-  color: var(--ncar-cyan);
+  margin-top: 14px;
+  font-size: 14px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
@@ -173,25 +168,117 @@
   position: absolute;
   left: 96px;
   right: 96px;
-  bottom: 40px;
-  font-size: 12px;
+  bottom: 36px;
+  font-size: 11px;
   line-height: 1.4;
+  max-width: 1000px;
+  z-index: 3;
+}
+
+.slide-cover .material-notes {
+  font-size: 15px;
+  max-width: 1000px;
+  margin-top: 28px;
+  position: relative;
+  z-index: 3;
+}
+
+/* ------ WHITE cover variant ------ */
+
+.slide-cover-white {
+  background: var(--ncar-white) !important;
+}
+
+.slide-cover-white .eyebrow {
+  color: var(--ncar-blue);
+}
+
+.slide-cover-white h1 {
+  color: var(--ncar-navy-deep);
+}
+
+.slide-cover-white .subhead {
+  color: var(--ncar-navy);
+}
+
+.slide-cover-white .presenter-block {
+  color: var(--ncar-navy);
+}
+
+.slide-cover-white .presenter-block .name {
+  color: var(--ncar-navy-deep);
+}
+
+.slide-cover-white .credit-team {
+  color: var(--ncar-blue);
+}
+
+.slide-cover-white .funding-disclaimer {
+  color: rgba(0, 53, 122, 0.7);
+}
+
+.slide-cover-white .material-notes {
+  color: rgba(1, 24, 55, 0.7);
+}
+
+/* ------ BLUE cover variant ------ */
+
+.slide-cover-blue {
+  background: url("../assets/images/photo-cover.jpg") center / cover no-repeat;
+}
+
+.slide-cover-blue::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(1, 24, 55, 0.75);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.slide-cover-blue .eyebrow {
+  color: var(--ncar-cyan);
+}
+
+.slide-cover-blue h1 {
+  color: var(--ncar-white);
+}
+
+.slide-cover-blue .subhead {
+  color: var(--ncar-cream);
+}
+
+.slide-cover-blue .presenter-block {
+  color: var(--ncar-cream);
+}
+
+.slide-cover-blue .presenter-block .name {
+  color: var(--ncar-white);
+}
+
+.slide-cover-blue .credit-team {
+  color: var(--ncar-cyan);
+}
+
+.slide-cover-blue .funding-disclaimer {
+  color: rgba(241, 240, 238, 0.7);
+}
+
+.slide-cover-blue .material-notes {
   color: rgba(241, 240, 238, 0.75);
-  max-width: 1600px;
+}
+
+.slide-cover.reversed .material-notes {
+  margin-top: 110px;
 }
 
 .slide-cover.reversed .presenter-block {
   margin-top: 0;
 }
 
-.slide-cover .material-notes {
-  font-size: 16px;
-  color: rgba(241, 240, 238, 0.8);
-  max-width: 1400px;
-  margin-top: 40px;
-}
-
-/* -------- Layout: Content slides -------- */
+/* ======================================================================
+ * Layout: Content slides
+ * ====================================================================== */
 
 .slide-content {
   position: relative;
@@ -243,46 +330,67 @@
   padding-left: 14px;
 }
 
-/* Stat / label boxes (slide 5) */
+/* Stat / label boxes (slide 5) — tighter to prevent overflow */
 .stat-boxes {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-  margin-top: 28px;
+  gap: 16px;
+  margin-top: 16px;
 }
 
 .stat-boxes .box {
   background: rgba(0, 87, 194, 0.25);
   border: 1px solid rgba(66, 192, 255, 0.35);
   border-radius: 6px;
-  padding: 22px 24px;
+  padding: 14px 18px;
 }
 
 .stat-boxes .box .label {
-  font-size: 20px;
+  font-size: 18px;
   color: var(--ncar-cyan);
   font-weight: 600;
   display: block;
-  margin-bottom: 6px;
+  margin-bottom: 4px;
 }
 
 .stat-boxes .box .value {
-  font-size: 18px;
+  font-size: 16px;
   color: var(--ncar-cream);
 }
 
-/* Content + image (slide 5) */
+/* Content + image (slide 5) — reduced padding to prevent overflow */
+.slide-content.slide-with-image {
+  padding: 48px 72px !important;
+}
+
 .slide-content .with-image {
   display: grid;
   grid-template-columns: 1.4fr 1fr;
-  gap: 48px;
+  gap: 36px;
   align-items: start;
 }
 
 .slide-content .with-image img {
   width: 100%;
   height: auto;
+  max-height: 700px;
+  object-fit: cover;
   border-radius: 4px;
+}
+
+.slide-content .with-image ul {
+  margin: 0 0 0.4em 1.2em;
+}
+
+.slide-content .with-image li {
+  font-size: 20px;
+  line-height: 1.35;
+  margin-bottom: 4px;
+}
+
+.slide-content .with-image .intro {
+  font-size: 22px;
+  margin-bottom: 16px;
 }
 
 /* Grid list (slide 12) */
@@ -300,13 +408,12 @@
   border-left: 3px solid var(--ncar-orange);
 }
 
-/* -------- Layout: Section divider (slide 9) -------- */
+/* ======================================================================
+ * Layout: Section divider (slide 9) — now uses data-background-image
+ * ====================================================================== */
 
 .slide-section-divider {
-  background:
-    linear-gradient(180deg, rgba(1,24,55,0.55) 0%, rgba(1,24,55,0.85) 100%),
-    url("../assets/images/photo-section.jpg") center/cover no-repeat,
-    var(--ncar-navy-deep);
+  background: transparent;
   display: flex;
   align-items: center;
 }
@@ -317,31 +424,45 @@
   color: var(--ncar-white);
 }
 
-/* -------- Layout: Bolder statement (slide 13) -------- */
+.slide-section-divider h2.r-fit-text {
+  white-space: normal;
+  line-height: 1.1;
+}
+
+/* ======================================================================
+ * Layout: Bolder statement (slide 13) — overflow fixed
+ * ====================================================================== */
 
 .slide-bolder-statement {
-  background: var(--ncar-navy);
   display: flex;
   align-items: center;
+  justify-content: center;
+  padding: 80px 120px !important;
+  overflow: hidden;
 }
 
-.slide-bolder-statement .statement {
-  max-width: 1500px;
+.slide-bolder-statement .statement-lead {
   font-family: var(--font-display);
-  font-size: 52px;
-  line-height: 1.2;
+  font-size: 48px;
+  line-height: 1.1;
+  color: var(--ncar-cyan);
+  font-weight: 600;
+  margin: 0 0 20px 0;
+}
+
+.slide-bolder-statement .statement-body {
+  font-family: var(--font-display);
+  max-width: 1500px;
+  line-height: 1.15;
   color: var(--ncar-white);
   font-weight: 600;
+  margin: 0;
 }
 
-.slide-bolder-statement .statement .lead {
-  color: var(--ncar-cyan);
-  display: block;
-  margin-bottom: 12px;
-  font-size: 40px;
-}
+/* ======================================================================
+ * Utility
+ * ====================================================================== */
 
-/* Utility: small footer/page marker */
 .page-marker {
   position: absolute;
   right: 96px;
@@ -352,11 +473,10 @@
   text-transform: uppercase;
 }
 
-/* ================================================================
+/* ======================================================================
  * Demo / feature slides
- * ================================================================ */
+ * ====================================================================== */
 
-/* Code block styling — layered on top of highlight.js theme */
 .reveal pre {
   width: 100%;
   box-shadow: 0 6px 40px rgba(0, 0, 0, 0.45);
@@ -381,7 +501,6 @@
   margin-top: 16px;
 }
 
-/* Fragment demo */
 .slide-fragments .fragment.highlight-ncar-cyan.visible {
   color: var(--ncar-cyan);
 }
@@ -397,7 +516,6 @@
   font-family: "JetBrains Mono", Menlo, monospace;
 }
 
-/* Auto-animate chips (matches the revealjs.com /5/0/* demo idea) */
 .auto-animate-stack {
   display: flex;
   flex-direction: column;
@@ -420,7 +538,6 @@
 .auto-animate-stack .chip.teal   { background: var(--ncar-teal); }
 .auto-animate-stack .chip.deep   { background: var(--ncar-navy); }
 
-/* Transition demo */
 .slide-transition-demo .label {
   display: inline-block;
   margin-top: 32px;
@@ -433,7 +550,6 @@
   letter-spacing: 0.08em;
 }
 
-/* Iframe background slide: readability card over live site */
 .slide-iframe-bg {
   background: transparent;
 }
@@ -455,12 +571,4 @@
 
 .slide-iframe-bg p {
   font-size: 22px;
-}
-
-/* r-fit-text on section dividers and bolder statement:
- * reveal.js sets inline font-size; we just relax wrapping. */
-.slide-section-divider h2.r-fit-text,
-.slide-bolder-statement .statement.r-fit-text {
-  white-space: normal;
-  line-height: 1.1;
 }
