@@ -2,13 +2,16 @@
 
 A reveal.js port of `nsf_ncar_ral-slide-template.pptx`, preserving the
 original 13 slide layouts and placeholder text so it can serve as a
-reusable starting point for future talks.
+reusable starting point for future talks. The deck also includes
+demonstrations of reveal.js features you'll most likely want: fragments,
+code blocks, auto-animate, section/background transitions, iframe
+backgrounds, and `r-fit-text`.
 
 ## Contents
 
 ```
 ral-revealjs-slide-template/
-├── index.html              # 13 <section> slides
+├── index.html              # reveal.js deck (horizontal + vertical slides)
 ├── css/ncar-theme.css      # NCAR brand palette + layout classes
 └── assets/images/          # Images copied from the source .pptx
 ```
@@ -41,23 +44,44 @@ subsequent loads are cached.
 The URL updates with a `#/<n>` hash as you navigate, so you can
 deep-link directly to a slide.
 
-## Slide inventory
+## Slide structure
 
-| # | Layout                         | Class(es) on `<section>`           |
-|---|--------------------------------|------------------------------------|
-| 1 | Cover, full content            | `slide-cover`                      |
-| 2 | Cover, alternate with notes    | `slide-cover`                      |
-| 3 | Cover, short title             | `slide-cover`                      |
-| 4 | Cover, reversed layout         | `slide-cover reversed`             |
-| 5 | Content + stat boxes + photo   | `slide-content` (with `.with-image`, `.stat-boxes`) |
-| 6 | Large-title content            | `slide-content`                    |
-| 7 | Content, two columns           | `slide-content two-col`            |
-| 8 | Content intro only             | `slide-content`                    |
-| 9 | Full-bleed section divider     | `slide-section-divider`            |
-| 10| Content, two columns (deep)    | `slide-content two-col`            |
-| 11| Content, three columns         | `slide-content three-col`          |
-| 12| Grid / list                    | `slide-content` (with `.grid-list`) |
-| 13| Bolder statement               | `slide-bolder-statement`           |
+The deck uses reveal.js's 2D navigation: the left/right arrow keys move
+between topics, up/down moves through variants within a topic. Variants
+of the same layout are grouped as vertical stacks.
+
+| Topic | Layout                          | Notes                                                |
+|------:|---------------------------------|------------------------------------------------------|
+| 1     | Title / cover (4 variants)      | Vertical stack; fade between variants                |
+| 2     | Full-bleed section divider      | `r-fit-text`, `data-background-image`, zoom bg       |
+| 3     | Content + stat boxes + photo    | `.with-image`, `.stat-boxes`                         |
+| 4     | Large-title content             | `.accent` inline highlight                           |
+| 5     | Two-column content (2 variants) | Vertical stack                                       |
+| 6     | Three-column content            |                                                      |
+| 7     | Content intro only              |                                                      |
+| 8     | Grid / list                     | `.grid-list`                                         |
+| 9     | Bolder statement                | `r-fit-text`                                         |
+| 10    | Pretty code block               | highlight.js + `data-line-numbers` stepping          |
+| 11    | Fragments                       | fade-in, fade-up, fade-left, grow, highlight, strike |
+| 12    | Auto-animate (3 frames)         | Vertical stack; shared `data-id` tweens elements     |
+| 13    | Section transitions (6 frames)  | slide / fade / convex / concave / zoom / mixed      |
+| 14    | Background transitions          | fade / slide / convex / zoom over colored backgrounds|
+| 15    | Iframe background               | `data-background-iframe`, `data-background-interactive` |
+
+### reveal.js features demonstrated
+
+- **Vertical slides** for layout variants (cover & two-column stacks)
+- **`r-fit-text`** on the section divider and bolder statement
+- **Fragments** — incremental reveals on list items
+- **Code blocks** — highlight.js `monokai` theme with `data-line-numbers`
+  for stepped line highlighting
+- **Auto-animate** — three frames tween a growing chip stack and a
+  title that changes size and color, using matching `data-id` attributes
+- **Section transitions** via `data-transition` on individual slides
+- **Background transitions** via `data-background-transition` combined
+  with `data-background-color`
+- **Iframe background** pointing at `revealjs.com/backgrounds/` with
+  `data-background-interactive` so clicks pass through to the embed
 
 ## Editing
 

@@ -9,12 +9,15 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/black.css" id="theme" />
 
-  <!-- Poppins from Google Fonts -->
+  <!-- highlight.js theme for pretty code blocks (matches NCAR dark palette) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/monokai.css" />
+
+  <!-- Poppins + JetBrains Mono from Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" />
 
-  <!-- NCAR brand overrides -->
+  <!-- NCAR brand overrides (load last so they win) -->
   <link rel="stylesheet" href="css/ncar-theme.css" />
 </head>
 <body>
@@ -23,108 +26,117 @@
     <div class="slides">
 
       <!-- ============================================================ -->
-      <!-- SLIDE 1 — Cover, full content                                -->
+      <!-- 1. TITLE — four cover variants as a vertical stack            -->
       <!-- ============================================================ -->
-      <section class="slide-cover">
-        <div class="brand-bar">
-          <img src="assets/images/nsf-ncar-lockup.png" alt="NSF NCAR lockup" />
-        </div>
+      <section>
 
-        <p class="eyebrow">September 15, 2025</p>
-        <h1>Longer title and cover content lorem sit ipsum dolor nonummy aliquip</h1>
-        <p class="subhead">Optional subhead duis aute irure reprehenderit velit esse dolor ex commodo</p>
-
-        <div class="presenter-block">
-          <div class="name">Presenter Name(s) Here</div>
-          <div class="title">Presenter Title nonummy cilum ut labore</div>
-          <div class="credit-team">
-            Optional credit team names: Lorem Ipsum, Consectetur Adipiscing, Eiusmod Tempor,
-            Incididunt Labore, Dolore Magna, Aliqua Enim, Minim Veniam, Quis Nostrud
+        <!-- 1a. Cover, full content -->
+        <section class="slide-cover" data-transition="fade">
+          <div class="brand-bar">
+            <img src="assets/images/ncar-ral-stack.png" alt="NCAR RAL logo" />
           </div>
-        </div>
 
-        <p class="funding-disclaimer">
-          This material is based upon work supported by the NSF National Center for Atmospheric Research,
-          a major facility sponsored by the U.S. National Science Foundation and managed by the University
-          Corporation for Atmospheric Research. Any opinions, findings and conclusions or recommendations
-          expressed in this material do not necessarily reflect the views of NSF.
-        </p>
-      </section>
+          <p class="eyebrow">September 15, 2025</p>
+          <h1>Longer title and cover content lorem sit ipsum dolor nonummy aliquip</h1>
+          <p class="subhead">Optional subhead duis aute irure reprehenderit velit esse dolor ex commodo</p>
 
-      <!-- ============================================================ -->
-      <!-- SLIDE 2 — Cover, alt with notes                              -->
-      <!-- ============================================================ -->
-      <section class="slide-cover">
-        <div class="brand-bar">
-          <img src="assets/images/nsf-ncar-lockup.png" alt="NSF NCAR lockup" />
-        </div>
-
-        <p class="eyebrow">September 15, 2025</p>
-        <h1>Longer title and cover content lorem sit ipsum dolor nonummy aliquip</h1>
-        <p class="subhead">Optional subhead duis aute irure reprehenderit velit esse dolor ex commodo</p>
-
-        <div class="presenter-block">
-          <div class="name">Presenter Name(s) Here</div>
-          <div class="title">Presenter Title nonummy cilum ut labore</div>
-          <div class="credit-team">
-            Optional credit team names: Lorem Ipsum, Consectetur Adipiscing, Eiusmod Tempor,
-            Incididunt Labore, Dolore Magna, Aliqua Enim, Minim Veniam, Quis Nostrud
+          <div class="presenter-block">
+            <div class="name">Presenter Name(s) Here</div>
+            <div class="title">Presenter Title nonummy cilum ut labore</div>
+            <div class="credit-team">
+              Optional credit team names: Lorem Ipsum, Consectetur Adipiscing, Eiusmod Tempor,
+              Incididunt Labore, Dolore Magna, Aliqua Enim, Minim Veniam, Quis Nostrud
+            </div>
           </div>
-          <p class="material-notes">
-            Material notes duis aute irure in reprehenderit velit esse dolor ex commodo magna lorem sit
-            ipsum dolor nonummy aliquip cilum ut labore et dolore. Mattis elementum gravida eget consequat
-            imperdiet sed. Mi erat hac urna facilisis facilisis.
+
+          <p class="funding-disclaimer">
+            This material is based upon work supported by the NSF National Center for Atmospheric Research,
+            a major facility sponsored by the U.S. National Science Foundation and managed by the University
+            Corporation for Atmospheric Research. Any opinions, findings and conclusions or recommendations
+            expressed in this material do not necessarily reflect the views of NSF.
           </p>
-        </div>
-      </section>
+        </section>
 
-      <!-- ============================================================ -->
-      <!-- SLIDE 3 — Cover, short title                                 -->
-      <!-- ============================================================ -->
-      <section class="slide-cover">
-        <div class="brand-bar">
-          <img src="assets/images/nsf-ncar-lockup.png" alt="NSF NCAR lockup" />
-        </div>
+        <!-- 1b. Cover, alt with notes -->
+        <section class="slide-cover" data-transition="fade">
+          <div class="brand-bar">
+            <img src="assets/images/ncar-ral-stack.png" alt="NCAR RAL logo" />
+          </div>
 
-        <p class="eyebrow">September 15, 2025</p>
-        <h1>Shorter title and cover content lorem sit ipsum</h1>
+          <p class="eyebrow">September 15, 2025</p>
+          <h1>Longer title and cover content lorem sit ipsum dolor nonummy aliquip</h1>
+          <p class="subhead">Optional subhead duis aute irure reprehenderit velit esse dolor ex commodo</p>
 
-        <div class="presenter-block">
-          <div class="name">Presenter Name(s) Here</div>
-          <div class="title">Presenter Title nonummy cilum ut labore</div>
+          <div class="presenter-block">
+            <div class="name">Presenter Name(s) Here</div>
+            <div class="title">Presenter Title nonummy cilum ut labore</div>
+            <div class="credit-team">
+              Optional credit team names: Lorem Ipsum, Consectetur Adipiscing, Eiusmod Tempor,
+              Incididunt Labore, Dolore Magna, Aliqua Enim, Minim Veniam, Quis Nostrud
+            </div>
+            <p class="material-notes">
+              Material notes duis aute irure in reprehenderit velit esse dolor ex commodo magna lorem sit
+              ipsum dolor nonummy aliquip cilum ut labore et dolore. Mattis elementum gravida eget consequat
+              imperdiet sed. Mi erat hac urna facilisis facilisis.
+            </p>
+          </div>
+        </section>
+
+        <!-- 1c. Cover, short title -->
+        <section class="slide-cover" data-transition="fade">
+          <div class="brand-bar">
+            <img src="assets/images/ncar-ral-stack.png" alt="NCAR RAL logo" />
+          </div>
+
+          <p class="eyebrow">September 15, 2025</p>
+          <h1>Shorter title and cover content lorem sit ipsum</h1>
+
+          <div class="presenter-block">
+            <div class="name">Presenter Name(s) Here</div>
+            <div class="title">Presenter Title nonummy cilum ut labore</div>
+            <p class="material-notes">
+              Material notes duis aute irure in reprehenderit velit esse dolor ex commodo magna lorem sit
+              ipsum dolor nonummy aliquip cilum ut labore et dolore. Mattis elementum gravida eget consequat
+              imperdiet sed. Mi erat hac urna facilisis facilisis.
+            </p>
+          </div>
+        </section>
+
+        <!-- 1d. Cover, reversed layout -->
+        <section class="slide-cover reversed" data-transition="fade">
+          <div class="brand-bar">
+            <img src="assets/images/ncar-ral-stack.png" alt="NCAR RAL logo" />
+          </div>
+
           <p class="material-notes">
-            Material notes duis aute irure in reprehenderit velit esse dolor ex commodo magna lorem sit
-            ipsum dolor nonummy aliquip cilum ut labore et dolore. Mattis elementum gravida eget consequat
-            imperdiet sed. Mi erat hac urna facilisis facilisis.
+            Material notes duis aute irure in reprehenderit velit esse dolor ex commodo magna lorem sit ipsum
+            dolor nonummy aliquip cilum ut labore et dolore. Mattis elementum gravida eget consequat imperdiet
+            sed. Mi erat hac urna facilisis facilisis.
           </p>
-        </div>
+
+          <p class="eyebrow" style="margin-top: 40px;">September 15, 2025</p>
+          <h1>Shorter title and cover content lorem sit ipsum</h1>
+
+          <div class="presenter-block">
+            <div class="name">Presenter Name(s) Here</div>
+            <div class="title">Presenter Title nonummy cilum ut labore</div>
+          </div>
+        </section>
+
       </section>
 
       <!-- ============================================================ -->
-      <!-- SLIDE 4 — Cover, reversed layout (notes above)               -->
+      <!-- 2. Section divider — r-fit-text over full-bleed photo        -->
       <!-- ============================================================ -->
-      <section class="slide-cover reversed">
-        <div class="brand-bar">
-          <img src="assets/images/nsf-ncar-lockup.png" alt="NSF NCAR lockup" />
-        </div>
-
-        <p class="material-notes">
-          Material notes duis aute irure in reprehenderit velit esse dolor ex commodo magna lorem sit ipsum
-          dolor nonummy aliquip cilum ut labore et dolore. Mattis elementum gravida eget consequat imperdiet
-          sed. Mi erat hac urna facilisis facilisis.
-        </p>
-
-        <p class="eyebrow" style="margin-top: 40px;">September 15, 2025</p>
-        <h1>Shorter title and cover content lorem sit ipsum</h1>
-
-        <div class="presenter-block">
-          <div class="name">Presenter Name(s) Here</div>
-          <div class="title">Presenter Title nonummy cilum ut labore</div>
-        </div>
+      <section class="slide-section-divider"
+               data-background-image="assets/images/photo-section.jpg"
+               data-background-opacity="0.45"
+               data-background-transition="zoom">
+        <h2 class="r-fit-text">Shorter page title lorem sit ipsum dolor</h2>
       </section>
 
       <!-- ============================================================ -->
-      <!-- SLIDE 5 — Content + stat boxes + image                       -->
+      <!-- 3. Content + stat boxes + photo                              -->
       <!-- ============================================================ -->
       <section class="slide-content">
         <h2>Shorter page title lorem sit ipsum dolor</h2>
@@ -161,7 +173,7 @@
       </section>
 
       <!-- ============================================================ -->
-      <!-- SLIDE 6 — Large-title content                                -->
+      <!-- 4. Large-title content                                       -->
       <!-- ============================================================ -->
       <section class="slide-content">
         <h2>
@@ -189,117 +201,98 @@
       </section>
 
       <!-- ============================================================ -->
-      <!-- SLIDE 7 — Content + two columns                              -->
+      <!-- 5. Two-column variants — vertical stack                      -->
       <!-- ============================================================ -->
-      <section class="slide-content two-col">
-        <h2>Shorter page title lorem sit ipsum dolor</h2>
-        <p class="intro">Lorem ipsum dolor amet consectetur</p>
+      <section>
 
-        <div class="body">
-          <div>
-            <p>
-              Duis rhoncus facilisis enim sit venenatis diam ornare fames molestie. Enim at molestie
-              vestibulum nunc dictum quis nulla bibendum. Aenean nulla aliquam nec sed. Diam venenatis
-              vestibulum vitae ut sagittis ultricies molestie.
-            </p>
-            <p>
-              Sed purus egestas elementum in dignissim viverra. Amet at laoreet morbi tellus mattis proin
-              velit at. Mi mi nunc lorem in diam convallis facilisis. Id ridiculus sit et nisl proin erat.
-              Massa facilisi dignissim amet id lectus dis scelerisque hendrerit.
-            </p>
-            <p>Aenean nulla aliquam nec sed. Diam venenatis vestibulum vitae ut sagittis ultricies molestie.</p>
+        <section class="slide-content two-col">
+          <h2>Shorter page title lorem sit ipsum dolor</h2>
+          <p class="intro">Lorem ipsum dolor amet consectetur</p>
+
+          <div class="body">
+            <div>
+              <p>
+                Duis rhoncus facilisis enim sit venenatis diam ornare fames molestie. Enim at molestie
+                vestibulum nunc dictum quis nulla bibendum. Aenean nulla aliquam nec sed. Diam venenatis
+                vestibulum vitae ut sagittis ultricies molestie.
+              </p>
+              <p>
+                Sed purus egestas elementum in dignissim viverra. Amet at laoreet morbi tellus mattis proin
+                velit at. Mi mi nunc lorem in diam convallis facilisis. Id ridiculus sit et nisl proin erat.
+                Massa facilisi dignissim amet id lectus dis scelerisque hendrerit.
+              </p>
+              <p>Aenean nulla aliquam nec sed. Diam venenatis vestibulum vitae ut sagittis ultricies molestie.</p>
+            </div>
+            <div>
+              <h3>Metus sit posuere vitae nam nisl</h3>
+              <p>
+                Erat tellus enim enim ut suspendisse augue ut et. Non vestibulum pellentesque pulvinar sed.
+                Sociis neque enim felis sodales sit maecenas amet.
+              </p>
+              <p>
+                Sed neque quam morbi lorem vel vehicula nullam augue. Mattis elementum gravida eget non
+                scelerisque consequat imperdiet sed.
+              </p>
+              <p>Aenean nulla aliquam nec sed. Diam venenatis vestibulum vitae ut sagittis ultricies molestie.</p>
+              <p>
+                Mi erat hac urna facilisis facilisis. Cras eget morbi blandit arcu in purus arcu consectetur.
+                Egestas tellus aenean augue eget sed purus lacus pretium.
+              </p>
+            </div>
           </div>
-          <div>
-            <h3>Metus sit posuere vitae nam nisl</h3>
-            <p>
-              Erat tellus enim enim ut suspendisse augue ut et. Non vestibulum pellentesque pulvinar sed.
-              Sociis neque enim felis sodales sit maecenas amet.
-            </p>
-            <p>
-              Sed neque quam morbi lorem vel vehicula nullam augue. Mattis elementum gravida eget non
-              scelerisque consequat imperdiet sed.
-            </p>
-            <p>Aenean nulla aliquam nec sed. Diam venenatis vestibulum vitae ut sagittis ultricies molestie.</p>
-            <p>
-              Mi erat hac urna facilisis facilisis. Cras eget morbi blandit arcu in purus arcu consectetur.
-              Egestas tellus aenean augue eget sed purus lacus pretium.
-            </p>
+        </section>
+
+        <section class="slide-content two-col">
+          <h2>Shorter page title lorem sit ipsum dolor</h2>
+          <p class="intro">Lorem ipsum dolor sit amet consectetur</p>
+
+          <div class="body">
+            <div>
+              <p>
+                Duis rhoncus facilisis enim sit venenatis diam ornare fames molestie. Enim at molestie
+                vestibulum nunc dictum quis nulla bibendum. Aenean nulla aliquam nec sed. Diam venenatis
+                vestibulum vitae ut sagittis ultricies molestie.
+              </p>
+              <p>
+                Sed purus egestas elementum in dignissim viverra. Amet at laoreet morbi tellus mattis proin
+                velit at. Mi mi nunc lorem in diam convallis facilisis. Id ridiculus sit et nisl proin erat.
+                Massa facilisi dignissim amet id lectus dis scelerisque hendrerit.
+              </p>
+              <h3>Metus sit posuere vitae nam</h3>
+              <p>
+                Erat tellus enim enim ut suspendisse augue ut et. Non vestibulum pellentesque pulvinar sed.
+                Sociis neque enim felis sodales sit maecenas amet.
+              </p>
+              <p>
+                Sed neque quam morbi lorem vel vehicula nullam augue. Mattis elementum gravida eget non
+                scelerisque consequat imperdiet sed. Aenean nulla aliquam nec sed. Diam venenatis vestibulum
+                vitae ut sagittis ultricies molestie.
+              </p>
+            </div>
+            <div>
+              <p>
+                Mi erat hac urna facilisis facilisis. Cras eget morbi blandit arcu in purus arcu consectetur.
+                Egestas tellus aenean augue eget sed purus lacus pretium.
+              </p>
+              <h3>Sed purus egestas elementum in dignissim viverra</h3>
+              <p>
+                Amet at laoreet morbi tellus mattis proin velit at. Mi mi nunc lorem in diam convallis
+                facilisis. Id ridiculus sit et nisl proin erat. Massa facilisi dignissim amet id lectus dis
+                scelerisque hendrerit. Aenean nulla aliquam nec sed. Diam venenatis vestibulum vitae ut
+                sagittis ultricies molestie.
+              </p>
+              <p>
+                Duis rhoncus facilisis enim sit venenatis diam ornare fames molestie. Enim at molestie
+                vestibulum nunc dictum quis nulla bibendum. Aenean nulla aliquam nec sed.
+              </p>
+            </div>
           </div>
-        </div>
+        </section>
+
       </section>
 
       <!-- ============================================================ -->
-      <!-- SLIDE 8 — Content intro only                                 -->
-      <!-- ============================================================ -->
-      <section class="slide-content">
-        <h2>Shorter page title lorem sit ipsum dolor</h2>
-        <p class="intro">Lorem ipsum dolor amet consectetur</p>
-        <p>
-          Duis rhoncus facilisis enim sit venenatis diam ornare fames molestie. Enim at molestie vestibulum
-          nunc dictum quis nulla bibendum. Aenean nulla aliquam nec sed. Diam venenatis vestibulum vitae ut
-          sagittis ultricies molestie.
-        </p>
-      </section>
-
-      <!-- ============================================================ -->
-      <!-- SLIDE 9 — Section divider with full-bleed photo              -->
-      <!-- ============================================================ -->
-      <section class="slide-section-divider">
-        <h2>Shorter page title lorem sit ipsum dolor</h2>
-      </section>
-
-      <!-- ============================================================ -->
-      <!-- SLIDE 10 — Content, two columns (deep)                       -->
-      <!-- ============================================================ -->
-      <section class="slide-content two-col">
-        <h2>Shorter page title lorem sit ipsum dolor</h2>
-        <p class="intro">Lorem ipsum dolor sit amet consectetur</p>
-
-        <div class="body">
-          <div>
-            <p>
-              Duis rhoncus facilisis enim sit venenatis diam ornare fames molestie. Enim at molestie
-              vestibulum nunc dictum quis nulla bibendum. Aenean nulla aliquam nec sed. Diam venenatis
-              vestibulum vitae ut sagittis ultricies molestie.
-            </p>
-            <p>
-              Sed purus egestas elementum in dignissim viverra. Amet at laoreet morbi tellus mattis proin
-              velit at. Mi mi nunc lorem in diam convallis facilisis. Id ridiculus sit et nisl proin erat.
-              Massa facilisi dignissim amet id lectus dis scelerisque hendrerit.
-            </p>
-            <h3>Metus sit posuere vitae nam</h3>
-            <p>
-              Erat tellus enim enim ut suspendisse augue ut et. Non vestibulum pellentesque pulvinar sed.
-              Sociis neque enim felis sodales sit maecenas amet.
-            </p>
-            <p>
-              Sed neque quam morbi lorem vel vehicula nullam augue. Mattis elementum gravida eget non
-              scelerisque consequat imperdiet sed. Aenean nulla aliquam nec sed. Diam venenatis vestibulum
-              vitae ut sagittis ultricies molestie.
-            </p>
-          </div>
-          <div>
-            <p>
-              Mi erat hac urna facilisis facilisis. Cras eget morbi blandit arcu in purus arcu consectetur.
-              Egestas tellus aenean augue eget sed purus lacus pretium.
-            </p>
-            <h3>Sed purus egestas elementum in dignissim viverra</h3>
-            <p>
-              Amet at laoreet morbi tellus mattis proin velit at. Mi mi nunc lorem in diam convallis
-              facilisis. Id ridiculus sit et nisl proin erat. Massa facilisi dignissim amet id lectus dis
-              scelerisque hendrerit. Aenean nulla aliquam nec sed. Diam venenatis vestibulum vitae ut
-              sagittis ultricies molestie.
-            </p>
-            <p>
-              Duis rhoncus facilisis enim sit venenatis diam ornare fames molestie. Enim at molestie
-              vestibulum nunc dictum quis nulla bibendum. Aenean nulla aliquam nec sed.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <!-- ============================================================ -->
-      <!-- SLIDE 11 — Content, three columns                            -->
+      <!-- 6. Three columns                                             -->
       <!-- ============================================================ -->
       <section class="slide-content three-col">
         <h2>Shorter page title lorem sit ipsum dolor</h2>
@@ -330,10 +323,6 @@
               Amet at laoreet morbi tellus mattis proin velit at. Mi mi nunc lorem in diam convallis
               facilisis. Id ridiculus sit et nisl proin erat.
             </p>
-            <p>
-              Duis rhoncus facilisis enim sit venenatis diam ornare fames molestie. Enim at molestie
-              vestibulum nunc dictum quis nulla bibendum. Aenean nulla aliquam nec sed.
-            </p>
           </div>
           <div>
             <h3>Posuere vitae nam</h3>
@@ -351,7 +340,20 @@
       </section>
 
       <!-- ============================================================ -->
-      <!-- SLIDE 12 — Grid / list                                       -->
+      <!-- 7. Content intro only                                        -->
+      <!-- ============================================================ -->
+      <section class="slide-content">
+        <h2>Shorter page title lorem sit ipsum dolor</h2>
+        <p class="intro">Lorem ipsum dolor amet consectetur</p>
+        <p>
+          Duis rhoncus facilisis enim sit venenatis diam ornare fames molestie. Enim at molestie vestibulum
+          nunc dictum quis nulla bibendum. Aenean nulla aliquam nec sed. Diam venenatis vestibulum vitae ut
+          sagittis ultricies molestie.
+        </p>
+      </section>
+
+      <!-- ============================================================ -->
+      <!-- 8. Grid / list                                               -->
       <!-- ============================================================ -->
       <section class="slide-content">
         <h2>Shorter page title lorem sit ipsum dolor</h2>
@@ -381,20 +383,209 @@
       </section>
 
       <!-- ============================================================ -->
-      <!-- SLIDE 13 — Bolder statement                                  -->
+      <!-- 9. Bolder statement with r-fit-text                          -->
       <!-- ============================================================ -->
       <section class="slide-bolder-statement">
-        <p class="statement">
+        <p class="statement r-fit-text">
           <span class="lead">Bolder statement</span>
-          Tellus enim enim ut suspendisse augue ut et. Non vestibulum pellentesque pulvinar sed.
-          Sociis neque enim felis sodales sit maecenas amet.
+          Tellus enim enim ut suspendisse augue ut et.
         </p>
+      </section>
+
+      <!-- ============================================================ -->
+      <!-- 10. Code block demo                                          -->
+      <!-- ============================================================ -->
+      <section class="slide-content slide-code">
+        <h2>Pretty code blocks</h2>
+        <p class="intro">Syntax highlighted via highlight.js, with stepped line highlighting driven by reveal.js fragments.</p>
+
+        <pre><code class="language-python" data-trim data-line-numbers="|1-4|6-9|11-14|all"><script type="text/template">
+from dataclasses import dataclass
+
+@dataclass
+class Observation:
+    station: str
+    temperature_c: float
+    timestamp: str
+
+def hot_stations(obs, threshold=30.0):
+    """Return stations hotter than the threshold."""
+    return sorted(
+        {o.station for o in obs if o.temperature_c > threshold}
+    )
+</script></code></pre>
+
+        <p class="caption">Press → to step through the line highlights.</p>
+      </section>
+
+      <!-- ============================================================ -->
+      <!-- 11. Fragments demo                                           -->
+      <!-- ============================================================ -->
+      <section class="slide-content slide-fragments">
+        <h2>Fragments</h2>
+        <p class="intro">Reveal content incrementally with <code>class="fragment"</code>.</p>
+
+        <ul>
+          <li class="fragment fade-in">
+            Fade in
+            <span class="fragment-note">fade-in</span>
+          </li>
+          <li class="fragment fade-up">
+            Fade up
+            <span class="fragment-note">fade-up</span>
+          </li>
+          <li class="fragment fade-left">
+            Fade from the right
+            <span class="fragment-note">fade-left</span>
+          </li>
+          <li class="fragment grow">
+            Grow
+            <span class="fragment-note">grow</span>
+          </li>
+          <li class="fragment highlight-current-blue">
+            Highlight current in blue
+            <span class="fragment-note">highlight-current-blue</span>
+          </li>
+          <li class="fragment strike">
+            Strike-through on reveal
+            <span class="fragment-note">strike</span>
+          </li>
+        </ul>
+      </section>
+
+      <!-- ============================================================ -->
+      <!-- 12. Auto-animate — vertical stack                            -->
+      <!-- ============================================================ -->
+      <section>
+
+        <section data-auto-animate class="slide-content">
+          <h2 data-id="aa-title" style="font-size: 48px;">Auto-Animate</h2>
+          <p class="intro">Reveal's automatic element tweening.</p>
+          <div class="auto-animate-stack">
+            <div class="chip" data-id="chip-a">Data</div>
+          </div>
+        </section>
+
+        <section data-auto-animate class="slide-content">
+          <h2 data-id="aa-title" style="font-size: 72px;">Auto-Animate</h2>
+          <p class="intro">Same <code>data-id</code> → smoothly tweened position, size, and color.</p>
+          <div class="auto-animate-stack">
+            <div class="chip" data-id="chip-a">Data</div>
+            <div class="chip teal" data-id="chip-b">Model</div>
+          </div>
+        </section>
+
+        <section data-auto-animate class="slide-content">
+          <h2 data-id="aa-title" style="font-size: 96px; color: var(--ncar-cyan);">Auto-Animate</h2>
+          <p class="intro">A third frame grows the stack and changes the title color.</p>
+          <div class="auto-animate-stack">
+            <div class="chip accent" data-id="chip-a">Data</div>
+            <div class="chip teal" data-id="chip-b">Model</div>
+            <div class="chip deep" data-id="chip-c">Forecast</div>
+          </div>
+        </section>
+
+      </section>
+
+      <!-- ============================================================ -->
+      <!-- 13. Transitions demo                                         -->
+      <!-- ============================================================ -->
+      <section>
+
+        <section class="slide-content slide-transition-demo" data-transition="slide">
+          <h2>Transitions</h2>
+          <p class="intro">Each slide in this stack uses a different <code>data-transition</code>.</p>
+          <p class="label">data-transition="slide"</p>
+        </section>
+
+        <section class="slide-content slide-transition-demo" data-transition="fade">
+          <h2>Fade</h2>
+          <p class="label">data-transition="fade"</p>
+        </section>
+
+        <section class="slide-content slide-transition-demo" data-transition="convex">
+          <h2>Convex</h2>
+          <p class="label">data-transition="convex"</p>
+        </section>
+
+        <section class="slide-content slide-transition-demo" data-transition="concave">
+          <h2>Concave</h2>
+          <p class="label">data-transition="concave"</p>
+        </section>
+
+        <section class="slide-content slide-transition-demo" data-transition="zoom">
+          <h2>Zoom</h2>
+          <p class="label">data-transition="zoom"</p>
+        </section>
+
+        <section class="slide-content slide-transition-demo" data-transition="slide-in fade-out">
+          <h2>Mix: slide-in / fade-out</h2>
+          <p class="label">data-transition="slide-in fade-out"</p>
+        </section>
+
+      </section>
+
+      <!-- ============================================================ -->
+      <!-- 14. Background transitions demo                              -->
+      <!-- ============================================================ -->
+      <section>
+
+        <section data-background-color="#011837"
+                 data-background-transition="fade"
+                 class="slide-content slide-transition-demo">
+          <h2>Background transitions</h2>
+          <p class="intro">Each slide has a different <code>data-background-transition</code>.</p>
+          <p class="label">data-background-transition="fade"</p>
+        </section>
+
+        <section data-background-color="#00357A"
+                 data-background-transition="slide"
+                 class="slide-content slide-transition-demo">
+          <h2>Slide</h2>
+          <p class="label">data-background-transition="slide"</p>
+        </section>
+
+        <section data-background-color="#0057C2"
+                 data-background-transition="convex"
+                 class="slide-content slide-transition-demo">
+          <h2>Convex</h2>
+          <p class="label">data-background-transition="convex"</p>
+        </section>
+
+        <section data-background-color="#0092DB"
+                 data-background-transition="zoom"
+                 class="slide-content slide-transition-demo">
+          <h2>Zoom</h2>
+          <p class="label">data-background-transition="zoom"</p>
+        </section>
+
+      </section>
+
+      <!-- ============================================================ -->
+      <!-- 15. Iframe background                                        -->
+      <!-- ============================================================ -->
+      <section class="slide-iframe-bg"
+               data-background-iframe="https://revealjs.com/backgrounds/"
+               data-background-interactive>
+        <div class="card">
+          <h2>Iframe backgrounds</h2>
+          <p>
+            This slide's background is a live <code>&lt;iframe&gt;</code> pointing at
+            <code>revealjs.com/backgrounds/</code>. Add <code>data-background-interactive</code>
+            to let the user click through to the embedded page.
+          </p>
+        </div>
       </section>
 
     </div>
   </div>
 
+  <!-- reveal.js core -->
   <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+  <!-- Plugins: syntax highlighting + speaker notes -->
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/highlight.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/notes/notes.js"></script>
+
   <script>
     Reveal.initialize({
       hash: true,
@@ -406,7 +597,13 @@
       slideNumber: 'c/t',
       controls: true,
       progress: true,
-      transition: 'slide'
+
+      // Default transitions (overridable per slide via data-transition)
+      transition: 'slide',
+      transitionSpeed: 'default',
+      backgroundTransition: 'fade',
+
+      plugins: [ RevealHighlight, RevealNotes ]
     });
   </script>
 </body>
