@@ -1,0 +1,353 @@
+/* NSF NCAR / RAL brand theme for reveal.js
+ * Override layer applied after the built-in "black" theme.
+ * Palette extracted from theme1.xml of nsf_ncar_ral-slide-template.pptx. */
+
+:root {
+  --ncar-navy-deep:  #011837;
+  --ncar-navy:       #00357A;
+  --ncar-blue:       #0057C2;
+  --ncar-blue-br:    #0092DB;
+  --ncar-cyan:       #42C0FF;
+  --ncar-teal:       #0097A7;
+  --ncar-orange:     #FAA119;
+  --ncar-yellow:     #FDD509;
+  --ncar-cream:      #F1F0EE;
+  --ncar-white:      #FFFFFF;
+
+  --font-display: "Poppins", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-body:    "Poppins", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+/* -------- Reveal base overrides -------- */
+
+.reveal {
+  font-family: var(--font-body);
+  font-weight: 400;
+  color: var(--ncar-cream);
+  letter-spacing: 0.005em;
+}
+
+.reveal .slides {
+  text-align: left;
+}
+
+.reveal .slides section {
+  box-sizing: border-box;
+  padding: 72px 96px;
+  background: var(--ncar-navy-deep);
+  height: 100%;
+}
+
+/* Backgrounds are painted via section background-color so the whole
+ * 1920x1080 canvas is brand-navy regardless of zoom. */
+.reveal-viewport,
+.reveal {
+  background: var(--ncar-navy-deep);
+}
+
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4 {
+  font-family: var(--font-display);
+  color: var(--ncar-white);
+  text-transform: none;
+  letter-spacing: normal;
+  line-height: 1.1;
+  margin: 0 0 0.4em 0;
+  font-weight: 600;
+}
+
+.reveal h1 { font-size: 64px; }
+.reveal h2 { font-size: 52px; }
+.reveal h3 { font-size: 34px; color: var(--ncar-cyan); }
+.reveal h4 { font-size: 26px; color: var(--ncar-cyan); }
+
+.reveal p,
+.reveal li {
+  font-size: 24px;
+  line-height: 1.45;
+  color: var(--ncar-cream);
+}
+
+.reveal a { color: var(--ncar-cyan); }
+
+.reveal ul,
+.reveal ol {
+  margin: 0 0 0.6em 1.2em;
+  padding: 0;
+}
+
+.reveal ul li::marker {
+  color: var(--ncar-orange);
+}
+
+.reveal .slide-number {
+  background: transparent;
+  color: var(--ncar-cream);
+  font-family: var(--font-body);
+  font-size: 16px;
+  right: 32px;
+  bottom: 24px;
+}
+
+/* -------- Brand furniture (logo, wave) -------- */
+
+.brand-bar {
+  position: absolute;
+  top: 40px;
+  right: 96px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  z-index: 5;
+}
+
+.brand-bar img {
+  height: 56px;
+  width: auto;
+  display: block;
+}
+
+.wave-footer {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* -------- Layout: Cover slides (1 – 4) -------- */
+
+.slide-cover {
+  position: relative;
+  background:
+    linear-gradient(180deg, rgba(1,24,55,0.85) 0%, rgba(1,24,55,0.6) 55%, rgba(1,24,55,0.95) 100%),
+    url("../assets/images/photo-cover.jpg") center/cover no-repeat,
+    var(--ncar-navy-deep);
+}
+
+.slide-cover .eyebrow {
+  font-size: 22px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ncar-cyan);
+  font-weight: 600;
+  margin: 0 0 24px 0;
+}
+
+.slide-cover h1 {
+  font-size: 72px;
+  max-width: 1500px;
+  margin-bottom: 16px;
+}
+
+.slide-cover .subhead {
+  font-size: 30px;
+  color: var(--ncar-cream);
+  max-width: 1400px;
+  margin: 0 0 56px 0;
+}
+
+.slide-cover .presenter-block {
+  font-size: 22px;
+  line-height: 1.5;
+}
+
+.slide-cover .presenter-block .name {
+  color: var(--ncar-white);
+  font-weight: 600;
+}
+
+.slide-cover .credit-team {
+  margin-top: 18px;
+  font-size: 16px;
+  color: var(--ncar-cyan);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.slide-cover .funding-disclaimer {
+  position: absolute;
+  left: 96px;
+  right: 96px;
+  bottom: 40px;
+  font-size: 12px;
+  line-height: 1.4;
+  color: rgba(241, 240, 238, 0.75);
+  max-width: 1600px;
+}
+
+.slide-cover.reversed .presenter-block {
+  margin-top: 0;
+}
+
+.slide-cover .material-notes {
+  font-size: 16px;
+  color: rgba(241, 240, 238, 0.8);
+  max-width: 1400px;
+  margin-top: 40px;
+}
+
+/* -------- Layout: Content slides -------- */
+
+.slide-content {
+  position: relative;
+}
+
+.slide-content h2 {
+  color: var(--ncar-white);
+  max-width: 1600px;
+}
+
+.slide-content h2 .accent {
+  color: var(--ncar-cyan);
+  font-weight: 500;
+}
+
+.slide-content .intro {
+  font-size: 24px;
+  max-width: 1500px;
+  margin: 0 0 28px 0;
+}
+
+/* Two-column and three-column bodies */
+.slide-content.two-col .body,
+.slide-content.three-col .body {
+  display: grid;
+  gap: 40px;
+  margin-top: 16px;
+}
+
+.slide-content.two-col .body {
+  grid-template-columns: 1fr 1fr;
+}
+
+.slide-content.three-col .body {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.slide-content .body p,
+.slide-content .body li {
+  font-size: 20px;
+  line-height: 1.45;
+}
+
+.slide-content .body h3 {
+  font-size: 24px;
+  color: var(--ncar-cyan);
+  margin-bottom: 10px;
+  border-left: 4px solid var(--ncar-orange);
+  padding-left: 14px;
+}
+
+/* Stat / label boxes (slide 5) */
+.stat-boxes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 28px;
+}
+
+.stat-boxes .box {
+  background: rgba(0, 87, 194, 0.25);
+  border: 1px solid rgba(66, 192, 255, 0.35);
+  border-radius: 6px;
+  padding: 22px 24px;
+}
+
+.stat-boxes .box .label {
+  font-size: 20px;
+  color: var(--ncar-cyan);
+  font-weight: 600;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.stat-boxes .box .value {
+  font-size: 18px;
+  color: var(--ncar-cream);
+}
+
+/* Content + image (slide 5) */
+.slide-content .with-image {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+.slide-content .with-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+/* Grid list (slide 12) */
+.grid-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px 40px;
+  margin-top: 16px;
+}
+
+.grid-list p {
+  font-size: 18px;
+  margin: 0;
+  padding-left: 14px;
+  border-left: 3px solid var(--ncar-orange);
+}
+
+/* -------- Layout: Section divider (slide 9) -------- */
+
+.slide-section-divider {
+  background:
+    linear-gradient(180deg, rgba(1,24,55,0.55) 0%, rgba(1,24,55,0.85) 100%),
+    url("../assets/images/photo-section.jpg") center/cover no-repeat,
+    var(--ncar-navy-deep);
+  display: flex;
+  align-items: center;
+}
+
+.slide-section-divider h2 {
+  font-size: 80px;
+  max-width: 1400px;
+  color: var(--ncar-white);
+}
+
+/* -------- Layout: Bolder statement (slide 13) -------- */
+
+.slide-bolder-statement {
+  background: var(--ncar-navy);
+  display: flex;
+  align-items: center;
+}
+
+.slide-bolder-statement .statement {
+  max-width: 1500px;
+  font-family: var(--font-display);
+  font-size: 52px;
+  line-height: 1.2;
+  color: var(--ncar-white);
+  font-weight: 600;
+}
+
+.slide-bolder-statement .statement .lead {
+  color: var(--ncar-cyan);
+  display: block;
+  margin-bottom: 12px;
+  font-size: 40px;
+}
+
+/* Utility: small footer/page marker */
+.page-marker {
+  position: absolute;
+  right: 96px;
+  bottom: 28px;
+  font-size: 14px;
+  color: rgba(241, 240, 238, 0.6);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
