@@ -1,29 +1,181 @@
-/* NSF NCAR / RAL brand theme for reveal.js
+/* ======================================================================
+ * NSF NCAR / RAL — Unified brand theme for reveal.js
  * Override layer applied after the built-in "black" theme.
- * Palette extracted from theme1.xml of nsf_ncar_ral-slide-template.pptx. */
+ * Palette extracted from theme1.xml of nsf_ncar_ral-slide-template.pptx.
+ *
+ * Dark / light switching via  data-theme="dark|light"  on <html>.
+ * Press  T  during a presentation to toggle (see JS in index.html).
+ * ====================================================================== */
+
+/* ======================================================================
+ * 1. Brand palette  (immutable — never changes between themes)
+ * ====================================================================== */
 
 :root {
-  --ncar-navy-deep:  #011837;
-  --ncar-navy:       #00357A;
-  --ncar-blue:       #0057C2;
-  --ncar-blue-br:    #0092DB;
-  --ncar-cyan:       #42C0FF;
-  --ncar-teal:       #0097A7;
-  --ncar-orange:     #FAA119;
-  --ncar-yellow:     #FDD509;
-  --ncar-cream:      #F1F0EE;
-  --ncar-white:      #FFFFFF;
+  /* Primary */
+  --ncar-blue: #0057c2;
+  --ncar-dark-blue: #00357a;
 
+  /* Secondary */
+  --ncar-space: #011837;
+  --ncar-light-blue: #42c0ff;
+  --ncar-light-gray: #f1f0ee;
+  --ncar-white: #ffffff;
+
+  /* Accent */
+  --ncar-orange: #faa119;
+  --ncar-yellow: #ffdd31;
+
+  /* Typography */
   --font-display: "Poppins", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  --font-body:    "Poppins", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-body: "Poppins", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+  /* Layout spacing */
+  --slide-pad-x: 54px;
+  --slide-pad-top: 36px;
+  --slide-pad-bottom: 36px;
 }
 
-/* -------- Reveal base overrides -------- */
+/* ======================================================================
+ * 2. Semantic tokens — dark theme (default)
+ * ====================================================================== */
+
+:root,
+[data-theme="dark"] {
+  /* Backgrounds */
+  --bg-viewport: var(--ncar-space);
+  --bg-section: var(--ncar-dark-blue);
+
+  /* Body text */
+  --text-primary: var(--ncar-light-gray);
+  --text-heading: var(--ncar-white);
+  --text-h3h4: var(--ncar-light-blue);
+  --text-link: var(--ncar-light-blue);
+  --text-accent: var(--ncar-light-blue);
+
+  /* Cover slides */
+  --cover-bg: var(--ncar-dark-blue);
+  --cover-bg-wave: url("../assets/images/wave-graphics-ncar-colors/NCAR-Waves_Fills-A-White-3_RGB.png");
+  --cover-eyebrow: var(--ncar-light-blue);
+  --cover-title: var(--ncar-white);
+  --cover-subhead: var(--ncar-light-gray);
+  --cover-presenter: var(--ncar-light-gray);
+  --cover-name: var(--ncar-white);
+  --cover-credit: var(--ncar-light-blue);
+  --cover-disclaimer: var(--ncar-light-gray);
+
+  /* Logo switching (dark bg → white logo, light bg → color logo) */
+  --logo-color-display: none;
+  --logo-white-display: block;
+
+  /* Section dividers */
+  --divider-bg: transparent;
+  --divider-heading: var(--ncar-white);
+
+  /* Bolder statement */
+  --statement-lead: var(--ncar-light-blue);
+  --statement-body: var(--ncar-white);
+
+  /* Components */
+  --box-bg: rgba(0, 87, 194, 0.25);
+  --box-border: rgba(66, 192, 255, 0.35);
+  --card-bg: rgba(1, 24, 55, 0.82);
+  --card-border: rgba(66, 192, 255, 0.35);
+  --fragment-note-bg: rgba(66, 192, 255, 0.15);
+  --shadow-code: rgba(0, 0, 0, 0.45);
+  --page-marker-color: rgba(241, 240, 238, 0.6);
+}
+
+/* ======================================================================
+ * 3. Semantic tokens — light theme
+ * ====================================================================== */
+
+[data-theme="light"] {
+  /* Backgrounds */
+  --bg-viewport: var(--ncar-light-gray);
+  --bg-section: var(--ncar-white);
+
+  /* Body text */
+  --text-primary: var(--ncar-space);
+  --text-heading: var(--ncar-dark-blue);
+  --text-h3h4: var(--ncar-blue);
+  --text-link: var(--ncar-blue);
+  --text-accent: var(--ncar-blue);
+
+  /* Cover slides */
+  --cover-bg: var(--ncar-white);
+  --cover-bg-wave: url("../assets/images/wave-graphics-ncar-colors/NCAR-Waves_Fills-A-Color-3_RGB.png");
+  --cover-eyebrow: var(--ncar-blue);
+  --cover-title: var(--ncar-space);
+  --cover-subhead: var(--ncar-dark-blue);
+  --cover-presenter: var(--ncar-dark-blue);
+  --cover-name: var(--ncar-space);
+  --cover-credit: var(--ncar-blue);
+  --cover-disclaimer: var(--ncar-dark-blue);
+
+  /* Logo switching (light bg → color logo) */
+  --logo-color-display: block;
+  --logo-white-display: none;
+
+  /* Section dividers */
+  --divider-bg: var(--ncar-white);
+  --divider-heading: var(--ncar-blue);
+
+  /* Bolder statement */
+  --statement-lead: var(--ncar-blue);
+  --statement-body: var(--ncar-dark-blue);
+
+  /* Components */
+  --box-bg: rgba(0, 87, 194, 0.08);
+  --box-border: rgba(0, 87, 194, 0.2);
+  --card-bg: rgba(255, 255, 255, 0.92);
+  --card-border: rgba(0, 87, 194, 0.2);
+  --fragment-note-bg: rgba(0, 87, 194, 0.1);
+  --shadow-code: rgba(0, 0, 0, 0.12);
+  --page-marker-color: rgba(0, 53, 122, 0.5);
+}
+
+/* ======================================================================
+ * 4. Per-slide cover overrides (work in any theme)
+ *
+ *    Add  .slide-cover-white  or  .slide-cover-blue  to a <section> to
+ *    force a specific cover palette regardless of the active theme.
+ * ====================================================================== */
+
+.slide-cover-white {
+  --cover-bg: var(--ncar-white);
+  --cover-eyebrow: var(--ncar-blue);
+  --cover-title: var(--ncar-space);
+  --cover-subhead: var(--ncar-dark-blue);
+  --cover-presenter: var(--ncar-dark-blue);
+  --cover-name: var(--ncar-space);
+  --cover-credit: var(--ncar-blue);
+  --cover-disclaimer: rgba(0, 53, 122, 0.7);
+  --logo-color-display: block;
+  --logo-white-display: none;
+}
+
+.slide-cover-blue {
+  --cover-bg: var(--ncar-dark-blue);
+  --cover-eyebrow: var(--ncar-light-blue);
+  --cover-title: var(--ncar-white);
+  --cover-subhead: var(--ncar-light-gray);
+  --cover-presenter: var(--ncar-light-gray);
+  --cover-name: var(--ncar-white);
+  --cover-credit: var(--ncar-light-blue);
+  --cover-disclaimer: rgba(241, 240, 238, 0.7);
+  --logo-color-display: none;
+  --logo-white-display: block;
+}
+
+/* ======================================================================
+ * 5. Reveal base overrides
+ * ====================================================================== */
 
 .reveal {
   font-family: var(--font-body);
   font-weight: 400;
-  color: var(--ncar-cream);
+  color: var(--text-primary);
   letter-spacing: 0.005em;
 }
 
@@ -33,15 +185,13 @@
 
 .reveal .slides section {
   box-sizing: border-box;
-  padding: 72px 0 72px 96px;
-  width: calc(100% - 96px);
-  background: var(--ncar-navy-deep);
+  /*background: var(--bg-section);*/
   height: 100%;
 }
 
 .reveal-viewport,
 .reveal {
-  background: var(--ncar-navy-deep);
+  background: var(--bg-viewport);
 }
 
 .reveal h1,
@@ -49,7 +199,7 @@
 .reveal h3,
 .reveal h4 {
   font-family: var(--font-display);
-  color: var(--ncar-white);
+  color: var(--text-heading);
   text-transform: none;
   letter-spacing: normal;
   line-height: 1.1;
@@ -57,19 +207,31 @@
   font-weight: 600;
 }
 
-.reveal h1 { font-size: 64px; }
-.reveal h2 { font-size: 52px; }
-.reveal h3 { font-size: 34px; color: var(--ncar-cyan); }
-.reveal h4 { font-size: 26px; color: var(--ncar-cyan); }
+.reveal h1 {
+  font-size: 64px;
+}
+.reveal h2 {
+  font-size: 52px;
+}
+.reveal h3 {
+  font-size: 34px;
+  color: var(--text-h3h4);
+}
+.reveal h4 {
+  font-size: 26px;
+  color: var(--text-h3h4);
+}
 
 .reveal p,
 .reveal li {
   font-size: 24px;
   line-height: 1.45;
-  color: var(--ncar-cream);
+  color: var(--text-primary);
 }
 
-.reveal a { color: var(--ncar-cyan); }
+.reveal a {
+  color: var(--text-link);
+}
 
 .reveal ul,
 .reveal ol {
@@ -83,7 +245,7 @@
 
 .reveal .slide-number {
   background: transparent;
-  color: var(--ncar-cream);
+  color: var(--text-primary);
   font-family: var(--font-body);
   font-size: 16px;
   right: 32px;
@@ -91,46 +253,97 @@
 }
 
 /* ======================================================================
- * Brand furniture (logo)
+ * 6. Brand furniture (logo bar)
  * ====================================================================== */
 
 .brand-bar {
-  position: absolute;
-  top: 40px;
-  left: 96px;
+  position: relative;
+  padding: var(--slide-pad-top) var(--slide-pad-x) 0 var(--slide-pad-x);
   display: flex;
   align-items: center;
-  gap: 24px;
   z-index: 5;
 }
 
 .brand-bar img {
-  height: 96px;
+  height: 200px;
   width: auto;
-  display: block;
+}
+
+.brand-bar-wide {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  z-index: 5;
+  padding-bottom: 16px;
+  margin-bottom: 20px;
+  border-bottom: 3px solid var(--ncar-blue);
+}
+
+.brand-bar-wide h2 {
+  flex: 1;
+  min-width: 0;
+  margin-bottom: 0;
+}
+
+.brand-bar-wide img {
+  height: 52px;
+  width: auto;
+}
+
+/* Corner logo — for slides where the title needs full width (r-fit-text, centered statements) */
+.slide-logo-corner {
+  position: absolute;
+  top: var(--slide-pad-top);
+  right: var(--slide-pad-x);
+  z-index: 5;
+}
+
+.slide-logo-corner img {
+  height: 52px;
+  width: auto;
+}
+
+/* Logo switching — shared by all bar/logo variants */
+.brand-bar .logo-color,
+.brand-bar-wide .logo-color,
+.slide-logo-corner .logo-color {
+  display: var(--logo-color-display);
+}
+
+.brand-bar .logo-white,
+.brand-bar-wide .logo-white,
+.slide-logo-corner .logo-white {
+  display: var(--logo-white-display);
 }
 
 /* ======================================================================
- * Layout: Cover slides (1 – 4) — shared base
+ * 7. Layout: Cover slides — shared base
  * ====================================================================== */
 
 .slide-cover {
   position: relative;
-  /* padding-top: 190px !important; */ /* room for logo + spacing */
   overflow: hidden;
+  /*background: var(--cover-bg);*/
+}
+
+.slide-cover .contents {
+  position: relative;
+  padding: 6px var(--slide-pad-x) 0 var(--slide-pad-x);
 }
 
 .slide-cover .eyebrow {
+  color: var(--cover-eyebrow);
   font-size: 22px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   font-weight: 600;
-  margin: 110px 0 20px 0;
   position: relative;
   z-index: 3;
 }
 
 .slide-cover h1 {
+  color: var(--cover-title);
   font-size: 64px;
   max-width: 1100px;
   margin-bottom: 12px;
@@ -139,6 +352,7 @@
 }
 
 .slide-cover .subhead {
+  color: var(--cover-subhead);
   font-size: 26px;
   max-width: 1000px;
   margin: 0 0 36px 0;
@@ -147,6 +361,7 @@
 }
 
 .slide-cover .presenter-block {
+  color: var(--cover-presenter);
   font-size: 20px;
   line-height: 1.5;
   position: relative;
@@ -154,10 +369,12 @@
 }
 
 .slide-cover .presenter-block .name {
+  color: var(--cover-name);
   font-weight: 600;
 }
 
 .slide-cover .credit-team {
+  color: var(--cover-credit);
   margin-top: 14px;
   font-size: 14px;
   letter-spacing: 0.08em;
@@ -165,10 +382,10 @@
 }
 
 .slide-cover .funding-disclaimer {
-  position: absolute;
-  left: 96px;
-  right: 96px;
-  bottom: 36px;
+  color: var(--cover-disclaimer);
+  opacity: 0.7;
+  position: relative;
+  padding-top: 40px;
   font-size: 11px;
   line-height: 1.4;
   max-width: 1000px;
@@ -176,58 +393,20 @@
 }
 
 .slide-cover .material-notes {
-  font-size: 15px;
+  color: var(--cover-disclaimer);
+  opacity: 0.7;
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  bottom: 36px;
+  font-size: 11px;
+  line-height: 1.4;
   max-width: 1000px;
-  margin-top: 28px;
-  position: relative;
   z-index: 3;
 }
 
-/* ------ WHITE cover variant ------ */
-
-.slide-cover-white {
-  background: var(--ncar-white) !important;
-}
-
-.slide-cover-white .eyebrow {
-  color: var(--ncar-blue);
-}
-
-.slide-cover-white h1 {
-  color: var(--ncar-navy-deep);
-}
-
-.slide-cover-white .subhead {
-  color: var(--ncar-navy);
-}
-
-.slide-cover-white .presenter-block {
-  color: var(--ncar-navy);
-}
-
-.slide-cover-white .presenter-block .name {
-  color: var(--ncar-navy-deep);
-}
-
-.slide-cover-white .credit-team {
-  color: var(--ncar-blue);
-}
-
-.slide-cover-white .funding-disclaimer {
-  color: rgba(0, 53, 122, 0.7);
-}
-
-.slide-cover-white .material-notes {
-  color: rgba(1, 24, 55, 0.7);
-}
-
-/* ------ BLUE cover variant ------ */
-
-.slide-cover-blue {
-  background: url("../assets/images/photo-cover.jpg") center / cover no-repeat;
-}
-
-.slide-cover-blue::before {
+/* Photo-overlay cover (darkens a background image) */
+.slide-cover-overlay::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -236,61 +415,35 @@
   pointer-events: none;
 }
 
-.slide-cover-blue .eyebrow {
-  color: var(--ncar-cyan);
-}
-
-.slide-cover-blue h1 {
-  color: var(--ncar-white);
-}
-
-.slide-cover-blue .subhead {
-  color: var(--ncar-cream);
-}
-
-.slide-cover-blue .presenter-block {
-  color: var(--ncar-cream);
-}
-
-.slide-cover-blue .presenter-block .name {
-  color: var(--ncar-white);
-}
-
-.slide-cover-blue .credit-team {
-  color: var(--ncar-cyan);
-}
-
-.slide-cover-blue .funding-disclaimer {
-  color: rgba(241, 240, 238, 0.7);
-}
-
-.slide-cover-blue .material-notes {
-  color: rgba(241, 240, 238, 0.75);
-}
-
-.slide-cover.reversed .material-notes {
-  margin-top: 110px;
-}
-
-.slide-cover.reversed .presenter-block {
-  margin-top: 0;
-}
-
 /* ======================================================================
- * Layout: Content slides
+ * 8. Layout: Content slides
  * ====================================================================== */
 
 .slide-content {
   position: relative;
 }
 
+.waves-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("../assets/images/wave-graphics-ncar-colors/NCAR-Waves_Lines-Only-3_RGB.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.25;
+  transform: rotate(-90deg);
+  z-index: 0;
+  pointer-events: none;
+}
+
 .slide-content h2 {
-  color: var(--ncar-white);
+  color: var(--text-heading);
   max-width: 1600px;
 }
 
 .slide-content h2 .accent {
-  color: var(--ncar-cyan);
+  color: var(--text-accent);
   font-weight: 500;
 }
 
@@ -324,13 +477,13 @@
 
 .slide-content .body h3 {
   font-size: 24px;
-  color: var(--ncar-cyan);
+  color: var(--text-h3h4);
   margin-bottom: 10px;
   border-left: 4px solid var(--ncar-orange);
   padding-left: 14px;
 }
 
-/* Stat / label boxes (slide 5) — tighter to prevent overflow */
+/* Stat / label boxes */
 .stat-boxes {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -339,15 +492,15 @@
 }
 
 .stat-boxes .box {
-  background: rgba(0, 87, 194, 0.25);
-  border: 1px solid rgba(66, 192, 255, 0.35);
+  background: var(--box-bg);
+  border: 1px solid var(--box-border);
   border-radius: 6px;
   padding: 14px 18px;
 }
 
 .stat-boxes .box .label {
   font-size: 18px;
-  color: var(--ncar-cyan);
+  color: var(--text-accent);
   font-weight: 600;
   display: block;
   margin-bottom: 4px;
@@ -355,12 +508,12 @@
 
 .stat-boxes .box .value {
   font-size: 16px;
-  color: var(--ncar-cream);
+  color: var(--text-primary);
 }
 
-/* Content + image (slide 5) — reduced padding to prevent overflow */
+/* Content + image — tighter padding to fit more */
 .slide-content.slide-with-image {
-  padding: 48px 72px !important;
+  padding: var(--slide-pad-top) var(--slide-pad-x);
 }
 
 .slide-content .with-image {
@@ -393,7 +546,7 @@
   margin-bottom: 16px;
 }
 
-/* Grid list (slide 12) */
+/* Grid list */
 .grid-list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -409,19 +562,19 @@
 }
 
 /* ======================================================================
- * Layout: Section divider (slide 9) — now uses data-background-image
+ * 9. Layout: Section divider
  * ====================================================================== */
 
 .slide-section-divider {
-  background: transparent;
+  position: relative;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .slide-section-divider h2 {
   font-size: 80px;
-  max-width: 1400px;
-  color: var(--ncar-white);
+  max-width: 1200px;
+  color: var(--divider-heading);
 }
 
 .slide-section-divider h2.r-fit-text {
@@ -430,14 +583,14 @@
 }
 
 /* ======================================================================
- * Layout: Bolder statement (slide 13) — overflow fixed
+ * 10. Layout: Bolder statement
  * ====================================================================== */
 
 .slide-bolder-statement {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 80px 120px !important;
   overflow: hidden;
 }
 
@@ -445,41 +598,42 @@
   font-family: var(--font-display);
   font-size: 48px;
   line-height: 1.1;
-  color: var(--ncar-cyan);
+  color: var(--statement-lead);
   font-weight: 600;
-  margin: 0 0 20px 0;
+  padding: 40px var(--slide-pad-x) 0 var(--slide-pad-x);
 }
 
 .slide-bolder-statement .statement-body {
   font-family: var(--font-display);
   max-width: 1500px;
   line-height: 1.15;
-  color: var(--ncar-white);
+  color: var(--statement-body);
   font-weight: 600;
-  margin: 0;
+  margin-top: 100px;
+  max-width: 1200px;
 }
 
 /* ======================================================================
- * Utility
+ * 11. Utility
  * ====================================================================== */
 
 .page-marker {
   position: absolute;
-  right: 96px;
+  right: 16px;
   bottom: 28px;
   font-size: 14px;
-  color: rgba(241, 240, 238, 0.6);
+  color: var(--page-marker-color);
   letter-spacing: 0.15em;
   text-transform: uppercase;
 }
 
 /* ======================================================================
- * Demo / feature slides
+ * 12. Demo / feature slides
  * ====================================================================== */
 
 .reveal pre {
   width: 100%;
-  box-shadow: 0 6px 40px rgba(0, 0, 0, 0.45);
+  box-shadow: 0 6px 40px var(--shadow-code);
   border-radius: 6px;
   margin: 24px 0;
 }
@@ -494,7 +648,7 @@
 }
 
 .slide-code .caption {
-  color: var(--ncar-cyan);
+  color: var(--text-accent);
   font-size: 18px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -502,7 +656,7 @@
 }
 
 .slide-fragments .fragment.highlight-ncar-cyan.visible {
-  color: var(--ncar-cyan);
+  color: var(--text-accent);
 }
 
 .slide-fragments .fragment-note {
@@ -510,8 +664,8 @@
   margin-left: 12px;
   padding: 2px 10px;
   border-radius: 3px;
-  background: rgba(66, 192, 255, 0.15);
-  color: var(--ncar-cyan);
+  background: var(--fragment-note-bg);
+  color: var(--text-accent);
   font-size: 16px;
   font-family: "JetBrains Mono", Menlo, monospace;
 }
@@ -534,19 +688,26 @@
   align-self: flex-start;
 }
 
-.auto-animate-stack .chip.accent { background: var(--ncar-orange); color: var(--ncar-navy-deep); }
-.auto-animate-stack .chip.teal   { background: var(--ncar-teal); }
-.auto-animate-stack .chip.deep   { background: var(--ncar-navy); }
+.auto-animate-stack .chip.accent {
+  background: var(--ncar-orange);
+  color: var(--ncar-space);
+}
+.auto-animate-stack .chip.light-blue {
+  background: var(--ncar-light-blue);
+}
+.auto-animate-stack .chip.dark-blue {
+  background: var(--ncar-dark-blue);
+}
 
 .slide-transition-demo .label {
   display: inline-block;
   margin-top: 32px;
   padding: 10px 20px;
-  border: 1px solid var(--ncar-cyan);
+  border: 1px solid var(--text-accent);
   border-radius: 4px;
   font-family: "JetBrains Mono", Menlo, monospace;
   font-size: 18px;
-  color: var(--ncar-cyan);
+  color: var(--text-accent);
   letter-spacing: 0.08em;
 }
 
@@ -558,14 +719,14 @@
   display: inline-block;
   max-width: 1000px;
   padding: 40px 48px;
-  background: rgba(1, 24, 55, 0.82);
+  background: var(--card-bg);
   backdrop-filter: blur(4px);
-  border: 1px solid rgba(66, 192, 255, 0.35);
+  border: 1px solid var(--card-border);
   border-radius: 8px;
 }
 
 .slide-iframe-bg h2 {
-  color: var(--ncar-white);
+  color: var(--text-heading);
   margin-bottom: 12px;
 }
 

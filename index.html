@@ -1,413 +1,562 @@
 <!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <title>NSF NCAR / RAL Slide Template (reveal.js)</title>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <title>NSF NCAR / RAL Slide Template (reveal.js)</title>
 
-  <!-- Reveal.js core + base theme from jsDelivr -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/black.css" id="theme" />
+    <!-- Reveal.js core + base theme from jsDelivr -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/black.css"
+      id="theme"
+    />
 
-  <!-- highlight.js theme for pretty code blocks -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/monokai.css" />
+    <!-- highlight.js theme for pretty code blocks -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/monokai.css"
+    />
 
-  <!-- Poppins + JetBrains Mono from Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" />
+    <!-- Poppins + JetBrains Mono from Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+    />
 
-  <!-- NCAR brand overrides (load last so they win) -->
-  <link rel="stylesheet" href="css/ncar-theme.css" />
-</head>
-<body>
+    <!-- NCAR brand overrides (load last so they win) -->
+    <link rel="stylesheet" href="css/ncar-theme.css" />
+  </head>
 
-  <div class="reveal">
-    <div class="slides">
-
-      <!-- ============================================================ -->
-      <!-- 1. TITLE — four cover variants as a vertical stack            -->
-      <!--    1a: Long title, WHITE   1b: Long title, BLUE              -->
-      <!--    1c: Short title, WHITE  1d: Short title, BLUE             -->
-      <!-- ============================================================ -->
-      <section>
-
-        <!-- 1a. Long title, WHITE cover -->
-        <section class="slide-cover slide-cover-white" data-transition="fade" data-background-image="assets/images/photo-cover.jpg">
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section
+          class="slide-cover"
+          data-transition="fade"
+          data-background-image="assets/images/photo-cover.jpg"
+          data-background-opacity="0.45"
+        >
           <div class="brand-bar">
-            <img src="assets/images/ncar-ral-wide-color.png" alt="NCAR RAL" />
+            <img
+              class="logo-color"
+              src="assets/images/ncar-ral-stack-color.png"
+              alt="NCAR RAL"
+            />
+            <img
+              class="logo-white"
+              src="assets/images/ncar-ral-stack-white.png"
+              alt="NCAR RAL"
+            />
           </div>
-          <p class="eyebrow">September 15, 2025</p>
-          <h1>Longer title and cover content lorem sit ipsum dolor nonummy aliquip</h1>
-          <p class="subhead">Optional subhead duis aute irure reprehenderit velit esse dolor ex commodo</p>
+          <div class="slide-cover contents">
+            <p class="eyebrow">September 15, 2025</p>
+            <h1 class="h1">
+              Longer title and cover content lorem sit ipsum dolor nonummy
+              aliquip
+            </h1>
+            <p class="subhead">
+              Optional subhead duis aute irure reprehenderit velit esse dolor ex
+              commodo
+            </p>
 
-          <div class="presenter-block">
-            <div class="name">Presenter Name(s) Here</div>
-            <div class="title">Presenter Title nonummy cilum ut labore</div>
-            <div class="credit-team">
-              Optional credit team names: Lorem Ipsum, Consectetur Adipiscing, Eiusmod Tempor,
-              Incididunt Labore, Dolore Magna, Aliqua Enim, Minim Veniam, Quis Nostrud
+            <div class="presenter-block">
+              <div class="name">Presenter Name(s) Here</div>
+              <div class="title">Presenter Title nonummy cilum ut labore</div>
+              <div class="credit-team">
+                Optional credit team names: Lorem Ipsum, Consectetur Adipiscing,
+                Eiusmod Tempor, Incididunt Labore, Dolore Magna, Aliqua Enim,
+                Minim Veniam, Quis Nostrud
+              </div>
             </div>
-          </div>
 
-          <p class="funding-disclaimer">
-            This material is based upon work supported by the NSF National Center for Atmospheric Research,
-            a major facility sponsored by the U.S. National Science Foundation and managed by the University
-            Corporation for Atmospheric Research. Any opinions, findings and conclusions or recommendations
-            expressed in this material do not necessarily reflect the views of NSF.
-          </p>
-        </section>
-
-        <!-- 1b. Long title, BLUE cover -->
-        <section class="slide-cover slide-cover-blue" data-transition="fade">
-          <div class="brand-bar">
-            <img src="assets/images/ncar-ral-wide-white.png" alt="NCAR RAL" />
-          </div>
-          <p class="eyebrow">September 15, 2025</p>
-          <h1>Longer title and cover content lorem sit ipsum dolor nonummy aliquip</h1>
-          <p class="subhead">Optional subhead duis aute irure reprehenderit velit esse dolor ex commodo</p>
-
-          <div class="presenter-block">
-            <div class="name">Presenter Name(s) Here</div>
-            <div class="title">Presenter Title nonummy cilum ut labore</div>
-            <div class="credit-team">
-              Optional credit team names: Lorem Ipsum, Consectetur Adipiscing, Eiusmod Tempor,
-              Incididunt Labore, Dolore Magna, Aliqua Enim, Minim Veniam, Quis Nostrud
-            </div>
-            <p class="material-notes">
-              Material notes duis aute irure in reprehenderit velit esse dolor ex commodo magna lorem sit
-              ipsum dolor nonummy aliquip cilum ut labore et dolore. Mattis elementum gravida eget consequat
-              imperdiet sed. Mi erat hac urna facilisis facilisis.
+            <p class="funding-disclaimer">
+              This material is based upon work supported by the NSF National
+              Center for Atmospheric Research, a major facility sponsored by the
+              U.S. National Science Foundation and managed by the University
+              Corporation for Atmospheric Research. Any opinions, findings and
+              conclusions or recommendations expressed in this material do not
+              necessarily reflect the views of NSF.
             </p>
           </div>
         </section>
 
-        <!-- 1c. Short title, WHITE cover -->
-        <section class="slide-cover slide-cover-white" data-transition="fade" data-background-image="assets/images/photo-cover.jpg">
-          <div class="brand-bar">
-            <img src="assets/images/ncar-ral-wide-color.png" alt="NCAR RAL" />
-          </div>
-          <p class="eyebrow">September 15, 2025</p>
-          <h1>Shorter title and cover content lorem sit ipsum</h1>
+        <!-- ============================================================ -->
+        <!-- 2. Section divider — aurora photo       -->
+        <!-- ============================================================ -->
 
-          <div class="presenter-block">
-            <div class="name">Presenter Name(s) Here</div>
-            <div class="title">Presenter Title nonummy cilum ut labore</div>
-            <p class="material-notes">
-              Material notes duis aute irure in reprehenderit velit esse dolor ex commodo magna lorem sit
-              ipsum dolor nonummy aliquip cilum ut labore et dolore. Mattis elementum gravida eget consequat
-              imperdiet sed. Mi erat hac urna facilisis facilisis.
-            </p>
+        <section
+          class="slide-section-divider"
+          data-background-image="assets/images/Aurora-in-Sweden_CAESAR.jpg"
+          data-background-opacity="0.55"
+          data-background-transition="zoom"
+        >
+          <div class="slide-logo-corner">
+            <img
+              class="logo-color"
+              src="assets/images/ncar-ral-wide-color.png"
+              alt="NCAR RAL"
+            />
+            <img
+              class="logo-white"
+              src="assets/images/ncar-ral-wide-white.png"
+              alt="NCAR RAL"
+            />
+          </div>
+          <h2 class="h2">Shorter page title lorem sit ipsum dolor</h2>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- 3. Content + stat boxes + Derecho photo (overflow fixed)     -->
+        <!-- ============================================================ -->
+        <section class="slide-content slide-with-image">
+          <div class="waves-bg"></div>
+          <div class="brand-bar-wide">
+            <h2>Shorter page title lorem sit ipsum dolor</h2>
+            <img
+              class="logo-color"
+              src="assets/images/ncar-ral-wide-color.png"
+              alt="NCAR RAL"
+            />
+            <img
+              class="logo-white"
+              src="assets/images/ncar-ral-wide-white.png"
+              alt="NCAR RAL"
+            />
+          </div>
+
+          <div class="with-image">
+            <div>
+              <p class="intro">Lorem ipsum dolor amet consectetur</p>
+              <ul>
+                <li>
+                  Duis rhoncus facilisis enim sit venenatis diam ornare fames
+                  molestie. Enim at molestie vestibulum.
+                </li>
+                <li>
+                  Id ridiculus sit et nisl proin erat. Massa facilisi dignissim
+                  amet id lectus dis scelerisque hendrerit.
+                </li>
+                <li>Sed purus egestas elementum in dignissim.</li>
+                <li>Amet at laoreet morbi tellus mattis proin velit at.</li>
+                <li>Mi mi nunc lorem in diam convallis facilisis.</li>
+                <li>Id ridiculus sit et nisl proin erat.</li>
+              </ul>
+
+              <div class="stat-boxes">
+                <div class="box">
+                  <span class="label">Morbi tellus</span>
+                  <span class="value">mattis proin velit</span>
+                </div>
+                <div class="box">
+                  <span class="label">Egestas</span>
+                  <span class="value">elementum</span>
+                </div>
+                <div class="box">
+                  <span class="label">Ridiculus</span>
+                  <span class="value">sit et nisl proin erat</span>
+                </div>
+              </div>
+            </div>
+            <img
+              src="assets/images/Derecho_installed_2023_3.jpg"
+              alt="Derecho supercomputer"
+            />
           </div>
         </section>
 
-        <!-- 1d. Short title, BLUE cover -->
-        <section class="slide-cover slide-cover-blue reversed" data-transition="fade">
-          <div class="brand-bar">
-            <img src="assets/images/ncar-ral-wide-white.png" alt="NCAR RAL" />
+        <!-- ============================================================ -->
+        <!-- 4. Large-title content                                       -->
+        <!-- ============================================================ -->
+        <section class="slide-content">
+          <div class="waves-bg"></div>
+
+          <div class="brand-bar-wide">
+            <h2>
+              Longer page title lorem sit ipsum dolor
+              <span class="accent"
+                >amet nonummy aliquip cilum ornare fames</span
+              >
+            </h2>
+            <img
+              class="logo-color"
+              src="assets/images/ncar-ral-wide-color.png"
+              alt="NCAR RAL"
+            />
+            <img
+              class="logo-white"
+              src="assets/images/ncar-ral-wide-white.png"
+              alt="NCAR RAL"
+            />
           </div>
-          <p class="material-notes">
-            Material notes duis aute irure in reprehenderit velit esse dolor ex commodo magna lorem sit ipsum
-            dolor nonummy aliquip cilum ut labore et dolore. Mattis elementum gravida eget consequat imperdiet
-            sed. Mi erat hac urna facilisis facilisis.
+
+          <p class="intro">Lorem ipsum dolor sit amet consectetur</p>
+
+          <p>
+            Venenatis diam ornare fames molestie. Enim at molestie vestibulum
+            nunc dictum quis nulla bibendum. Aenean nulla aliquam nec sed. Diam
+            venenatis vestibulum vitae ut sagittis ultricies molestie. Sed purus
+            egestas elementum in dignissim viverra. Amet at laoreet morbi tellus
+            mattis proin velit at. Mi mi nunc lorem in diam convallis facilisis.
+            Id ridiculus sit et nisl proin erat. Massa facilisi dignissim amet
+            id lectus dis hendrerit.
           </p>
-
-          <p class="eyebrow" style="margin-top: 32px;">September 15, 2025</p>
-          <h1>Shorter title and cover content lorem sit ipsum</h1>
-
-          <div class="presenter-block">
-            <div class="name">Presenter Name(s) Here</div>
-            <div class="title">Presenter Title nonummy cilum ut labore</div>
-          </div>
+          <p>
+            Erat tellus enim enim ut suspendisse augue ut et. Non vestibulum
+            pellentesque pulvinar sed. Sociis neque enim felis sodales sit
+            maecenas amet. Diam venenatis vestibulum vitae ut sagittis ultricies
+            molestie. Sed neque quam morbi lorem vel vehicula nullam augue.
+            Mattis elementum gravida eget non scelerisque consequat imperdiet
+            sed. Mi erat hac urna facilisis facilisis. Mi mi nunc lorem in diam
+            convallis facilisis. Id ridiculus sit et nisl proin erat. Massa
+            facilisi dignissim amet id lectus dis hendrerit.
+          </p>
         </section>
 
-      </section>
+        <!-- ============================================================ -->
+        <!-- 5. Two-column variants — vertical stack                      -->
+        <!-- ============================================================ -->
+        <section>
+          <section class="slide-content two-col">
+            <div class="waves-bg"></div>
 
-      <!-- ============================================================ -->
-      <!-- 2. Section divider — aurora photo replacing airplane         -->
-      <!-- ============================================================ -->
-      <section class="slide-section-divider"
-               data-background-image="assets/images/Aurora-in-Sweden_CAESAR.jpg"
-               data-background-opacity="0.5"
-               data-background-transition="zoom">
-        <h2 class="r-fit-text">Shorter page title lorem sit ipsum dolor</h2>
-      </section>
-
-      <!-- ============================================================ -->
-      <!-- 3. Content + stat boxes + Derecho photo (overflow fixed)     -->
-      <!-- ============================================================ -->
-      <section class="slide-content slide-with-image">
-        <h2>Shorter page title lorem sit ipsum dolor</h2>
-
-        <div class="with-image">
-          <div>
+            <div class="brand-bar-wide">
+              <h2>Shorter page title lorem sit ipsum dolor</h2>
+              <img
+                class="logo-color"
+                src="assets/images/ncar-ral-wide-color.png"
+                alt="NCAR RAL"
+              />
+              <img
+                class="logo-white"
+                src="assets/images/ncar-ral-wide-white.png"
+                alt="NCAR RAL"
+              />
+            </div>
             <p class="intro">Lorem ipsum dolor amet consectetur</p>
-            <ul>
-              <li>Duis rhoncus facilisis enim sit venenatis diam ornare fames molestie. Enim at molestie vestibulum.</li>
-              <li>Id ridiculus sit et nisl proin erat. Massa facilisi dignissim amet id lectus dis scelerisque hendrerit.</li>
-              <li>Sed purus egestas elementum in dignissim.</li>
-              <li>Amet at laoreet morbi tellus mattis proin velit at.</li>
-              <li>Mi mi nunc lorem in diam convallis facilisis.</li>
-              <li>Id ridiculus sit et nisl proin erat.</li>
-            </ul>
 
-            <div class="stat-boxes">
-              <div class="box">
-                <span class="label">Morbi tellus</span>
-                <span class="value">mattis proin velit</span>
+            <div class="body">
+              <div>
+                <p>
+                  Duis rhoncus facilisis enim sit venenatis diam ornare fames
+                  molestie. Enim at molestie vestibulum nunc dictum quis nulla
+                  bibendum. Aenean nulla aliquam nec sed. Diam venenatis
+                  vestibulum vitae ut sagittis ultricies molestie.
+                </p>
+                <p>
+                  Sed purus egestas elementum in dignissim viverra. Amet at
+                  laoreet morbi tellus mattis proin velit at. Mi mi nunc lorem
+                  in diam convallis facilisis. Id ridiculus sit et nisl proin
+                  erat. Massa facilisi dignissim amet id lectus dis scelerisque
+                  hendrerit.
+                </p>
+                <p>
+                  Aenean nulla aliquam nec sed. Diam venenatis vestibulum vitae
+                  ut sagittis ultricies molestie.
+                </p>
               </div>
-              <div class="box">
-                <span class="label">Egestas</span>
-                <span class="value">elementum</span>
-              </div>
-              <div class="box">
-                <span class="label">Ridiculus</span>
-                <span class="value">sit et nisl proin erat</span>
+              <div>
+                <h3>Metus sit posuere vitae nam nisl</h3>
+                <p>
+                  Erat tellus enim enim ut suspendisse augue ut et. Non
+                  vestibulum pellentesque pulvinar sed. Sociis neque enim felis
+                  sodales sit maecenas amet.
+                </p>
+                <p>
+                  Sed neque quam morbi lorem vel vehicula nullam augue. Mattis
+                  elementum gravida eget non scelerisque consequat imperdiet
+                  sed.
+                </p>
+                <p>
+                  Aenean nulla aliquam nec sed. Diam venenatis vestibulum vitae
+                  ut sagittis ultricies molestie.
+                </p>
+                <p>
+                  Mi erat hac urna facilisis facilisis. Cras eget morbi blandit
+                  arcu in purus arcu consectetur. Egestas tellus aenean augue
+                  eget sed purus lacus pretium.
+                </p>
               </div>
             </div>
-          </div>
-          <img src="assets/images/Derecho_installed_2023_3.jpg" alt="Derecho supercomputer" />
-        </div>
-      </section>
+          </section>
 
-      <!-- ============================================================ -->
-      <!-- 4. Large-title content                                       -->
-      <!-- ============================================================ -->
-      <section class="slide-content">
-        <h2>
-          Longer page title lorem sit ipsum dolor
-          <span class="accent">amet nonummy aliquip cilum ornare fames</span>
-        </h2>
+          <section
+            class="slide-content two-col"
+            data-background-image="assets/images/behind_Derecho.jpg"
+            data-background-opacity="0.12"
+          >
+            <div class="waves-bg"></div>
 
-        <p class="intro">Lorem ipsum dolor sit amet consectetur</p>
-
-        <p>
-          Venenatis diam ornare fames molestie. Enim at molestie vestibulum nunc dictum quis nulla bibendum.
-          Aenean nulla aliquam nec sed. Diam venenatis vestibulum vitae ut sagittis ultricies molestie.
-          Sed purus egestas elementum in dignissim viverra. Amet at laoreet morbi tellus mattis proin velit
-          at. Mi mi nunc lorem in diam convallis facilisis. Id ridiculus sit et nisl proin erat. Massa
-          facilisi dignissim amet id lectus dis hendrerit.
-        </p>
-        <p>
-          Erat tellus enim enim ut suspendisse augue ut et. Non vestibulum pellentesque pulvinar sed. Sociis
-          neque enim felis sodales sit maecenas amet. Diam venenatis vestibulum vitae ut sagittis ultricies
-          molestie. Sed neque quam morbi lorem vel vehicula nullam augue. Mattis elementum gravida eget non
-          scelerisque consequat imperdiet sed. Mi erat hac urna facilisis facilisis. Mi mi nunc lorem in
-          diam convallis facilisis. Id ridiculus sit et nisl proin erat. Massa facilisi dignissim amet id
-          lectus dis hendrerit.
-        </p>
-      </section>
-
-      <!-- ============================================================ -->
-      <!-- 5. Two-column variants — vertical stack                      -->
-      <!-- ============================================================ -->
-      <section>
-
-        <section class="slide-content two-col">
-          <h2>Shorter page title lorem sit ipsum dolor</h2>
-          <p class="intro">Lorem ipsum dolor amet consectetur</p>
-
-          <div class="body">
-            <div>
-              <p>
-                Duis rhoncus facilisis enim sit venenatis diam ornare fames molestie. Enim at molestie
-                vestibulum nunc dictum quis nulla bibendum. Aenean nulla aliquam nec sed. Diam venenatis
-                vestibulum vitae ut sagittis ultricies molestie.
-              </p>
-              <p>
-                Sed purus egestas elementum in dignissim viverra. Amet at laoreet morbi tellus mattis proin
-                velit at. Mi mi nunc lorem in diam convallis facilisis. Id ridiculus sit et nisl proin erat.
-                Massa facilisi dignissim amet id lectus dis scelerisque hendrerit.
-              </p>
-              <p>Aenean nulla aliquam nec sed. Diam venenatis vestibulum vitae ut sagittis ultricies molestie.</p>
+            <div class="brand-bar-wide">
+              <h2>Shorter page title lorem sit ipsum dolor</h2>
+              <img
+                class="logo-color"
+                src="assets/images/ncar-ral-wide-color.png"
+                alt="NCAR RAL"
+              />
+              <img
+                class="logo-white"
+                src="assets/images/ncar-ral-wide-white.png"
+                alt="NCAR RAL"
+              />
             </div>
-            <div>
-              <h3>Metus sit posuere vitae nam nisl</h3>
-              <p>
-                Erat tellus enim enim ut suspendisse augue ut et. Non vestibulum pellentesque pulvinar sed.
-                Sociis neque enim felis sodales sit maecenas amet.
-              </p>
-              <p>
-                Sed neque quam morbi lorem vel vehicula nullam augue. Mattis elementum gravida eget non
-                scelerisque consequat imperdiet sed.
-              </p>
-              <p>Aenean nulla aliquam nec sed. Diam venenatis vestibulum vitae ut sagittis ultricies molestie.</p>
-              <p>
-                Mi erat hac urna facilisis facilisis. Cras eget morbi blandit arcu in purus arcu consectetur.
-                Egestas tellus aenean augue eget sed purus lacus pretium.
-              </p>
+            <p class="intro">Lorem ipsum dolor sit amet consectetur</p>
+
+            <div class="body">
+              <div>
+                <p>
+                  Duis rhoncus facilisis enim sit venenatis diam ornare fames
+                  molestie. Enim at molestie vestibulum nunc dictum quis nulla
+                  bibendum. Aenean nulla aliquam nec sed. Diam venenatis
+                  vestibulum vitae ut sagittis ultricies molestie.
+                </p>
+                <p>
+                  Sed purus egestas elementum in dignissim viverra. Amet at
+                  laoreet morbi tellus mattis proin velit at. Mi mi nunc lorem
+                  in diam convallis facilisis. Id ridiculus sit et nisl proin
+                  erat. Massa facilisi dignissim amet id lectus dis scelerisque
+                  hendrerit.
+                </p>
+                <h3>Metus sit posuere vitae nam</h3>
+                <p>
+                  Erat tellus enim enim ut suspendisse augue ut et. Non
+                  vestibulum pellentesque pulvinar sed. Sociis neque enim felis
+                  sodales sit maecenas amet.
+                </p>
+                <p>
+                  Sed neque quam morbi lorem vel vehicula nullam augue. Mattis
+                  elementum gravida eget non scelerisque consequat imperdiet
+                  sed. Aenean nulla aliquam nec sed. Diam venenatis vestibulum
+                  vitae ut sagittis ultricies molestie.
+                </p>
+              </div>
+              <div>
+                <p>
+                  Mi erat hac urna facilisis facilisis. Cras eget morbi blandit
+                  arcu in purus arcu consectetur. Egestas tellus aenean augue
+                  eget sed purus lacus pretium.
+                </p>
+                <h3>Sed purus egestas elementum in dignissim viverra</h3>
+                <p>
+                  Amet at laoreet morbi tellus mattis proin velit at. Mi mi nunc
+                  lorem in diam convallis facilisis. Id ridiculus sit et nisl
+                  proin erat. Massa facilisi dignissim amet id lectus dis
+                  scelerisque hendrerit. Aenean nulla aliquam nec sed. Diam
+                  venenatis vestibulum vitae ut sagittis ultricies molestie.
+                </p>
+                <p>
+                  Duis rhoncus facilisis enim sit venenatis diam ornare fames
+                  molestie. Enim at molestie vestibulum nunc dictum quis nulla
+                  bibendum. Aenean nulla aliquam nec sed.
+                </p>
+              </div>
             </div>
-          </div>
+          </section>
         </section>
 
-        <section class="slide-content two-col"
-                 data-background-image="assets/images/behind_Derecho.jpg"
-                 data-background-opacity="0.12">
-          <h2>Shorter page title lorem sit ipsum dolor</h2>
+        <!-- ============================================================ -->
+        <!-- 6. Three columns                                             -->
+        <!-- ============================================================ -->
+        <section class="slide-content three-col">
+          <div class="waves-bg"></div>
+
+          <div class="brand-bar-wide">
+            <h2>Shorter page title lorem sit ipsum dolor</h2>
+            <img
+              class="logo-color"
+              src="assets/images/ncar-ral-wide-color.png"
+              alt="NCAR RAL"
+            />
+            <img
+              class="logo-white"
+              src="assets/images/ncar-ral-wide-white.png"
+              alt="NCAR RAL"
+            />
+          </div>
           <p class="intro">Lorem ipsum dolor sit amet consectetur</p>
 
           <div class="body">
             <div>
               <p>
-                Duis rhoncus facilisis enim sit venenatis diam ornare fames molestie. Enim at molestie
-                vestibulum nunc dictum quis nulla bibendum. Aenean nulla aliquam nec sed. Diam venenatis
+                Duis rhoncus facilisis enim sit venenatis diam ornare fames
+                molestie. Enim at molestie vestibulum nunc dictum quis nulla
+                bibendum. Aenean nulla aliquam nec sed. Diam venenatis
                 vestibulum vitae ut sagittis ultricies molestie.
               </p>
+              <p>Sed purus egestas elementum in dignissim viverra.</p>
+            </div>
+            <div>
+              <h3>Metus sit posuere vitae</h3>
               <p>
-                Sed purus egestas elementum in dignissim viverra. Amet at laoreet morbi tellus mattis proin
-                velit at. Mi mi nunc lorem in diam convallis facilisis. Id ridiculus sit et nisl proin erat.
-                Massa facilisi dignissim amet id lectus dis scelerisque hendrerit.
+                Erat tellus enim enim ut suspendisse augue ut et. Non vestibulum
+                pellentesque pulvinar sed. Sociis neque enim felis sodales sit
+                maecenas amet.
               </p>
-              <h3>Metus sit posuere vitae nam</h3>
               <p>
-                Erat tellus enim enim ut suspendisse augue ut et. Non vestibulum pellentesque pulvinar sed.
-                Sociis neque enim felis sodales sit maecenas amet.
+                Sed neque quam morbi lorem vel vehicula nullam augue. Mattis
+                elementum gravida eget non scelerisque consequat imperdiet sed.
+                Aenean nulla aliquam nec sed. Diam venenatis vestibulum vitae ut
+                sagittis ultricies molestie.
               </p>
+              <h3>Sed purus egestas dignissim viverra</h3>
               <p>
-                Sed neque quam morbi lorem vel vehicula nullam augue. Mattis elementum gravida eget non
-                scelerisque consequat imperdiet sed. Aenean nulla aliquam nec sed. Diam venenatis vestibulum
-                vitae ut sagittis ultricies molestie.
+                Amet at laoreet morbi tellus mattis proin velit at. Mi mi nunc
+                lorem in diam convallis facilisis. Id ridiculus sit et nisl
+                proin erat.
               </p>
             </div>
             <div>
+              <h3>Posuere vitae nam</h3>
               <p>
-                Mi erat hac urna facilisis facilisis. Cras eget morbi blandit arcu in purus arcu consectetur.
-                Egestas tellus aenean augue eget sed purus lacus pretium.
+                Erat tellus enim enim ut suspendisse augue ut et. Non vestibulum
+                pellentesque pulvinar sed. Sociis neque enim felis sodales sit
+                maecenas amet.
               </p>
-              <h3>Sed purus egestas elementum in dignissim viverra</h3>
               <p>
-                Amet at laoreet morbi tellus mattis proin velit at. Mi mi nunc lorem in diam convallis
-                facilisis. Id ridiculus sit et nisl proin erat. Massa facilisi dignissim amet id lectus dis
-                scelerisque hendrerit. Aenean nulla aliquam nec sed. Diam venenatis vestibulum vitae ut
+                Sed neque quam morbi lorem vel vehicula nullam augue. Mattis
+                elementum gravida eget non scelerisque consequat imperdiet sed.
+                Aenean nulla aliquam nec sed. Diam venenatis vestibulum vitae ut
                 sagittis ultricies molestie.
-              </p>
-              <p>
-                Duis rhoncus facilisis enim sit venenatis diam ornare fames molestie. Enim at molestie
-                vestibulum nunc dictum quis nulla bibendum. Aenean nulla aliquam nec sed.
               </p>
             </div>
           </div>
         </section>
 
-      </section>
-
-      <!-- ============================================================ -->
-      <!-- 6. Three columns                                             -->
-      <!-- ============================================================ -->
-      <section class="slide-content three-col">
-        <h2>Shorter page title lorem sit ipsum dolor</h2>
-        <p class="intro">Lorem ipsum dolor sit amet consectetur</p>
-
-        <div class="body">
-          <div>
-            <p>
-              Duis rhoncus facilisis enim sit venenatis diam ornare fames molestie. Enim at molestie
-              vestibulum nunc dictum quis nulla bibendum. Aenean nulla aliquam nec sed. Diam venenatis
-              vestibulum vitae ut sagittis ultricies molestie.
-            </p>
-            <p>Sed purus egestas elementum in dignissim viverra.</p>
+        <!-- ============================================================ -->
+        <!-- 7. Content intro only — with Milky Way background            -->
+        <!-- ============================================================ -->
+        <section
+          class="slide-content"
+          data-background-image="assets/images/4G4A1413-Pano.JPG"
+          data-background-opacity="0.40"
+        >
+          <div class="brand-bar-wide">
+            <h2>Shorter page title lorem sit ipsum dolor</h2>
+            <img
+              class="logo-color"
+              src="assets/images/ncar-ral-wide-color.png"
+              alt="NCAR RAL"
+            />
+            <img
+              class="logo-white"
+              src="assets/images/ncar-ral-wide-white.png"
+              alt="NCAR RAL"
+            />
           </div>
-          <div>
-            <h3>Metus sit posuere vitae</h3>
-            <p>
-              Erat tellus enim enim ut suspendisse augue ut et. Non vestibulum pellentesque pulvinar sed.
-              Sociis neque enim felis sodales sit maecenas amet.
-            </p>
-            <p>
-              Sed neque quam morbi lorem vel vehicula nullam augue. Mattis elementum gravida eget non
-              scelerisque consequat imperdiet sed. Aenean nulla aliquam nec sed. Diam venenatis vestibulum
-              vitae ut sagittis ultricies molestie.
-            </p>
-            <h3>Sed purus egestas dignissim viverra</h3>
-            <p>
-              Amet at laoreet morbi tellus mattis proin velit at. Mi mi nunc lorem in diam convallis
-              facilisis. Id ridiculus sit et nisl proin erat.
-            </p>
-          </div>
-          <div>
-            <h3>Posuere vitae nam</h3>
-            <p>
-              Erat tellus enim enim ut suspendisse augue ut et. Non vestibulum pellentesque pulvinar sed.
-              Sociis neque enim felis sodales sit maecenas amet.
-            </p>
-            <p>
-              Sed neque quam morbi lorem vel vehicula nullam augue. Mattis elementum gravida eget non
-              scelerisque consequat imperdiet sed. Aenean nulla aliquam nec sed. Diam venenatis vestibulum
-              vitae ut sagittis ultricies molestie.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <!-- ============================================================ -->
-      <!-- 7. Content intro only — with Milky Way background            -->
-      <!-- ============================================================ -->
-      <section class="slide-content"
-               data-background-image="assets/images/4G4A1413-Pano.JPG"
-               data-background-opacity="0.15">
-        <h2>Shorter page title lorem sit ipsum dolor</h2>
-        <p class="intro">Lorem ipsum dolor amet consectetur</p>
-        <p>
-          Duis rhoncus facilisis enim sit venenatis diam ornare fames molestie. Enim at molestie vestibulum
-          nunc dictum quis nulla bibendum. Aenean nulla aliquam nec sed. Diam venenatis vestibulum vitae ut
-          sagittis ultricies molestie.
-        </p>
-      </section>
-
-      <!-- ============================================================ -->
-      <!-- 8. Grid / list                                               -->
-      <!-- ============================================================ -->
-      <section class="slide-content">
-        <h2>Shorter page title lorem sit ipsum dolor</h2>
-
-        <div class="grid-list">
-          <p>Lorem ipsum</p>
-          <p>Metus sit posuere</p>
-          <p>Sed purus</p>
-          <p>Posuere vitae nam</p>
-          <p>Duis rhoncus facilisis enim sit venenatis diam ornare</p>
-          <p>Vel vehicula nullam augue.</p>
-          <p>Rhoncus facilisis enim sit venenatis diam ornare</p>
-          <p>Sed neque quam morbi lorem vel vehicula</p>
-          <p>Sed neque quam morbi lorem vel vehicula nullam</p>
-          <p>Facilisis enim sit venenatis diam ornare fames</p>
-          <p>Sed neque quam morbi lorem vel vehicula</p>
-          <p>Venenatis diam ornare fames molestie.</p>
-          <p>Duis rhoncus facilisis enim</p>
-          <p>Sed neque quam morbi lorem vel vehicula nullam</p>
-          <p>Facilisis enim sit venenatis diam ornare fames</p>
-          <p>Vel vehicula nullam augue</p>
-          <p>Sed neque quam morbi</p>
-          <p>Duis rhoncus facilisis enim sit venenatis diam ornare</p>
-          <p>Sed neque quam morbi lorem vel vehicula</p>
-          <p>Duis rhoncus facilisis enim sit venenatis diam</p>
-        </div>
-      </section>
-
-      <!-- ============================================================ -->
-      <!-- 9. Bolder statement — overflow fixed, MPAS bg                -->
-      <!-- ============================================================ -->
-      <section class="slide-bolder-statement"
-               data-background-image="assets/images/MPAS-image.png"
-               data-background-opacity="0.2"
-               data-background-size="cover">
-        <div>
-          <p class="statement-lead">Bolder statement</p>
-          <p class="statement-body r-fit-text">
-            Tellus enim enim ut suspendisse augue ut et. Non vestibulum pellentesque pulvinar sed.
-            Sociis neque enim felis sodales sit maecenas amet.
+          <p class="intro">Lorem ipsum dolor amet consectetur</p>
+          <p>
+            Duis rhoncus facilisis enim sit venenatis diam ornare fames
+            molestie. Enim at molestie vestibulum nunc dictum quis nulla
+            bibendum. Aenean nulla aliquam nec sed. Diam venenatis vestibulum
+            vitae ut sagittis ultricies molestie.
           </p>
-        </div>
-      </section>
+        </section>
 
-      <!-- ============================================================ -->
-      <!-- 10. Code block demo                                          -->
-      <!-- ============================================================ -->
-      <section class="slide-content slide-code">
-        <h2>Pretty code blocks</h2>
-        <p class="intro">Syntax highlighted via highlight.js, with stepped line highlighting driven by reveal.js fragments.</p>
+        <!-- ============================================================ -->
+        <!-- 8. Grid / list                                               -->
+        <!-- ============================================================ -->
+        <section class="slide-content">
+          <div class="brand-bar-wide">
+            <h2>Shorter page title lorem sit ipsum dolor</h2>
+            <img
+              class="logo-color"
+              src="assets/images/ncar-ral-wide-color.png"
+              alt="NCAR RAL"
+            />
+            <img
+              class="logo-white"
+              src="assets/images/ncar-ral-wide-white.png"
+              alt="NCAR RAL"
+            />
+          </div>
 
-        <pre><code class="language-python" data-trim data-line-numbers="|1-4|6-9|11-14|all"><script type="text/template">
+          <div class="grid-list">
+            <p>Lorem ipsum</p>
+            <p>Metus sit posuere</p>
+            <p>Sed purus</p>
+            <p>Posuere vitae nam</p>
+            <p>Duis rhoncus facilisis enim sit venenatis diam ornare</p>
+            <p>Vel vehicula nullam augue.</p>
+            <p>Rhoncus facilisis enim sit venenatis diam ornare</p>
+            <p>Sed neque quam morbi lorem vel vehicula</p>
+            <p>Sed neque quam morbi lorem vel vehicula nullam</p>
+            <p>Facilisis enim sit venenatis diam ornare fames</p>
+            <p>Sed neque quam morbi lorem vel vehicula</p>
+            <p>Venenatis diam ornare fames molestie.</p>
+            <p>Duis rhoncus facilisis enim</p>
+            <p>Sed neque quam morbi lorem vel vehicula nullam</p>
+            <p>Facilisis enim sit venenatis diam ornare fames</p>
+            <p>Vel vehicula nullam augue</p>
+            <p>Sed neque quam morbi</p>
+            <p>Duis rhoncus facilisis enim sit venenatis diam ornare</p>
+            <p>Sed neque quam morbi lorem vel vehicula</p>
+            <p>Duis rhoncus facilisis enim sit venenatis diam</p>
+          </div>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- 9. Bolder statement — overflow fixed, MPAS bg                -->
+        <!-- ============================================================ -->
+        <section
+          class="slide-bolder-statement"
+          data-background-image="assets/images/MPAS-image.png"
+          data-background-opacity="0.2"
+          data-background-size="cover"
+        >
+          <div class="slide-logo-corner">
+            <img
+              class="logo-color"
+              src="assets/images/ncar-ral-wide-color.png"
+              alt="NCAR RAL"
+            />
+            <img
+              class="logo-white"
+              src="assets/images/ncar-ral-wide-white.png"
+              alt="NCAR RAL"
+            />
+          </div>
+          <div>
+            <p class="statement-lead">Bolder statement</p>
+            <p class="statement-body r-fit-text">
+              Tellus enim enim ut suspendisse augue ut et. Non vestibulum
+              pellentesque pulvinar sed. Sociis neque enim felis sodales sit
+              maecenas amet.
+            </p>
+          </div>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- 10. Code block demo                                          -->
+        <!-- ============================================================ -->
+        <section class="slide-content slide-code">
+          <div class="brand-bar-wide">
+            <h2>Pretty code blocks</h2>
+            <img
+              class="logo-color"
+              src="assets/images/ncar-ral-wide-color.png"
+              alt="NCAR RAL"
+            />
+            <img
+              class="logo-white"
+              src="assets/images/ncar-ral-wide-white.png"
+              alt="NCAR RAL"
+            />
+          </div>
+          <p class="intro">
+            Syntax highlighted via highlight.js, with stepped line highlighting
+            driven by reveal.js fragments.
+          </p>
+
+          <pre><code class="language-python" data-trim data-line-numbers="|1-4|6-9|11-14|all"><script type="text/template">
 from dataclasses import dataclass
 
 @dataclass
@@ -423,194 +572,437 @@ def hot_stations(obs, threshold=30.0):
     )
 </script></code></pre>
 
-        <p class="caption">Press → to step through the line highlights.</p>
-      </section>
+          <p class="caption">Press → to step through the line highlights.</p>
+        </section>
 
-      <!-- ============================================================ -->
-      <!-- 11. Fragments demo                                           -->
-      <!-- ============================================================ -->
-      <section class="slide-content slide-fragments">
-        <h2>Fragments</h2>
-        <p class="intro">Reveal content incrementally with <code>class="fragment"</code>.</p>
-
-        <ul>
-          <li class="fragment fade-in">
-            Fade in
-            <span class="fragment-note">fade-in</span>
-          </li>
-          <li class="fragment fade-up">
-            Fade up
-            <span class="fragment-note">fade-up</span>
-          </li>
-          <li class="fragment fade-left">
-            Fade from the right
-            <span class="fragment-note">fade-left</span>
-          </li>
-          <li class="fragment grow">
-            Grow
-            <span class="fragment-note">grow</span>
-          </li>
-          <li class="fragment highlight-current-blue">
-            Highlight current in blue
-            <span class="fragment-note">highlight-current-blue</span>
-          </li>
-          <li class="fragment strike">
-            Strike-through on reveal
-            <span class="fragment-note">strike</span>
-          </li>
-        </ul>
-      </section>
-
-      <!-- ============================================================ -->
-      <!-- 12. Auto-animate — vertical stack                            -->
-      <!-- ============================================================ -->
-      <section>
-
-        <section data-auto-animate class="slide-content">
-          <h2 data-id="aa-title" style="font-size: 48px;">Auto-Animate</h2>
-          <p class="intro">Reveal's automatic element tweening.</p>
-          <div class="auto-animate-stack">
-            <div class="chip" data-id="chip-a">Data</div>
+        <!-- ============================================================ -->
+        <!-- 11. Fragments demo                                           -->
+        <!-- ============================================================ -->
+        <section class="slide-content slide-fragments">
+          <div class="brand-bar-wide">
+            <h2>Fragments</h2>
+            <img
+              class="logo-color"
+              src="assets/images/ncar-ral-wide-color.png"
+              alt="NCAR RAL"
+            />
+            <img
+              class="logo-white"
+              src="assets/images/ncar-ral-wide-white.png"
+              alt="NCAR RAL"
+            />
           </div>
-        </section>
-
-        <section data-auto-animate class="slide-content">
-          <h2 data-id="aa-title" style="font-size: 72px;">Auto-Animate</h2>
-          <p class="intro">Same <code>data-id</code> → smoothly tweened position, size, and color.</p>
-          <div class="auto-animate-stack">
-            <div class="chip" data-id="chip-a">Data</div>
-            <div class="chip teal" data-id="chip-b">Model</div>
-          </div>
-        </section>
-
-        <section data-auto-animate class="slide-content">
-          <h2 data-id="aa-title" style="font-size: 96px; color: var(--ncar-cyan);">Auto-Animate</h2>
-          <p class="intro">A third frame grows the stack and changes the title color.</p>
-          <div class="auto-animate-stack">
-            <div class="chip accent" data-id="chip-a">Data</div>
-            <div class="chip teal" data-id="chip-b">Model</div>
-            <div class="chip deep" data-id="chip-c">Forecast</div>
-          </div>
-        </section>
-
-      </section>
-
-      <!-- ============================================================ -->
-      <!-- 13. Transitions demo — vertical stack                        -->
-      <!-- ============================================================ -->
-      <section>
-
-        <section class="slide-content slide-transition-demo" data-transition="slide">
-          <h2>Transitions</h2>
-          <p class="intro">Each slide in this stack uses a different <code>data-transition</code>.</p>
-          <p class="label">data-transition="slide"</p>
-        </section>
-
-        <section class="slide-content slide-transition-demo" data-transition="fade">
-          <h2>Fade</h2>
-          <p class="label">data-transition="fade"</p>
-        </section>
-
-        <section class="slide-content slide-transition-demo" data-transition="convex">
-          <h2>Convex</h2>
-          <p class="label">data-transition="convex"</p>
-        </section>
-
-        <section class="slide-content slide-transition-demo" data-transition="concave">
-          <h2>Concave</h2>
-          <p class="label">data-transition="concave"</p>
-        </section>
-
-        <section class="slide-content slide-transition-demo" data-transition="zoom">
-          <h2>Zoom</h2>
-          <p class="label">data-transition="zoom"</p>
-        </section>
-
-        <section class="slide-content slide-transition-demo" data-transition="slide-in fade-out">
-          <h2>Mix: slide-in / fade-out</h2>
-          <p class="label">data-transition="slide-in fade-out"</p>
-        </section>
-
-      </section>
-
-      <!-- ============================================================ -->
-      <!-- 14. Background transitions demo                              -->
-      <!-- ============================================================ -->
-      <section>
-
-        <section data-background-color="#011837"
-                 data-background-transition="fade"
-                 class="slide-content slide-transition-demo">
-          <h2>Background transitions</h2>
-          <p class="intro">Each slide has a different <code>data-background-transition</code>.</p>
-          <p class="label">data-background-transition="fade"</p>
-        </section>
-
-        <section data-background-color="#00357A"
-                 data-background-transition="slide"
-                 class="slide-content slide-transition-demo">
-          <h2>Slide</h2>
-          <p class="label">data-background-transition="slide"</p>
-        </section>
-
-        <section data-background-color="#0057C2"
-                 data-background-transition="convex"
-                 class="slide-content slide-transition-demo">
-          <h2>Convex</h2>
-          <p class="label">data-background-transition="convex"</p>
-        </section>
-
-        <section data-background-color="#0092DB"
-                 data-background-transition="zoom"
-                 class="slide-content slide-transition-demo">
-          <h2>Zoom</h2>
-          <p class="label">data-background-transition="zoom"</p>
-        </section>
-
-      </section>
-
-      <!-- ============================================================ -->
-      <!-- 15. Iframe background                                        -->
-      <!-- ============================================================ -->
-      <section class="slide-iframe-bg"
-               data-background-iframe="https://revealjs.com/backgrounds/"
-               data-background-interactive>
-        <div class="card">
-          <h2>Iframe backgrounds</h2>
-          <p>
-            This slide's background is a live <code>&lt;iframe&gt;</code> pointing at
-            <code>revealjs.com/backgrounds/</code>. Add <code>data-background-interactive</code>
-            to let the user click through to the embedded page.
+          <p class="intro">
+            Reveal content incrementally with <code>class="fragment"</code>.
           </p>
-        </div>
-      </section>
 
+          <ul>
+            <li class="fragment fade-in">
+              Fade in
+              <span class="fragment-note">fade-in</span>
+            </li>
+            <li class="fragment fade-up">
+              Fade up
+              <span class="fragment-note">fade-up</span>
+            </li>
+            <li class="fragment fade-left">
+              Fade from the right
+              <span class="fragment-note">fade-left</span>
+            </li>
+            <li class="fragment grow">
+              Grow
+              <span class="fragment-note">grow</span>
+            </li>
+            <li class="fragment highlight-current-blue">
+              Highlight current in blue
+              <span class="fragment-note">highlight-current-blue</span>
+            </li>
+            <li class="fragment strike">
+              Strike-through on reveal
+              <span class="fragment-note">strike</span>
+            </li>
+          </ul>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- 12. Auto-animate — vertical stack                            -->
+        <!-- ============================================================ -->
+        <section>
+          <section data-auto-animate class="slide-content">
+            <div class="brand-bar-wide">
+              <h2 data-id="aa-title" style="font-size: 48px">Auto-Animate</h2>
+              <img
+                class="logo-color"
+                src="assets/images/ncar-ral-wide-color.png"
+                alt="NCAR RAL"
+              />
+              <img
+                class="logo-white"
+                src="assets/images/ncar-ral-wide-white.png"
+                alt="NCAR RAL"
+              />
+            </div>
+            <p class="intro">Reveal's automatic element tweening.</p>
+            <div class="auto-animate-stack">
+              <div class="chip" data-id="chip-a">Data</div>
+            </div>
+          </section>
+
+          <section data-auto-animate class="slide-content">
+            <div class="brand-bar-wide">
+              <h2 data-id="aa-title" style="font-size: 72px">Auto-Animate</h2>
+              <img
+                class="logo-color"
+                src="assets/images/ncar-ral-wide-color.png"
+                alt="NCAR RAL"
+              />
+              <img
+                class="logo-white"
+                src="assets/images/ncar-ral-wide-white.png"
+                alt="NCAR RAL"
+              />
+            </div>
+            <p class="intro">
+              Same <code>data-id</code> → smoothly tweened position, size, and
+              color.
+            </p>
+            <div class="auto-animate-stack">
+              <div class="chip" data-id="chip-a">Data</div>
+              <div class="chip light-blue" data-id="chip-b">Model</div>
+            </div>
+          </section>
+
+          <section data-auto-animate class="slide-content">
+            <div class="brand-bar-wide">
+              <h2
+                data-id="aa-title"
+                style="font-size: 96px; color: var(--ncar-cyan)"
+              >
+                Auto-Animate
+              </h2>
+              <img
+                class="logo-color"
+                src="assets/images/ncar-ral-wide-color.png"
+                alt="NCAR RAL"
+              />
+              <img
+                class="logo-white"
+                src="assets/images/ncar-ral-wide-white.png"
+                alt="NCAR RAL"
+              />
+            </div>
+            <p class="intro">
+              A third frame grows the stack and changes the title color.
+            </p>
+            <div class="auto-animate-stack">
+              <div class="chip accent" data-id="chip-a">Data</div>
+              <div class="chip light-blue" data-id="chip-b">Model</div>
+              <div class="chip dark-blue" data-id="chip-c">Forecast</div>
+            </div>
+          </section>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- 13. Transitions demo — vertical stack                        -->
+        <!-- ============================================================ -->
+        <section>
+          <section
+            class="slide-content slide-transition-demo"
+            data-transition="slide"
+          >
+            <div class="brand-bar-wide">
+              <h2>Transitions</h2>
+              <img
+                class="logo-color"
+                src="assets/images/ncar-ral-wide-color.png"
+                alt="NCAR RAL"
+              />
+              <img
+                class="logo-white"
+                src="assets/images/ncar-ral-wide-white.png"
+                alt="NCAR RAL"
+              />
+            </div>
+            <p class="intro">
+              Each slide in this stack uses a different
+              <code>data-transition</code>.
+            </p>
+            <p class="label">data-transition="slide"</p>
+          </section>
+
+          <section
+            class="slide-content slide-transition-demo"
+            data-transition="fade"
+          >
+            <div class="brand-bar-wide">
+              <h2>Fade</h2>
+              <img
+                class="logo-color"
+                src="assets/images/ncar-ral-wide-color.png"
+                alt="NCAR RAL"
+              />
+              <img
+                class="logo-white"
+                src="assets/images/ncar-ral-wide-white.png"
+                alt="NCAR RAL"
+              />
+            </div>
+            <p class="label">data-transition="fade"</p>
+          </section>
+
+          <section
+            class="slide-content slide-transition-demo"
+            data-transition="convex"
+          >
+            <div class="brand-bar-wide">
+              <h2>Convex</h2>
+              <img
+                class="logo-color"
+                src="assets/images/ncar-ral-wide-color.png"
+                alt="NCAR RAL"
+              />
+              <img
+                class="logo-white"
+                src="assets/images/ncar-ral-wide-white.png"
+                alt="NCAR RAL"
+              />
+            </div>
+            <p class="label">data-transition="convex"</p>
+          </section>
+
+          <section
+            class="slide-content slide-transition-demo"
+            data-transition="concave"
+          >
+            <div class="brand-bar-wide">
+              <h2>Concave</h2>
+              <img
+                class="logo-color"
+                src="assets/images/ncar-ral-wide-color.png"
+                alt="NCAR RAL"
+              />
+              <img
+                class="logo-white"
+                src="assets/images/ncar-ral-wide-white.png"
+                alt="NCAR RAL"
+              />
+            </div>
+            <p class="label">data-transition="concave"</p>
+          </section>
+
+          <section
+            class="slide-content slide-transition-demo"
+            data-transition="zoom"
+          >
+            <div class="brand-bar-wide">
+              <h2>Zoom</h2>
+              <img
+                class="logo-color"
+                src="assets/images/ncar-ral-wide-color.png"
+                alt="NCAR RAL"
+              />
+              <img
+                class="logo-white"
+                src="assets/images/ncar-ral-wide-white.png"
+                alt="NCAR RAL"
+              />
+            </div>
+            <p class="label">data-transition="zoom"</p>
+          </section>
+
+          <section
+            class="slide-content slide-transition-demo"
+            data-transition="slide-in fade-out"
+          >
+            <div class="brand-bar-wide">
+              <h2>Mix: slide-in / fade-out</h2>
+              <img
+                class="logo-color"
+                src="assets/images/ncar-ral-wide-color.png"
+                alt="NCAR RAL"
+              />
+              <img
+                class="logo-white"
+                src="assets/images/ncar-ral-wide-white.png"
+                alt="NCAR RAL"
+              />
+            </div>
+            <p class="label">data-transition="slide-in fade-out"</p>
+          </section>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- 14. Background transitions demo                              -->
+        <!-- ============================================================ -->
+        <section>
+          <section
+            data-background-color="#011837"
+            data-background-transition="fade"
+            class="slide-content slide-transition-demo"
+          >
+            <div class="brand-bar-wide">
+              <h2>Background transitions</h2>
+              <img
+                class="logo-color"
+                src="assets/images/ncar-ral-wide-color.png"
+                alt="NCAR RAL"
+              />
+              <img
+                class="logo-white"
+                src="assets/images/ncar-ral-wide-white.png"
+                alt="NCAR RAL"
+              />
+            </div>
+            <p class="intro">
+              Each slide has a different
+              <code>data-background-transition</code>.
+            </p>
+            <p class="label">data-background-transition="fade"</p>
+          </section>
+
+          <section
+            data-background-color="#00357A"
+            data-background-transition="slide"
+            class="slide-content slide-transition-demo"
+          >
+            <div class="brand-bar-wide">
+              <h2>Slide</h2>
+              <img
+                class="logo-color"
+                src="assets/images/ncar-ral-wide-color.png"
+                alt="NCAR RAL"
+              />
+              <img
+                class="logo-white"
+                src="assets/images/ncar-ral-wide-white.png"
+                alt="NCAR RAL"
+              />
+            </div>
+            <p class="label">data-background-transition="slide"</p>
+          </section>
+
+          <section
+            data-background-color="#0057C2"
+            data-background-transition="convex"
+            class="slide-content slide-transition-demo"
+          >
+            <div class="brand-bar-wide">
+              <h2>Convex</h2>
+              <img
+                class="logo-color"
+                src="assets/images/ncar-ral-wide-color.png"
+                alt="NCAR RAL"
+              />
+              <img
+                class="logo-white"
+                src="assets/images/ncar-ral-wide-white.png"
+                alt="NCAR RAL"
+              />
+            </div>
+            <p class="label">data-background-transition="convex"</p>
+          </section>
+
+          <section
+            data-background-color="#0092DB"
+            data-background-transition="zoom"
+            class="slide-content slide-transition-demo"
+          >
+            <div class="brand-bar-wide">
+              <h2>Zoom</h2>
+              <img
+                class="logo-color"
+                src="assets/images/ncar-ral-wide-color.png"
+                alt="NCAR RAL"
+              />
+              <img
+                class="logo-white"
+                src="assets/images/ncar-ral-wide-white.png"
+                alt="NCAR RAL"
+              />
+            </div>
+            <p class="label">data-background-transition="zoom"</p>
+          </section>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- 15. Iframe background                                        -->
+        <!-- ============================================================ -->
+        <section
+          class="slide-iframe-bg"
+          data-background-iframe="https://revealjs.com/backgrounds/"
+          data-background-interactive
+        >
+          <div class="card">
+            <div class="brand-bar-wide">
+              <h2>Iframe backgrounds</h2>
+              <img
+                class="logo-color"
+                src="assets/images/ncar-ral-wide-color.png"
+                alt="NCAR RAL"
+              />
+              <img
+                class="logo-white"
+                src="assets/images/ncar-ral-wide-white.png"
+                alt="NCAR RAL"
+              />
+            </div>
+            <p>
+              This slide's background is a live
+              <code>&lt;iframe&gt;</code> pointing at
+              <code>revealjs.com/backgrounds/</code>. Add
+              <code>data-background-interactive</code>
+              to let the user click through to the embedded page.
+            </p>
+          </div>
+        </section>
+      </div>
     </div>
-  </div>
 
-  <!-- reveal.js core -->
-  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
-  <!-- Plugins -->
-  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/highlight.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/notes/notes.js"></script>
+    <!-- reveal.js core -->
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+    <!-- Plugins -->
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/highlight.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/notes/notes.js"></script>
 
-  <script>
-    Reveal.initialize({
-      hash: true,
-      width: 1920,
-      height: 1080,
-      center: true,
-      margin: 0.04,
-      minScale: 0.2,
-      maxScale: 2.0,
-      slideNumber: 'c/t',
-      controls: true,
-      progress: true,
-      transition: 'slide',
-      transitionSpeed: 'default',
-      backgroundTransition: 'fade',
-      plugins: [ RevealHighlight, RevealNotes ]
-    });
-  </script>
-</body>
+    <script>
+      Reveal.initialize({
+        hash: true,
+        width: 1920,
+        height: 1080,
+        center: true,
+        margin: 0.04,
+        minScale: 0.2,
+        maxScale: 2.0,
+        slideNumber: "h.v",
+        controls: true,
+        progress: true,
+        transition: "slide",
+        transitionSpeed: "default",
+        backgroundTransition: "fade",
+        plugins: [RevealHighlight, RevealNotes],
+      });
+
+      // Theme toggle: press T to switch dark ↔ light
+      (function () {
+        var html = document.documentElement;
+        var saved = localStorage.getItem("ncar-theme");
+        if (saved) html.setAttribute("data-theme", saved);
+
+        document.addEventListener("keydown", function (e) {
+          if (
+            e.key === "t" &&
+            !e.ctrlKey &&
+            !e.metaKey &&
+            !e.altKey &&
+            document.activeElement.tagName !== "INPUT"
+          ) {
+            var next =
+              html.getAttribute("data-theme") === "dark" ? "light" : "dark";
+            html.setAttribute("data-theme", next);
+            localStorage.setItem("ncar-theme", next);
+          }
+        });
+      })();
+    </script>
+  </body>
 </html>
