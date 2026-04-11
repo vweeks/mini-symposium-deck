@@ -386,15 +386,20 @@
 
         <!-- ============================================================ -->
         <!-- 7. SECTION DIVIDER — penultimate (agent screenshot + zoom)   -->
+        <!--    Alt+click (or Ctrl+click on Linux) to zoom into image     -->
         <!-- ============================================================ -->
         <section
           class="slide-section-divider"
           data-transition="fade"
-          data-background-image="assets/images/agent-team-screenshot.jpg"
-          data-background-opacity="0.55"
           data-background-transition="zoom"
+          data-background-color="#011837"
         >
-          <h2 class="r-fit-text">Scientific Agentic Engineering</h2>
+          <h2 style="font-size: 48px; margin-bottom: 24px">Scientific Agentic Engineering</h2>
+          <img
+            src="assets/images/agent-team-screenshot.jpg"
+            alt="Multi-agent AI workflow — scientific agentic engineering in action"
+            style="max-width: 85%; max-height: 720px; border-radius: 8px; box-shadow: 0 8px 40px rgba(0,0,0,0.5); cursor: zoom-in"
+          />
         </section>
 
         <!-- ============================================================ -->
@@ -465,6 +470,7 @@
     <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
     <!-- Plugins -->
     <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/notes/notes.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/zoom/zoom.js"></script>
 
     <script>
       Reveal.initialize({
@@ -481,7 +487,7 @@
         transition: "slide",
         transitionSpeed: "default",
         backgroundTransition: "fade",
-        plugins: [RevealNotes],
+        plugins: [RevealNotes, RevealZoom],
       });
 
       // Theme toggle: press T to switch dark ↔ light
