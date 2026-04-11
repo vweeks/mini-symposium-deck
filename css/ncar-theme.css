@@ -1,0 +1,735 @@
+/* ======================================================================
+ * NSF NCAR / RAL — Unified brand theme for reveal.js
+ * Override layer applied after the built-in "black" theme.
+ * Palette extracted from theme1.xml of nsf_ncar_ral-slide-template.pptx.
+ *
+ * Dark / light switching via  data-theme="dark|light"  on <html>.
+ * Press  T  during a presentation to toggle (see JS in index.html).
+ * ====================================================================== */
+
+/* ======================================================================
+ * 1. Brand palette  (immutable — never changes between themes)
+ * ====================================================================== */
+
+:root {
+  /* Primary */
+  --ncar-blue: #0057c2;
+  --ncar-dark-blue: #00357a;
+
+  /* Secondary */
+  --ncar-space: #011837;
+  --ncar-light-blue: #42c0ff;
+  --ncar-light-gray: #f1f0ee;
+  --ncar-white: #ffffff;
+
+  /* Accent */
+  --ncar-orange: #faa119;
+  --ncar-yellow: #ffdd31;
+
+  /* Typography */
+  --font-display: "Poppins", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-body: "Poppins", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+  /* Layout spacing */
+  --slide-pad-x: 54px;
+  --slide-pad-top: 36px;
+  --slide-pad-bottom: 36px;
+}
+
+/* ======================================================================
+ * 2. Semantic tokens — dark theme (default)
+ * ====================================================================== */
+
+:root,
+[data-theme="dark"] {
+  /* Backgrounds */
+  --bg-viewport: var(--ncar-space);
+  --bg-section: var(--ncar-dark-blue);
+
+  /* Body text */
+  --text-primary: var(--ncar-light-gray);
+  --text-heading: var(--ncar-white);
+  --text-h3h4: var(--ncar-light-blue);
+  --text-link: var(--ncar-light-blue);
+  --text-accent: var(--ncar-light-blue);
+
+  /* Cover slides */
+  --cover-bg: var(--ncar-dark-blue);
+  --cover-bg-wave: url("../assets/images/wave-graphics-ncar-colors/NCAR-Waves_Fills-A-White-3_RGB.png");
+  --cover-eyebrow: var(--ncar-light-blue);
+  --cover-title: var(--ncar-white);
+  --cover-subhead: var(--ncar-light-gray);
+  --cover-presenter: var(--ncar-light-gray);
+  --cover-name: var(--ncar-white);
+  --cover-credit: var(--ncar-light-blue);
+  --cover-disclaimer: var(--ncar-light-gray);
+
+  /* Logo switching (dark bg → white logo, light bg → color logo) */
+  --logo-color-display: none;
+  --logo-white-display: block;
+
+  /* Section dividers */
+  --divider-bg: transparent;
+  --divider-heading: var(--ncar-white);
+
+  /* Bolder statement */
+  --statement-lead: var(--ncar-light-blue);
+  --statement-body: var(--ncar-white);
+
+  /* Components */
+  --box-bg: rgba(0, 87, 194, 0.25);
+  --box-border: rgba(66, 192, 255, 0.35);
+  --card-bg: rgba(1, 24, 55, 0.82);
+  --card-border: rgba(66, 192, 255, 0.35);
+  --fragment-note-bg: rgba(66, 192, 255, 0.15);
+  --shadow-code: rgba(0, 0, 0, 0.45);
+  --page-marker-color: rgba(241, 240, 238, 0.6);
+}
+
+/* ======================================================================
+ * 3. Semantic tokens — light theme
+ * ====================================================================== */
+
+[data-theme="light"] {
+  /* Backgrounds */
+  --bg-viewport: var(--ncar-light-gray);
+  --bg-section: var(--ncar-white);
+
+  /* Body text */
+  --text-primary: var(--ncar-space);
+  --text-heading: var(--ncar-dark-blue);
+  --text-h3h4: var(--ncar-blue);
+  --text-link: var(--ncar-blue);
+  --text-accent: var(--ncar-blue);
+
+  /* Cover slides */
+  --cover-bg: var(--ncar-white);
+  --cover-bg-wave: url("../assets/images/wave-graphics-ncar-colors/NCAR-Waves_Fills-A-Color-3_RGB.png");
+  --cover-eyebrow: var(--ncar-blue);
+  --cover-title: var(--ncar-space);
+  --cover-subhead: var(--ncar-dark-blue);
+  --cover-presenter: var(--ncar-dark-blue);
+  --cover-name: var(--ncar-space);
+  --cover-credit: var(--ncar-blue);
+  --cover-disclaimer: var(--ncar-dark-blue);
+
+  /* Logo switching (light bg → color logo) */
+  --logo-color-display: block;
+  --logo-white-display: none;
+
+  /* Section dividers */
+  --divider-bg: var(--ncar-white);
+  --divider-heading: var(--ncar-blue);
+
+  /* Bolder statement */
+  --statement-lead: var(--ncar-blue);
+  --statement-body: var(--ncar-dark-blue);
+
+  /* Components */
+  --box-bg: rgba(0, 87, 194, 0.08);
+  --box-border: rgba(0, 87, 194, 0.2);
+  --card-bg: rgba(255, 255, 255, 0.92);
+  --card-border: rgba(0, 87, 194, 0.2);
+  --fragment-note-bg: rgba(0, 87, 194, 0.1);
+  --shadow-code: rgba(0, 0, 0, 0.12);
+  --page-marker-color: rgba(0, 53, 122, 0.5);
+}
+
+/* ======================================================================
+ * 4. Per-slide cover overrides (work in any theme)
+ *
+ *    Add  .slide-cover-white  or  .slide-cover-blue  to a <section> to
+ *    force a specific cover palette regardless of the active theme.
+ * ====================================================================== */
+
+.slide-cover-white {
+  --cover-bg: var(--ncar-white);
+  --cover-eyebrow: var(--ncar-blue);
+  --cover-title: var(--ncar-space);
+  --cover-subhead: var(--ncar-dark-blue);
+  --cover-presenter: var(--ncar-dark-blue);
+  --cover-name: var(--ncar-space);
+  --cover-credit: var(--ncar-blue);
+  --cover-disclaimer: rgba(0, 53, 122, 0.7);
+  --logo-color-display: block;
+  --logo-white-display: none;
+}
+
+.slide-cover-blue {
+  --cover-bg: var(--ncar-dark-blue);
+  --cover-eyebrow: var(--ncar-light-blue);
+  --cover-title: var(--ncar-white);
+  --cover-subhead: var(--ncar-light-gray);
+  --cover-presenter: var(--ncar-light-gray);
+  --cover-name: var(--ncar-white);
+  --cover-credit: var(--ncar-light-blue);
+  --cover-disclaimer: rgba(241, 240, 238, 0.7);
+  --logo-color-display: none;
+  --logo-white-display: block;
+}
+
+/* ======================================================================
+ * 5. Reveal base overrides
+ * ====================================================================== */
+
+.reveal {
+  font-family: var(--font-body);
+  font-weight: 400;
+  color: var(--text-primary);
+  letter-spacing: 0.005em;
+}
+
+.reveal .slides {
+  text-align: left;
+}
+
+.reveal .slides section {
+  box-sizing: border-box;
+  /*background: var(--bg-section);*/
+  height: 100%;
+}
+
+.reveal-viewport,
+.reveal {
+  background: var(--bg-viewport);
+}
+
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4 {
+  font-family: var(--font-display);
+  color: var(--text-heading);
+  text-transform: none;
+  letter-spacing: normal;
+  line-height: 1.1;
+  margin: 0 0 0.4em 0;
+  font-weight: 600;
+}
+
+.reveal h1 {
+  font-size: 64px;
+}
+.reveal h2 {
+  font-size: 52px;
+}
+.reveal h3 {
+  font-size: 34px;
+  color: var(--text-h3h4);
+}
+.reveal h4 {
+  font-size: 26px;
+  color: var(--text-h3h4);
+}
+
+.reveal p,
+.reveal li {
+  font-size: 24px;
+  line-height: 1.45;
+  color: var(--text-primary);
+}
+
+.reveal a {
+  color: var(--text-link);
+}
+
+.reveal ul,
+.reveal ol {
+  margin: 0 0 0.6em 1.2em;
+  padding: 0;
+}
+
+.reveal ul li::marker {
+  color: var(--ncar-orange);
+}
+
+.reveal .slide-number {
+  background: transparent;
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 16px;
+  right: 32px;
+  bottom: 24px;
+}
+
+/* ======================================================================
+ * 6. Brand furniture (logo bar)
+ * ====================================================================== */
+
+.brand-bar {
+  position: relative;
+  padding: var(--slide-pad-top) var(--slide-pad-x) 0 var(--slide-pad-x);
+  display: flex;
+  align-items: center;
+  z-index: 5;
+}
+
+.brand-bar img {
+  height: 200px;
+  width: auto;
+}
+
+.brand-bar-wide {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  z-index: 5;
+  padding-bottom: 16px;
+  margin-bottom: 20px;
+  border-bottom: 3px solid var(--ncar-blue);
+}
+
+.brand-bar-wide h2 {
+  flex: 1;
+  min-width: 0;
+  margin-bottom: 0;
+}
+
+.brand-bar-wide img {
+  height: 52px;
+  width: auto;
+}
+
+/* Corner logo — for slides where the title needs full width (r-fit-text, centered statements) */
+.slide-logo-corner {
+  position: absolute;
+  top: var(--slide-pad-top);
+  right: var(--slide-pad-x);
+  z-index: 5;
+}
+
+.slide-logo-corner img {
+  height: 52px;
+  width: auto;
+}
+
+/* Logo switching — shared by all bar/logo variants */
+.brand-bar .logo-color,
+.brand-bar-wide .logo-color,
+.slide-logo-corner .logo-color {
+  display: var(--logo-color-display);
+}
+
+.brand-bar .logo-white,
+.brand-bar-wide .logo-white,
+.slide-logo-corner .logo-white {
+  display: var(--logo-white-display);
+}
+
+/* ======================================================================
+ * 7. Layout: Cover slides — shared base
+ * ====================================================================== */
+
+.slide-cover {
+  position: relative;
+  overflow: hidden;
+  /*background: var(--cover-bg);*/
+}
+
+.slide-cover .contents {
+  position: relative;
+  padding: 6px var(--slide-pad-x) 0 var(--slide-pad-x);
+}
+
+.slide-cover .eyebrow {
+  color: var(--cover-eyebrow);
+  font-size: 22px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 600;
+  position: relative;
+  z-index: 3;
+}
+
+.slide-cover h1 {
+  color: var(--cover-title);
+  font-size: 64px;
+  max-width: 1100px;
+  margin-bottom: 12px;
+  position: relative;
+  z-index: 3;
+}
+
+.slide-cover .subhead {
+  color: var(--cover-subhead);
+  font-size: 26px;
+  max-width: 1000px;
+  margin: 0 0 36px 0;
+  position: relative;
+  z-index: 3;
+}
+
+.slide-cover .presenter-block {
+  color: var(--cover-presenter);
+  font-size: 20px;
+  line-height: 1.5;
+  position: relative;
+  z-index: 3;
+}
+
+.slide-cover .presenter-block .name {
+  color: var(--cover-name);
+  font-weight: 600;
+}
+
+.slide-cover .credit-team {
+  color: var(--cover-credit);
+  margin-top: 14px;
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.slide-cover .funding-disclaimer {
+  color: var(--cover-disclaimer);
+  opacity: 0.7;
+  position: relative;
+  padding-top: 40px;
+  font-size: 11px;
+  line-height: 1.4;
+  max-width: 1000px;
+  z-index: 3;
+}
+
+.slide-cover .material-notes {
+  color: var(--cover-disclaimer);
+  opacity: 0.7;
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  bottom: 36px;
+  font-size: 11px;
+  line-height: 1.4;
+  max-width: 1000px;
+  z-index: 3;
+}
+
+/* Photo-overlay cover (darkens a background image) */
+.slide-cover-overlay::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(1, 24, 55, 0.75);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* ======================================================================
+ * 8. Layout: Content slides
+ * ====================================================================== */
+
+.slide-content {
+  position: relative;
+}
+
+.waves-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("../assets/images/wave-graphics-ncar-colors/NCAR-Waves_Lines-Only-3_RGB.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.25;
+  transform: rotate(-90deg);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.slide-content h2 {
+  color: var(--text-heading);
+  max-width: 1600px;
+}
+
+.slide-content h2 .accent {
+  color: var(--text-accent);
+  font-weight: 500;
+}
+
+.slide-content .intro {
+  font-size: 24px;
+  max-width: 1500px;
+  margin: 0 0 28px 0;
+}
+
+/* Two-column and three-column bodies */
+.slide-content.two-col .body,
+.slide-content.three-col .body {
+  display: grid;
+  gap: 40px;
+  margin-top: 16px;
+}
+
+.slide-content.two-col .body {
+  grid-template-columns: 1fr 1fr;
+}
+
+.slide-content.three-col .body {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.slide-content .body p,
+.slide-content .body li {
+  font-size: 20px;
+  line-height: 1.45;
+}
+
+.slide-content .body h3 {
+  font-size: 24px;
+  color: var(--text-h3h4);
+  margin-bottom: 10px;
+  border-left: 4px solid var(--ncar-orange);
+  padding-left: 14px;
+}
+
+/* Stat / label boxes */
+.stat-boxes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.stat-boxes .box {
+  background: var(--box-bg);
+  border: 1px solid var(--box-border);
+  border-radius: 6px;
+  padding: 14px 18px;
+}
+
+.stat-boxes .box .label {
+  font-size: 18px;
+  color: var(--text-accent);
+  font-weight: 600;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.stat-boxes .box .value {
+  font-size: 16px;
+  color: var(--text-primary);
+}
+
+/* Content + image — tighter padding to fit more */
+.slide-content.slide-with-image {
+  padding: var(--slide-pad-top) var(--slide-pad-x);
+}
+
+.slide-content .with-image {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 36px;
+  align-items: start;
+}
+
+.slide-content .with-image img {
+  width: 100%;
+  height: auto;
+  max-height: 700px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.slide-content .with-image ul {
+  margin: 0 0 0.4em 1.2em;
+}
+
+.slide-content .with-image li {
+  font-size: 20px;
+  line-height: 1.35;
+  margin-bottom: 4px;
+}
+
+.slide-content .with-image .intro {
+  font-size: 22px;
+  margin-bottom: 16px;
+}
+
+/* Grid list */
+.grid-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px 40px;
+  margin-top: 16px;
+}
+
+.grid-list p {
+  font-size: 18px;
+  margin: 0;
+  padding-left: 14px;
+  border-left: 3px solid var(--ncar-orange);
+}
+
+/* ======================================================================
+ * 9. Layout: Section divider
+ * ====================================================================== */
+
+.slide-section-divider {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+}
+
+.slide-section-divider h2 {
+  font-size: 80px;
+  max-width: 1200px;
+  color: var(--divider-heading);
+}
+
+.slide-section-divider h2.r-fit-text {
+  white-space: normal;
+  line-height: 1.1;
+}
+
+/* ======================================================================
+ * 10. Layout: Bolder statement
+ * ====================================================================== */
+
+.slide-bolder-statement {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.slide-bolder-statement .statement-lead {
+  font-family: var(--font-display);
+  font-size: 48px;
+  line-height: 1.1;
+  color: var(--statement-lead);
+  font-weight: 600;
+  padding: 40px var(--slide-pad-x) 0 var(--slide-pad-x);
+}
+
+.slide-bolder-statement .statement-body {
+  font-family: var(--font-display);
+  max-width: 1500px;
+  line-height: 1.15;
+  color: var(--statement-body);
+  font-weight: 600;
+  margin-top: 100px;
+  max-width: 1200px;
+}
+
+/* ======================================================================
+ * 11. Utility
+ * ====================================================================== */
+
+.page-marker {
+  position: absolute;
+  right: 16px;
+  bottom: 28px;
+  font-size: 14px;
+  color: var(--page-marker-color);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+/* ======================================================================
+ * 12. Demo / feature slides
+ * ====================================================================== */
+
+.reveal pre {
+  width: 100%;
+  box-shadow: 0 6px 40px var(--shadow-code);
+  border-radius: 6px;
+  margin: 24px 0;
+}
+
+.reveal pre code {
+  font-family: "JetBrains Mono", "Fira Code", Menlo, Consolas, monospace;
+  font-size: 22px;
+  line-height: 1.45;
+  padding: 28px 32px;
+  border-radius: 6px;
+  max-height: none;
+}
+
+.slide-code .caption {
+  color: var(--text-accent);
+  font-size: 18px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-top: 16px;
+}
+
+.slide-fragments .fragment.highlight-ncar-cyan.visible {
+  color: var(--text-accent);
+}
+
+.slide-fragments .fragment-note {
+  display: inline-block;
+  margin-left: 12px;
+  padding: 2px 10px;
+  border-radius: 3px;
+  background: var(--fragment-note-bg);
+  color: var(--text-accent);
+  font-size: 16px;
+  font-family: "JetBrains Mono", Menlo, monospace;
+}
+
+.auto-animate-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-top: 40px;
+}
+
+.auto-animate-stack .chip {
+  display: inline-block;
+  padding: 14px 24px;
+  background: var(--ncar-blue);
+  color: var(--ncar-white);
+  border-radius: 6px;
+  font-size: 22px;
+  font-weight: 500;
+  align-self: flex-start;
+}
+
+.auto-animate-stack .chip.accent {
+  background: var(--ncar-orange);
+  color: var(--ncar-space);
+}
+.auto-animate-stack .chip.light-blue {
+  background: var(--ncar-light-blue);
+}
+.auto-animate-stack .chip.dark-blue {
+  background: var(--ncar-dark-blue);
+}
+
+.slide-transition-demo .label {
+  display: inline-block;
+  margin-top: 32px;
+  padding: 10px 20px;
+  border: 1px solid var(--text-accent);
+  border-radius: 4px;
+  font-family: "JetBrains Mono", Menlo, monospace;
+  font-size: 18px;
+  color: var(--text-accent);
+  letter-spacing: 0.08em;
+}
+
+.slide-iframe-bg {
+  background: transparent;
+}
+
+.slide-iframe-bg .card {
+  display: inline-block;
+  max-width: 1000px;
+  padding: 40px 48px;
+  background: var(--card-bg);
+  backdrop-filter: blur(4px);
+  border: 1px solid var(--card-border);
+  border-radius: 8px;
+}
+
+.slide-iframe-bg h2 {
+  color: var(--text-heading);
+  margin-bottom: 12px;
+}
+
+.slide-iframe-bg p {
+  font-size: 22px;
+}
