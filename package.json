@@ -1,0 +1,11 @@
+{
+  "name": "mini-symposium-deck",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "node build.mjs"
+  },
+  "dependencies": {
+    "reveal.js": "5.1.0"
+  }
+}
