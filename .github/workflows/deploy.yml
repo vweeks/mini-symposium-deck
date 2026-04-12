@@ -30,7 +30,7 @@ jobs:
 
       - name: Verify no remaining CDN references
         run: |
-          # Fail if any CDN references leaked through (except the iframe demo)
+          # Fail if any CDN references leaked through
           if grep -r "cdn.jsdelivr.net" dist/; then
             echo "::error::CDN references found in build output"
             exit 1
@@ -39,8 +39,6 @@ jobs:
             echo "::error::Google Fonts CDN references found in build output"
             exit 1
           fi
-          # Confirm iframe URL is preserved
-          grep -q "revealjs.com/backgrounds" dist/index.html
 
       - uses: actions/upload-pages-artifact@v3
         with:
