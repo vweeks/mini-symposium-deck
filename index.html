@@ -6,7 +6,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
     />
-    <title>NSF NCAR / RAL Slide Template (reveal.js)</title>
+    <title>Before We Reproduce AI-Assisted Science, We Need to Make It Reproducible</title>
 
     <!-- Reveal.js core + base theme from jsDelivr -->
     <link
@@ -19,13 +19,7 @@
       id="theme"
     />
 
-    <!-- highlight.js theme for pretty code blocks -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/monokai.css"
-    />
-
-    <!-- Poppins + JetBrains Mono from Google Fonts -->
+    <!-- Poppins from Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -40,6 +34,10 @@
   <body>
     <div class="reveal">
       <div class="slides">
+
+        <!-- ============================================================ -->
+        <!-- 1. TITLE / COVER                                             -->
+        <!-- ============================================================ -->
         <section
           class="slide-cover"
           data-transition="fade"
@@ -59,23 +57,20 @@
             />
           </div>
           <div class="slide-cover contents">
-            <p class="eyebrow">September 15, 2025</p>
-            <h1 class="h1">
-              Longer title and cover content lorem sit ipsum dolor nonummy
-              aliquip
+            <p class="eyebrow">April 16, 2026</p>
+            <h1>
+              Before We Reproduce AI-Assisted Science, We Need to Make It
+              Reproducible
             </h1>
             <p class="subhead">
-              Optional subhead duis aute irure reprehenderit velit esse dolor ex
-              commodo
+              6th Chameleon User Meeting | Applying AI to Accelerate
+              Computational R&amp;R
             </p>
 
             <div class="presenter-block">
-              <div class="name">Presenter Name(s) Here</div>
-              <div class="title">Presenter Title nonummy cilum ut labore</div>
-              <div class="credit-team">
-                Optional credit team names: Lorem Ipsum, Consectetur Adipiscing,
-                Eiusmod Tempor, Incididunt Labore, Dolore Magna, Aliqua Enim,
-                Minim Veniam, Quis Nostrud
+              <div class="name">Victor Weeks</div>
+              <div class="title">
+                Software Engineer, NSF NCAR | 2026 BSSw Fellow
               </div>
             </div>
 
@@ -83,24 +78,31 @@
               This material is based upon work supported by the NSF National
               Center for Atmospheric Research, a major facility sponsored by the
               U.S. National Science Foundation and managed by the University
-              Corporation for Atmospheric Research. Any opinions, findings and
-              conclusions or recommendations expressed in this material do not
-              necessarily reflect the views of NSF.
+              Corporation for Atmospheric Research. This work is also supported
+              by the Better Scientific Software Fellowship Program, funded by
+              the U.S. Department of Energy and National Science Foundation.
             </p>
           </div>
+
+          <aside class="notes">
+            TALKING POINTS (~1 min):
+            - Introduce yourself: Victor Weeks, software engineer at NCAR, 2026 BSSw Fellow.
+            - Frame the talk: We've been discussing how AI can help with computational reproducibility. I want to raise a complementary question — what happens when AI is building the computational artifacts we're trying to reproduce?
+            - Transition: Let me set the stage.
+          </aside>
         </section>
 
         <!-- ============================================================ -->
-        <!-- 2. Section divider — aurora photo       -->
+        <!-- 2. TWO SIDES OF THE SAME COIN                                -->
         <!-- ============================================================ -->
-
         <section
-          class="slide-section-divider"
-          data-background-image="assets/images/Aurora-in-Sweden_CAESAR.jpg"
-          data-background-opacity="0.55"
-          data-background-transition="zoom"
+          class="slide-content two-col"
+          data-transition="slide"
+          data-background-image="assets/images/behind_Derecho.jpg"
+          data-background-opacity="0.12"
         >
-          <div class="slide-logo-corner">
+          <div class="brand-bar-wide">
+            <h2>Two Sides of the Same Coin</h2>
             <img
               class="logo-color"
               src="assets/images/ncar-ral-wide-color.png"
@@ -112,16 +114,99 @@
               alt="NCAR RAL"
             />
           </div>
-          <h2 class="h2">Shorter page title lorem sit ipsum dolor</h2>
+
+          <div class="body">
+            <div>
+              <h3>AI to Reproduce Computational Artifacts</h3>
+              <ul>
+                <li>Reconstruct software environments</li>
+                <li>Resolve dependency conflicts</li>
+                <li>Navigate platform-specific quirks</li>
+                <li>Automate artifact evaluation</li>
+              </ul>
+            </div>
+            <div class="fragment fade-in">
+              <h3>AI to Build Computational Artifacts</h3>
+              <ul>
+                <li>Write scientific software</li>
+                <li>Configure computational experiments</li>
+                <li>Make architectural decisions</li>
+                <li>Generate analysis pipelines</li>
+              </ul>
+            </div>
+          </div>
+
+          <aside class="notes">
+            TALKING POINTS (~1.5 min):
+            - This symposium is exploring the left side — how can AI help us reproduce computational artifacts? That's a great direction.
+            - But there's a parallel trend: AI is increasingly being used on the build side too.
+            - These are two sides of the same coin. If we don't get the build side right, we're producing artifacts that are harder to describe, evaluate, and reproduce — making the AD/AE process even more challenging.
+            - Transition: What does 'not getting it right' look like?
+          </aside>
         </section>
 
         <!-- ============================================================ -->
-        <!-- 3. Content + stat boxes + Derecho photo (overflow fixed)     -->
+        <!-- 3. THE AI-ASSISTED DEVELOPMENT SPECTRUM                      -->
         <!-- ============================================================ -->
-        <section class="slide-content slide-with-image">
+        <section class="slide-content three-col" data-transition="slide">
           <div class="waves-bg"></div>
+
           <div class="brand-bar-wide">
-            <h2>Shorter page title lorem sit ipsum dolor</h2>
+            <h2>The AI-Assisted Development Spectrum</h2>
+            <img
+              class="logo-color"
+              src="assets/images/ncar-ral-wide-color.png"
+              alt="NCAR RAL"
+            />
+            <img
+              class="logo-white"
+              src="assets/images/ncar-ral-wide-white.png"
+              alt="NCAR RAL"
+            />
+          </div>
+
+          <div class="body">
+            <div class="fragment fade-up">
+              <h3>&ldquo;Vibe Coding&rdquo;</h3>
+              <p>
+                Conversational AI assists with code generation and refactoring
+              </p>
+            </div>
+            <div class="fragment fade-up">
+              <h3>MCP &amp; Tools</h3>
+              <p>
+                Agents access external tools, APIs, and platform infrastructure
+              </p>
+            </div>
+            <div class="fragment fade-up">
+              <h3>Autonomous Agents</h3>
+              <p>
+                AI makes multi-step decisions, configures systems, and executes
+                workflows
+              </p>
+            </div>
+          </div>
+
+          <aside class="notes">
+            TALKING POINTS (~1 min):
+            - Quick tour of where AI-assisted dev is today.
+            - 'Vibe coding' — conversational, developer in the loop.
+            - MCP and tool use — agents interacting with external systems. Chameleon already has an MCP server — a great example of this pattern.
+            - Autonomous agents — multi-step decisions with less human oversight.
+            - Each step increases potential for undetected errors in artifacts.
+            - Transition: What kinds of errors?
+          </aside>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- 4. WHEN AI BUILDS SCIENTIFIC SOFTWARE                        -->
+        <!-- ============================================================ -->
+        <section
+          class="slide-content slide-with-image"
+          data-transition="slide-in fade-out"
+        >
+          <div class="brand-bar-wide">
+            <h2>When AI Builds Scientific Software</h2>
             <img
               class="logo-color"
               src="assets/images/ncar-ral-wide-color.png"
@@ -136,56 +221,122 @@
 
           <div class="with-image">
             <div>
-              <p class="intro">Lorem ipsum dolor amet consectetur</p>
-              <ul>
-                <li>
-                  Duis rhoncus facilisis enim sit venenatis diam ornare fames
-                  molestie. Enim at molestie vestibulum.
-                </li>
-                <li>
-                  Id ridiculus sit et nisl proin erat. Massa facilisi dignissim
-                  amet id lectus dis scelerisque hendrerit.
-                </li>
-                <li>Sed purus egestas elementum in dignissim.</li>
-                <li>Amet at laoreet morbi tellus mattis proin velit at.</li>
-                <li>Mi mi nunc lorem in diam convallis facilisis.</li>
-                <li>Id ridiculus sit et nisl proin erat.</li>
-              </ul>
+              <p class="intro">
+                Failure modes distinct from standard software bugs:
+              </p>
 
               <div class="stat-boxes">
                 <div class="box">
-                  <span class="label">Morbi tellus</span>
-                  <span class="value">mattis proin velit</span>
+                  <span class="label">Numerical Precision Errors</span>
+                  <span class="value">
+                    AI agents may introduce floating-point assumptions that
+                    silently degrade accuracy in physical simulations
+                  </span>
                 </div>
                 <div class="box">
-                  <span class="label">Egestas</span>
-                  <span class="value">elementum</span>
+                  <span class="label">Subtle Physics Violations</span>
+                  <span class="value">
+                    Generated code can violate conservation laws or domain
+                    constraints not captured by standard test suites
+                  </span>
                 </div>
                 <div class="box">
-                  <span class="label">Ridiculus</span>
-                  <span class="value">sit et nisl proin erat</span>
+                  <span class="label">Opaque Decision Histories</span>
+                  <span class="value">
+                    When an agent makes architectural choices, the rationale may
+                    not be recorded — making the artifact harder to describe and
+                    evaluate
+                  </span>
                 </div>
               </div>
             </div>
             <img
-              src="assets/images/Derecho_installed_2023_3.jpg"
-              alt="Derecho supercomputer"
+              src="assets/images/hurricane-satellite.jpg"
+              alt="Satellite image of hurricane — atmospheric science"
             />
           </div>
+
+          <aside class="notes">
+            TALKING POINTS (~1.5 min):
+            - These aren't hypothetical — they're things I've encountered at NCAR.
+            - Precision: float32 vs float64, rounding that accumulates over simulations.
+            - Physics: code that doesn't conserve mass/energy/momentum and passes tests.
+            - Opaque decisions: commit history and PR reviews capture 'why' for human code; agent decisions can evaporate.
+            - Key: These pass CI/CD but corrupt the science — and complicate artifact evaluation.
+            - Transition: What do we do about it?
+          </aside>
         </section>
 
         <!-- ============================================================ -->
-        <!-- 4. Large-title content                                       -->
+        <!-- 5. SCIENTIFIC AGENTIC ENGINEERING (SAE)                      -->
         <!-- ============================================================ -->
-        <section class="slide-content">
-          <div class="waves-bg"></div>
+        <section
+          class="slide-content three-col"
+          data-transition="convex"
+          data-background-image="assets/images/mammatus-clouds.jpg"
+          data-background-opacity="0.10"
+        >
+          <div class="brand-bar-wide">
+            <h2>Scientific Agentic Engineering (SAE)</h2>
+            <img
+              class="logo-color"
+              src="assets/images/ncar-ral-wide-color.png"
+              alt="NCAR RAL"
+            />
+            <img
+              class="logo-white"
+              src="assets/images/ncar-ral-wide-white.png"
+              alt="NCAR RAL"
+            />
+          </div>
 
+          <div class="body">
+            <div class="fragment fade-up">
+              <h3>Validation Loops</h3>
+              <p>
+                Domain-specific checks integrated into agent workflows — not
+                just at the end, but at each decision point
+              </p>
+            </div>
+            <div class="fragment fade-up">
+              <h3>Human Oversight</h3>
+              <p>
+                Defined points where humans review agent decisions, especially
+                for choices with scientific implications
+              </p>
+            </div>
+            <div class="fragment fade-up">
+              <h3>Standardized Tooling</h3>
+              <p>
+                Reusable MCP server templates, scientific skills, and agent
+                configurations that encode domain knowledge
+              </p>
+            </div>
+          </div>
+
+          <aside class="notes">
+            TALKING POINTS (~1.5 min):
+            - My BSSw Fellowship is developing a methodology I'm calling Scientific Agentic Engineering, or SAE.
+            - Three pillars: validation loops, human oversight, standardized tooling.
+            - SAE is tool-agnostic — about principles, not any specific AI product.
+            - Fellowship just started — framework design phase. Deliverables over the next 12 months.
+            - Transition: Why does this matter for this audience?
+          </aside>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- 6. WHY BUILD-TIME DISCIPLINE MATTERS FOR R&R                 -->
+        <!-- ============================================================ -->
+        <section
+          class="slide-content"
+          data-transition="fade"
+          data-background-image="assets/images/MPAS-image.png"
+          data-background-opacity="0.15"
+        >
           <div class="brand-bar-wide">
             <h2>
-              Longer page title lorem sit ipsum dolor
-              <span class="accent"
-                >amet nonummy aliquip cilum ornare fames</span
-              >
+              Why Build-Time Discipline Matters for
+              <span class="accent">R&amp;R</span>
             </h2>
             <img
               class="logo-color"
@@ -199,274 +350,69 @@
             />
           </div>
 
-          <p class="intro">Lorem ipsum dolor sit amet consectetur</p>
-
-          <p>
-            Venenatis diam ornare fames molestie. Enim at molestie vestibulum
-            nunc dictum quis nulla bibendum. Aenean nulla aliquam nec sed. Diam
-            venenatis vestibulum vitae ut sagittis ultricies molestie. Sed purus
-            egestas elementum in dignissim viverra. Amet at laoreet morbi tellus
-            mattis proin velit at. Mi mi nunc lorem in diam convallis facilisis.
-            Id ridiculus sit et nisl proin erat. Massa facilisi dignissim amet
-            id lectus dis hendrerit.
+          <p class="fragment fade-in">
+            If AI agents build computational artifacts without guardrails, those
+            artifacts become harder to describe in an Artifact Description and
+            harder to validate in an Artifact Evaluation.
           </p>
-          <p>
-            Erat tellus enim enim ut suspendisse augue ut et. Non vestibulum
-            pellentesque pulvinar sed. Sociis neque enim felis sodales sit
-            maecenas amet. Diam venenatis vestibulum vitae ut sagittis ultricies
-            molestie. Sed neque quam morbi lorem vel vehicula nullam augue.
-            Mattis elementum gravida eget non scelerisque consequat imperdiet
-            sed. Mi erat hac urna facilisis facilisis. Mi mi nunc lorem in diam
-            convallis facilisis. Id ridiculus sit et nisl proin erat. Massa
-            facilisi dignissim amet id lectus dis hendrerit.
+          <p class="fragment fade-in">
+            On the reproduce side, AI agents reconstructing environments and
+            running evaluations also need the same kinds of guardrails —
+            validation that the reconstructed environment actually matches,
+            domain-aware checks on whether the reproduction is scientifically
+            valid.
           </p>
+          <p class="fragment fade-in">
+            The same structural patterns that SAE defines — validation loops,
+            domain-specific safeguards, and standardized tooling — serve both
+            sides of this coin.
+          </p>
+          <p class="fragment fade-in" style="font-weight: 600">
+            <span class="accent">
+              Build-time discipline is upstream of reproduce-time reliability.
+            </span>
+          </p>
+
+          <aside class="notes">
+            TALKING POINTS (~1 min):
+            - Connection to today's discussions.
+            - Undisciplined build-side produces artifacts harder for AD/AE.
+            - Reproduce-side AI agents also need guardrails.
+            - Same structural patterns serve both sides.
+            - Build-time discipline is upstream of reproduce-time reliability.
+            - Transition: Closing.
+          </aside>
         </section>
 
         <!-- ============================================================ -->
-        <!-- 5. Two-column variants — vertical stack                      -->
+        <!-- 7. SECTION DIVIDER — penultimate (agent screenshot + zoom)   -->
+        <!--    Alt+click (or Ctrl+click on Linux) to zoom into image     -->
         <!-- ============================================================ -->
-        <section>
-          <section class="slide-content two-col">
-            <div class="waves-bg"></div>
-
-            <div class="brand-bar-wide">
-              <h2>Shorter page title lorem sit ipsum dolor</h2>
-              <img
-                class="logo-color"
-                src="assets/images/ncar-ral-wide-color.png"
-                alt="NCAR RAL"
-              />
-              <img
-                class="logo-white"
-                src="assets/images/ncar-ral-wide-white.png"
-                alt="NCAR RAL"
-              />
-            </div>
-            <p class="intro">Lorem ipsum dolor amet consectetur</p>
-
-            <div class="body">
-              <div>
-                <p>
-                  Duis rhoncus facilisis enim sit venenatis diam ornare fames
-                  molestie. Enim at molestie vestibulum nunc dictum quis nulla
-                  bibendum. Aenean nulla aliquam nec sed. Diam venenatis
-                  vestibulum vitae ut sagittis ultricies molestie.
-                </p>
-                <p>
-                  Sed purus egestas elementum in dignissim viverra. Amet at
-                  laoreet morbi tellus mattis proin velit at. Mi mi nunc lorem
-                  in diam convallis facilisis. Id ridiculus sit et nisl proin
-                  erat. Massa facilisi dignissim amet id lectus dis scelerisque
-                  hendrerit.
-                </p>
-                <p>
-                  Aenean nulla aliquam nec sed. Diam venenatis vestibulum vitae
-                  ut sagittis ultricies molestie.
-                </p>
-              </div>
-              <div>
-                <h3>Metus sit posuere vitae nam nisl</h3>
-                <p>
-                  Erat tellus enim enim ut suspendisse augue ut et. Non
-                  vestibulum pellentesque pulvinar sed. Sociis neque enim felis
-                  sodales sit maecenas amet.
-                </p>
-                <p>
-                  Sed neque quam morbi lorem vel vehicula nullam augue. Mattis
-                  elementum gravida eget non scelerisque consequat imperdiet
-                  sed.
-                </p>
-                <p>
-                  Aenean nulla aliquam nec sed. Diam venenatis vestibulum vitae
-                  ut sagittis ultricies molestie.
-                </p>
-                <p>
-                  Mi erat hac urna facilisis facilisis. Cras eget morbi blandit
-                  arcu in purus arcu consectetur. Egestas tellus aenean augue
-                  eget sed purus lacus pretium.
-                </p>
-              </div>
-            </div>
-          </section>
-
-          <section
-            class="slide-content two-col"
-            data-background-image="assets/images/behind_Derecho.jpg"
-            data-background-opacity="0.12"
-          >
-            <div class="waves-bg"></div>
-
-            <div class="brand-bar-wide">
-              <h2>Shorter page title lorem sit ipsum dolor</h2>
-              <img
-                class="logo-color"
-                src="assets/images/ncar-ral-wide-color.png"
-                alt="NCAR RAL"
-              />
-              <img
-                class="logo-white"
-                src="assets/images/ncar-ral-wide-white.png"
-                alt="NCAR RAL"
-              />
-            </div>
-            <p class="intro">Lorem ipsum dolor sit amet consectetur</p>
-
-            <div class="body">
-              <div>
-                <p>
-                  Duis rhoncus facilisis enim sit venenatis diam ornare fames
-                  molestie. Enim at molestie vestibulum nunc dictum quis nulla
-                  bibendum. Aenean nulla aliquam nec sed. Diam venenatis
-                  vestibulum vitae ut sagittis ultricies molestie.
-                </p>
-                <p>
-                  Sed purus egestas elementum in dignissim viverra. Amet at
-                  laoreet morbi tellus mattis proin velit at. Mi mi nunc lorem
-                  in diam convallis facilisis. Id ridiculus sit et nisl proin
-                  erat. Massa facilisi dignissim amet id lectus dis scelerisque
-                  hendrerit.
-                </p>
-                <h3>Metus sit posuere vitae nam</h3>
-                <p>
-                  Erat tellus enim enim ut suspendisse augue ut et. Non
-                  vestibulum pellentesque pulvinar sed. Sociis neque enim felis
-                  sodales sit maecenas amet.
-                </p>
-                <p>
-                  Sed neque quam morbi lorem vel vehicula nullam augue. Mattis
-                  elementum gravida eget non scelerisque consequat imperdiet
-                  sed. Aenean nulla aliquam nec sed. Diam venenatis vestibulum
-                  vitae ut sagittis ultricies molestie.
-                </p>
-              </div>
-              <div>
-                <p>
-                  Mi erat hac urna facilisis facilisis. Cras eget morbi blandit
-                  arcu in purus arcu consectetur. Egestas tellus aenean augue
-                  eget sed purus lacus pretium.
-                </p>
-                <h3>Sed purus egestas elementum in dignissim viverra</h3>
-                <p>
-                  Amet at laoreet morbi tellus mattis proin velit at. Mi mi nunc
-                  lorem in diam convallis facilisis. Id ridiculus sit et nisl
-                  proin erat. Massa facilisi dignissim amet id lectus dis
-                  scelerisque hendrerit. Aenean nulla aliquam nec sed. Diam
-                  venenatis vestibulum vitae ut sagittis ultricies molestie.
-                </p>
-                <p>
-                  Duis rhoncus facilisis enim sit venenatis diam ornare fames
-                  molestie. Enim at molestie vestibulum nunc dictum quis nulla
-                  bibendum. Aenean nulla aliquam nec sed.
-                </p>
-              </div>
-            </div>
-          </section>
+        <section
+          class="slide-section-divider"
+          data-transition="fade"
+          data-background-transition="zoom"
+          data-background-color="#011837"
+        >
+          <h2 style="font-size: 48px; margin-bottom: 24px">Scientific Agentic Engineering</h2>
+          <img
+            src="assets/images/agent-team-screenshot.jpg"
+            alt="Multi-agent AI workflow — scientific agentic engineering in action"
+            style="max-width: 85%; max-height: 720px; border-radius: 8px; box-shadow: 0 8px 40px rgba(0,0,0,0.5); cursor: zoom-in"
+          />
         </section>
 
         <!-- ============================================================ -->
-        <!-- 6. Three columns                                             -->
-        <!-- ============================================================ -->
-        <section class="slide-content three-col">
-          <div class="waves-bg"></div>
-
-          <div class="brand-bar-wide">
-            <h2>Shorter page title lorem sit ipsum dolor</h2>
-            <img
-              class="logo-color"
-              src="assets/images/ncar-ral-wide-color.png"
-              alt="NCAR RAL"
-            />
-            <img
-              class="logo-white"
-              src="assets/images/ncar-ral-wide-white.png"
-              alt="NCAR RAL"
-            />
-          </div>
-          <p class="intro">Lorem ipsum dolor sit amet consectetur</p>
-
-          <div class="body">
-            <div>
-              <p>
-                Duis rhoncus facilisis enim sit venenatis diam ornare fames
-                molestie. Enim at molestie vestibulum nunc dictum quis nulla
-                bibendum. Aenean nulla aliquam nec sed. Diam venenatis
-                vestibulum vitae ut sagittis ultricies molestie.
-              </p>
-              <p>Sed purus egestas elementum in dignissim viverra.</p>
-            </div>
-            <div>
-              <h3>Metus sit posuere vitae</h3>
-              <p>
-                Erat tellus enim enim ut suspendisse augue ut et. Non vestibulum
-                pellentesque pulvinar sed. Sociis neque enim felis sodales sit
-                maecenas amet.
-              </p>
-              <p>
-                Sed neque quam morbi lorem vel vehicula nullam augue. Mattis
-                elementum gravida eget non scelerisque consequat imperdiet sed.
-                Aenean nulla aliquam nec sed. Diam venenatis vestibulum vitae ut
-                sagittis ultricies molestie.
-              </p>
-              <h3>Sed purus egestas dignissim viverra</h3>
-              <p>
-                Amet at laoreet morbi tellus mattis proin velit at. Mi mi nunc
-                lorem in diam convallis facilisis. Id ridiculus sit et nisl
-                proin erat.
-              </p>
-            </div>
-            <div>
-              <h3>Posuere vitae nam</h3>
-              <p>
-                Erat tellus enim enim ut suspendisse augue ut et. Non vestibulum
-                pellentesque pulvinar sed. Sociis neque enim felis sodales sit
-                maecenas amet.
-              </p>
-              <p>
-                Sed neque quam morbi lorem vel vehicula nullam augue. Mattis
-                elementum gravida eget non scelerisque consequat imperdiet sed.
-                Aenean nulla aliquam nec sed. Diam venenatis vestibulum vitae ut
-                sagittis ultricies molestie.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        <!-- ============================================================ -->
-        <!-- 7. Content intro only — with Milky Way background            -->
+        <!-- 8. FOLLOW THE PROJECT — closing                              -->
         <!-- ============================================================ -->
         <section
           class="slide-content"
+          data-transition="fade"
           data-background-image="assets/images/4G4A1413-Pano.JPG"
-          data-background-opacity="0.40"
+          data-background-opacity="0.15"
         >
           <div class="brand-bar-wide">
-            <h2>Shorter page title lorem sit ipsum dolor</h2>
-            <img
-              class="logo-color"
-              src="assets/images/ncar-ral-wide-color.png"
-              alt="NCAR RAL"
-            />
-            <img
-              class="logo-white"
-              src="assets/images/ncar-ral-wide-white.png"
-              alt="NCAR RAL"
-            />
-          </div>
-          <p class="intro">Lorem ipsum dolor amet consectetur</p>
-          <p>
-            Duis rhoncus facilisis enim sit venenatis diam ornare fames
-            molestie. Enim at molestie vestibulum nunc dictum quis nulla
-            bibendum. Aenean nulla aliquam nec sed. Diam venenatis vestibulum
-            vitae ut sagittis ultricies molestie.
-          </p>
-        </section>
-
-        <!-- ============================================================ -->
-        <!-- 8. Grid / list                                               -->
-        <!-- ============================================================ -->
-        <section class="slide-content">
-          <div class="brand-bar-wide">
-            <h2>Shorter page title lorem sit ipsum dolor</h2>
+            <h2>Follow the Project</h2>
             <img
               class="logo-color"
               src="assets/images/ncar-ral-wide-color.png"
@@ -479,490 +425,52 @@
             />
           </div>
 
-          <div class="grid-list">
-            <p>Lorem ipsum</p>
-            <p>Metus sit posuere</p>
-            <p>Sed purus</p>
-            <p>Posuere vitae nam</p>
-            <p>Duis rhoncus facilisis enim sit venenatis diam ornare</p>
-            <p>Vel vehicula nullam augue.</p>
-            <p>Rhoncus facilisis enim sit venenatis diam ornare</p>
-            <p>Sed neque quam morbi lorem vel vehicula</p>
-            <p>Sed neque quam morbi lorem vel vehicula nullam</p>
-            <p>Facilisis enim sit venenatis diam ornare fames</p>
-            <p>Sed neque quam morbi lorem vel vehicula</p>
-            <p>Venenatis diam ornare fames molestie.</p>
-            <p>Duis rhoncus facilisis enim</p>
-            <p>Sed neque quam morbi lorem vel vehicula nullam</p>
-            <p>Facilisis enim sit venenatis diam ornare fames</p>
-            <p>Vel vehicula nullam augue</p>
-            <p>Sed neque quam morbi</p>
-            <p>Duis rhoncus facilisis enim sit venenatis diam ornare</p>
-            <p>Sed neque quam morbi lorem vel vehicula</p>
-            <p>Duis rhoncus facilisis enim sit venenatis diam</p>
-          </div>
-        </section>
+          <p class="intro">Scientific Agentic Engineering (SAE)</p>
 
-        <!-- ============================================================ -->
-        <!-- 9. Bolder statement — overflow fixed, MPAS bg                -->
-        <!-- ============================================================ -->
-        <section
-          class="slide-bolder-statement"
-          data-background-image="assets/images/MPAS-image.png"
-          data-background-opacity="0.2"
-          data-background-size="cover"
-        >
-          <div class="slide-logo-corner">
+          <div class="with-image">
+            <div>
+              <ul>
+                <li>Framework &amp; methodology</li>
+                <li>Community repository of scientific MCP templates</li>
+                <li>Reference workflow &amp; tutorials</li>
+                <li>Workshops</li>
+              </ul>
+              <p style="margin-top: 24px">
+                All coming over the next 12 months.
+              </p>
+              <p style="margin-top: 32px; font-size: 28px; font-weight: 600">
+                <a
+                  href="https://vweeks.github.io/scientific-agentic-engineering"
+                  style="color: var(--text-link)"
+                >
+                  vweeks.github.io/scientific-agentic-engineering
+                </a>
+              </p>
+            </div>
             <img
-              class="logo-color"
-              src="assets/images/ncar-ral-wide-color.png"
-              alt="NCAR RAL"
-            />
-            <img
-              class="logo-white"
-              src="assets/images/ncar-ral-wide-white.png"
-              alt="NCAR RAL"
+              src="assets/images/sae-qr-code.png"
+              alt="QR code — vweeks.github.io/scientific-agentic-engineering"
+              style="max-height: 400px; object-fit: contain"
             />
           </div>
-          <div>
-            <p class="statement-lead">Bolder statement</p>
-            <p class="statement-body r-fit-text">
-              Tellus enim enim ut suspendisse augue ut et. Non vestibulum
-              pellentesque pulvinar sed. Sociis neque enim felis sodales sit
-              maecenas amet.
-            </p>
-          </div>
+
+          <aside class="notes">
+            TALKING POINTS (~30 sec):
+            - Fellowship just kicked off. All deliverables coming over the next 12 months.
+            - If interested — especially from R&R/AE perspective — project site will have resources.
+            - Interested in feedback on what guardrails would be most valuable for AD/AE.
+            - Thank you. Happy to take questions.
+          </aside>
         </section>
 
-        <!-- ============================================================ -->
-        <!-- 10. Code block demo                                          -->
-        <!-- ============================================================ -->
-        <section class="slide-content slide-code">
-          <div class="brand-bar-wide">
-            <h2>Pretty code blocks</h2>
-            <img
-              class="logo-color"
-              src="assets/images/ncar-ral-wide-color.png"
-              alt="NCAR RAL"
-            />
-            <img
-              class="logo-white"
-              src="assets/images/ncar-ral-wide-white.png"
-              alt="NCAR RAL"
-            />
-          </div>
-          <p class="intro">
-            Syntax highlighted via highlight.js, with stepped line highlighting
-            driven by reveal.js fragments.
-          </p>
-
-          <pre><code class="language-python" data-trim data-line-numbers="|1-4|6-9|11-14|all"><script type="text/template">
-from dataclasses import dataclass
-
-@dataclass
-class Observation:
-    station: str
-    temperature_c: float
-    timestamp: str
-
-def hot_stations(obs, threshold=30.0):
-    """Return stations hotter than the threshold."""
-    return sorted(
-        {o.station for o in obs if o.temperature_c > threshold}
-    )
-</script></code></pre>
-
-          <p class="caption">Press → to step through the line highlights.</p>
-        </section>
-
-        <!-- ============================================================ -->
-        <!-- 11. Fragments demo                                           -->
-        <!-- ============================================================ -->
-        <section class="slide-content slide-fragments">
-          <div class="brand-bar-wide">
-            <h2>Fragments</h2>
-            <img
-              class="logo-color"
-              src="assets/images/ncar-ral-wide-color.png"
-              alt="NCAR RAL"
-            />
-            <img
-              class="logo-white"
-              src="assets/images/ncar-ral-wide-white.png"
-              alt="NCAR RAL"
-            />
-          </div>
-          <p class="intro">
-            Reveal content incrementally with <code>class="fragment"</code>.
-          </p>
-
-          <ul>
-            <li class="fragment fade-in">
-              Fade in
-              <span class="fragment-note">fade-in</span>
-            </li>
-            <li class="fragment fade-up">
-              Fade up
-              <span class="fragment-note">fade-up</span>
-            </li>
-            <li class="fragment fade-left">
-              Fade from the right
-              <span class="fragment-note">fade-left</span>
-            </li>
-            <li class="fragment grow">
-              Grow
-              <span class="fragment-note">grow</span>
-            </li>
-            <li class="fragment highlight-current-blue">
-              Highlight current in blue
-              <span class="fragment-note">highlight-current-blue</span>
-            </li>
-            <li class="fragment strike">
-              Strike-through on reveal
-              <span class="fragment-note">strike</span>
-            </li>
-          </ul>
-        </section>
-
-        <!-- ============================================================ -->
-        <!-- 12. Auto-animate — vertical stack                            -->
-        <!-- ============================================================ -->
-        <section>
-          <section data-auto-animate class="slide-content">
-            <div class="brand-bar-wide">
-              <h2 data-id="aa-title" style="font-size: 48px">Auto-Animate</h2>
-              <img
-                class="logo-color"
-                src="assets/images/ncar-ral-wide-color.png"
-                alt="NCAR RAL"
-              />
-              <img
-                class="logo-white"
-                src="assets/images/ncar-ral-wide-white.png"
-                alt="NCAR RAL"
-              />
-            </div>
-            <p class="intro">Reveal's automatic element tweening.</p>
-            <div class="auto-animate-stack">
-              <div class="chip" data-id="chip-a">Data</div>
-            </div>
-          </section>
-
-          <section data-auto-animate class="slide-content">
-            <div class="brand-bar-wide">
-              <h2 data-id="aa-title" style="font-size: 72px">Auto-Animate</h2>
-              <img
-                class="logo-color"
-                src="assets/images/ncar-ral-wide-color.png"
-                alt="NCAR RAL"
-              />
-              <img
-                class="logo-white"
-                src="assets/images/ncar-ral-wide-white.png"
-                alt="NCAR RAL"
-              />
-            </div>
-            <p class="intro">
-              Same <code>data-id</code> → smoothly tweened position, size, and
-              color.
-            </p>
-            <div class="auto-animate-stack">
-              <div class="chip" data-id="chip-a">Data</div>
-              <div class="chip light-blue" data-id="chip-b">Model</div>
-            </div>
-          </section>
-
-          <section data-auto-animate class="slide-content">
-            <div class="brand-bar-wide">
-              <h2
-                data-id="aa-title"
-                style="font-size: 96px; color: var(--ncar-cyan)"
-              >
-                Auto-Animate
-              </h2>
-              <img
-                class="logo-color"
-                src="assets/images/ncar-ral-wide-color.png"
-                alt="NCAR RAL"
-              />
-              <img
-                class="logo-white"
-                src="assets/images/ncar-ral-wide-white.png"
-                alt="NCAR RAL"
-              />
-            </div>
-            <p class="intro">
-              A third frame grows the stack and changes the title color.
-            </p>
-            <div class="auto-animate-stack">
-              <div class="chip accent" data-id="chip-a">Data</div>
-              <div class="chip light-blue" data-id="chip-b">Model</div>
-              <div class="chip dark-blue" data-id="chip-c">Forecast</div>
-            </div>
-          </section>
-        </section>
-
-        <!-- ============================================================ -->
-        <!-- 13. Transitions demo — vertical stack                        -->
-        <!-- ============================================================ -->
-        <section>
-          <section
-            class="slide-content slide-transition-demo"
-            data-transition="slide"
-          >
-            <div class="brand-bar-wide">
-              <h2>Transitions</h2>
-              <img
-                class="logo-color"
-                src="assets/images/ncar-ral-wide-color.png"
-                alt="NCAR RAL"
-              />
-              <img
-                class="logo-white"
-                src="assets/images/ncar-ral-wide-white.png"
-                alt="NCAR RAL"
-              />
-            </div>
-            <p class="intro">
-              Each slide in this stack uses a different
-              <code>data-transition</code>.
-            </p>
-            <p class="label">data-transition="slide"</p>
-          </section>
-
-          <section
-            class="slide-content slide-transition-demo"
-            data-transition="fade"
-          >
-            <div class="brand-bar-wide">
-              <h2>Fade</h2>
-              <img
-                class="logo-color"
-                src="assets/images/ncar-ral-wide-color.png"
-                alt="NCAR RAL"
-              />
-              <img
-                class="logo-white"
-                src="assets/images/ncar-ral-wide-white.png"
-                alt="NCAR RAL"
-              />
-            </div>
-            <p class="label">data-transition="fade"</p>
-          </section>
-
-          <section
-            class="slide-content slide-transition-demo"
-            data-transition="convex"
-          >
-            <div class="brand-bar-wide">
-              <h2>Convex</h2>
-              <img
-                class="logo-color"
-                src="assets/images/ncar-ral-wide-color.png"
-                alt="NCAR RAL"
-              />
-              <img
-                class="logo-white"
-                src="assets/images/ncar-ral-wide-white.png"
-                alt="NCAR RAL"
-              />
-            </div>
-            <p class="label">data-transition="convex"</p>
-          </section>
-
-          <section
-            class="slide-content slide-transition-demo"
-            data-transition="concave"
-          >
-            <div class="brand-bar-wide">
-              <h2>Concave</h2>
-              <img
-                class="logo-color"
-                src="assets/images/ncar-ral-wide-color.png"
-                alt="NCAR RAL"
-              />
-              <img
-                class="logo-white"
-                src="assets/images/ncar-ral-wide-white.png"
-                alt="NCAR RAL"
-              />
-            </div>
-            <p class="label">data-transition="concave"</p>
-          </section>
-
-          <section
-            class="slide-content slide-transition-demo"
-            data-transition="zoom"
-          >
-            <div class="brand-bar-wide">
-              <h2>Zoom</h2>
-              <img
-                class="logo-color"
-                src="assets/images/ncar-ral-wide-color.png"
-                alt="NCAR RAL"
-              />
-              <img
-                class="logo-white"
-                src="assets/images/ncar-ral-wide-white.png"
-                alt="NCAR RAL"
-              />
-            </div>
-            <p class="label">data-transition="zoom"</p>
-          </section>
-
-          <section
-            class="slide-content slide-transition-demo"
-            data-transition="slide-in fade-out"
-          >
-            <div class="brand-bar-wide">
-              <h2>Mix: slide-in / fade-out</h2>
-              <img
-                class="logo-color"
-                src="assets/images/ncar-ral-wide-color.png"
-                alt="NCAR RAL"
-              />
-              <img
-                class="logo-white"
-                src="assets/images/ncar-ral-wide-white.png"
-                alt="NCAR RAL"
-              />
-            </div>
-            <p class="label">data-transition="slide-in fade-out"</p>
-          </section>
-        </section>
-
-        <!-- ============================================================ -->
-        <!-- 14. Background transitions demo                              -->
-        <!-- ============================================================ -->
-        <section>
-          <section
-            data-background-color="#011837"
-            data-background-transition="fade"
-            class="slide-content slide-transition-demo"
-          >
-            <div class="brand-bar-wide">
-              <h2>Background transitions</h2>
-              <img
-                class="logo-color"
-                src="assets/images/ncar-ral-wide-color.png"
-                alt="NCAR RAL"
-              />
-              <img
-                class="logo-white"
-                src="assets/images/ncar-ral-wide-white.png"
-                alt="NCAR RAL"
-              />
-            </div>
-            <p class="intro">
-              Each slide has a different
-              <code>data-background-transition</code>.
-            </p>
-            <p class="label">data-background-transition="fade"</p>
-          </section>
-
-          <section
-            data-background-color="#00357A"
-            data-background-transition="slide"
-            class="slide-content slide-transition-demo"
-          >
-            <div class="brand-bar-wide">
-              <h2>Slide</h2>
-              <img
-                class="logo-color"
-                src="assets/images/ncar-ral-wide-color.png"
-                alt="NCAR RAL"
-              />
-              <img
-                class="logo-white"
-                src="assets/images/ncar-ral-wide-white.png"
-                alt="NCAR RAL"
-              />
-            </div>
-            <p class="label">data-background-transition="slide"</p>
-          </section>
-
-          <section
-            data-background-color="#0057C2"
-            data-background-transition="convex"
-            class="slide-content slide-transition-demo"
-          >
-            <div class="brand-bar-wide">
-              <h2>Convex</h2>
-              <img
-                class="logo-color"
-                src="assets/images/ncar-ral-wide-color.png"
-                alt="NCAR RAL"
-              />
-              <img
-                class="logo-white"
-                src="assets/images/ncar-ral-wide-white.png"
-                alt="NCAR RAL"
-              />
-            </div>
-            <p class="label">data-background-transition="convex"</p>
-          </section>
-
-          <section
-            data-background-color="#0092DB"
-            data-background-transition="zoom"
-            class="slide-content slide-transition-demo"
-          >
-            <div class="brand-bar-wide">
-              <h2>Zoom</h2>
-              <img
-                class="logo-color"
-                src="assets/images/ncar-ral-wide-color.png"
-                alt="NCAR RAL"
-              />
-              <img
-                class="logo-white"
-                src="assets/images/ncar-ral-wide-white.png"
-                alt="NCAR RAL"
-              />
-            </div>
-            <p class="label">data-background-transition="zoom"</p>
-          </section>
-        </section>
-
-        <!-- ============================================================ -->
-        <!-- 15. Iframe background                                        -->
-        <!-- ============================================================ -->
-        <section
-          class="slide-iframe-bg"
-          data-background-iframe="https://revealjs.com/backgrounds/"
-          data-background-interactive
-        >
-          <div class="card">
-            <div class="brand-bar-wide">
-              <h2>Iframe backgrounds</h2>
-              <img
-                class="logo-color"
-                src="assets/images/ncar-ral-wide-color.png"
-                alt="NCAR RAL"
-              />
-              <img
-                class="logo-white"
-                src="assets/images/ncar-ral-wide-white.png"
-                alt="NCAR RAL"
-              />
-            </div>
-            <p>
-              This slide's background is a live
-              <code>&lt;iframe&gt;</code> pointing at
-              <code>revealjs.com/backgrounds/</code>. Add
-              <code>data-background-interactive</code>
-              to let the user click through to the embedded page.
-            </p>
-          </div>
-        </section>
       </div>
     </div>
 
     <!-- reveal.js core -->
     <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
     <!-- Plugins -->
-    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/highlight.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/notes/notes.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/zoom/zoom.js"></script>
 
     <script>
       Reveal.initialize({
@@ -973,13 +481,13 @@ def hot_stations(obs, threshold=30.0):
         margin: 0.04,
         minScale: 0.2,
         maxScale: 2.0,
-        slideNumber: "h.v",
+        slideNumber: "c/t",
         controls: true,
         progress: true,
         transition: "slide",
         transitionSpeed: "default",
         backgroundTransition: "fade",
-        plugins: [RevealHighlight, RevealNotes],
+        plugins: [RevealNotes, RevealZoom],
       });
 
       // Theme toggle: press T to switch dark ↔ light
