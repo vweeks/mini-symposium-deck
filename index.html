@@ -35,6 +35,9 @@
 
     <!-- NCAR brand overrides (load last so they win) -->
     <link rel="stylesheet" href="css/ncar-theme.css" />
+
+    <!-- NCAR custom elements (<ncar-title-bar>) -->
+    <script src="assets/js/ncar-components.js" defer></script>
   </head>
 
   <body>
@@ -79,7 +82,7 @@
               </div>
             </div>
 
-            <p class="funding-disclaimer">
+            <p class="slide-footnote">
               This material is based upon work supported by the NSF National
               Center for Atmospheric Research, a major facility sponsored by the
               U.S. National Science Foundation and managed by the University
@@ -100,19 +103,10 @@
           data-background-opacity="0.55"
           data-background-transition="zoom"
         >
-          <div class="slide-logo-corner">
-            <img
-              class="logo-color"
-              src="assets/images/ncar-ral-wide-color.png"
-              alt="NCAR RAL"
-            />
-            <img
-              class="logo-white"
-              src="assets/images/ncar-ral-wide-white.png"
-              alt="NCAR RAL"
-            />
-          </div>
-          <h2 class="h2">Shorter page title lorem sit ipsum dolor</h2>
+          <ncar-title-bar
+            variant="divider"
+            title="Shorter page title lorem sit ipsum dolor"
+          ></ncar-title-bar>
         </section>
 
         <!-- ============================================================ -->
@@ -120,19 +114,9 @@
         <!-- ============================================================ -->
         <section class="slide-content slide-with-image">
           <div class="waves-bg"></div>
-          <div class="brand-bar-wide">
-            <h2>Shorter page title lorem sit ipsum dolor</h2>
-            <img
-              class="logo-color"
-              src="assets/images/ncar-ral-wide-color.png"
-              alt="NCAR RAL"
-            />
-            <img
-              class="logo-white"
-              src="assets/images/ncar-ral-wide-white.png"
-              alt="NCAR RAL"
-            />
-          </div>
+          <ncar-title-bar
+            title="Shorter page title lorem sit ipsum dolor"
+          ></ncar-title-bar>
 
           <div class="with-image">
             <div>
@@ -180,24 +164,10 @@
         <section class="slide-content">
           <div class="waves-bg"></div>
 
-          <div class="brand-bar-wide">
-            <h2>
-              Longer page title lorem sit ipsum dolor
-              <span class="accent"
-                >amet nonummy aliquip cilum ornare fames</span
-              >
-            </h2>
-            <img
-              class="logo-color"
-              src="assets/images/ncar-ral-wide-color.png"
-              alt="NCAR RAL"
-            />
-            <img
-              class="logo-white"
-              src="assets/images/ncar-ral-wide-white.png"
-              alt="NCAR RAL"
-            />
-          </div>
+          <ncar-title-bar
+            title="Longer page title lorem sit ipsum dolor"
+            accent="amet nonummy aliquip cilum ornare fames"
+          ></ncar-title-bar>
 
           <p class="intro">Lorem ipsum dolor sit amet consectetur</p>
 
@@ -229,19 +199,9 @@
           <section class="slide-content two-col">
             <div class="waves-bg"></div>
 
-            <div class="brand-bar-wide">
-              <h2>Shorter page title lorem sit ipsum dolor</h2>
-              <img
-                class="logo-color"
-                src="assets/images/ncar-ral-wide-color.png"
-                alt="NCAR RAL"
-              />
-              <img
-                class="logo-white"
-                src="assets/images/ncar-ral-wide-white.png"
-                alt="NCAR RAL"
-              />
-            </div>
+            <ncar-title-bar
+              title="Shorter page title lorem sit ipsum dolor"
+            ></ncar-title-bar>
             <p class="intro">Lorem ipsum dolor amet consectetur</p>
 
             <div class="body">
@@ -296,19 +256,9 @@
           >
             <div class="waves-bg"></div>
 
-            <div class="brand-bar-wide">
-              <h2>Shorter page title lorem sit ipsum dolor</h2>
-              <img
-                class="logo-color"
-                src="assets/images/ncar-ral-wide-color.png"
-                alt="NCAR RAL"
-              />
-              <img
-                class="logo-white"
-                src="assets/images/ncar-ral-wide-white.png"
-                alt="NCAR RAL"
-              />
-            </div>
+            <ncar-title-bar
+              title="Shorter page title lorem sit ipsum dolor"
+            ></ncar-title-bar>
             <p class="intro">Lorem ipsum dolor sit amet consectetur</p>
 
             <div class="body">
@@ -369,19 +319,9 @@
         <section class="slide-content three-col">
           <div class="waves-bg"></div>
 
-          <div class="brand-bar-wide">
-            <h2>Shorter page title lorem sit ipsum dolor</h2>
-            <img
-              class="logo-color"
-              src="assets/images/ncar-ral-wide-color.png"
-              alt="NCAR RAL"
-            />
-            <img
-              class="logo-white"
-              src="assets/images/ncar-ral-wide-white.png"
-              alt="NCAR RAL"
-            />
-          </div>
+          <ncar-title-bar
+            title="Shorter page title lorem sit ipsum dolor"
+          ></ncar-title-bar>
           <p class="intro">Lorem ipsum dolor sit amet consectetur</p>
 
           <div class="body">
@@ -439,19 +379,9 @@
           data-background-image="assets/images/4G4A1413-Pano.JPG"
           data-background-opacity="0.40"
         >
-          <div class="brand-bar-wide">
-            <h2>Shorter page title lorem sit ipsum dolor</h2>
-            <img
-              class="logo-color"
-              src="assets/images/ncar-ral-wide-color.png"
-              alt="NCAR RAL"
-            />
-            <img
-              class="logo-white"
-              src="assets/images/ncar-ral-wide-white.png"
-              alt="NCAR RAL"
-            />
-          </div>
+          <ncar-title-bar
+            title="Shorter page title lorem sit ipsum dolor"
+          ></ncar-title-bar>
           <p class="intro">Lorem ipsum dolor amet consectetur</p>
           <p>
             Duis rhoncus facilisis enim sit venenatis diam ornare fames
@@ -465,19 +395,9 @@
         <!-- 8. Grid / list                                               -->
         <!-- ============================================================ -->
         <section class="slide-content">
-          <div class="brand-bar-wide">
-            <h2>Shorter page title lorem sit ipsum dolor</h2>
-            <img
-              class="logo-color"
-              src="assets/images/ncar-ral-wide-color.png"
-              alt="NCAR RAL"
-            />
-            <img
-              class="logo-white"
-              src="assets/images/ncar-ral-wide-white.png"
-              alt="NCAR RAL"
-            />
-          </div>
+          <ncar-title-bar
+            title="Shorter page title lorem sit ipsum dolor"
+          ></ncar-title-bar>
 
           <div class="grid-list">
             <p>Lorem ipsum</p>
@@ -512,24 +432,12 @@
           data-background-opacity="0.2"
           data-background-size="cover"
         >
-          <div class="slide-logo-corner">
-            <img
-              class="logo-color"
-              src="assets/images/ncar-ral-wide-color.png"
-              alt="NCAR RAL"
-            />
-            <img
-              class="logo-white"
-              src="assets/images/ncar-ral-wide-white.png"
-              alt="NCAR RAL"
-            />
-          </div>
+          <ncar-title-bar variant="statement" title=""></ncar-title-bar>
           <div>
-            <p class="statement-lead">Bolder statement</p>
-            <p class="statement-body r-fit-text">
-              Tellus enim enim ut suspendisse augue ut et. Non vestibulum
-              pellentesque pulvinar sed. Sociis neque enim felis sodales sit
-              maecenas amet.
+            <p class="statement-lead">
+              Bolder statement tellus enim enim ut suspendisse augue ut et. Non
+              vestibulum pellentesque pulvinar sed. Sociis neque enim felis
+              sodales sit maecenas amet.
             </p>
           </div>
         </section>
@@ -538,19 +446,7 @@
         <!-- 10. Code block demo                                          -->
         <!-- ============================================================ -->
         <section class="slide-content slide-code">
-          <div class="brand-bar-wide">
-            <h2>Pretty code blocks</h2>
-            <img
-              class="logo-color"
-              src="assets/images/ncar-ral-wide-color.png"
-              alt="NCAR RAL"
-            />
-            <img
-              class="logo-white"
-              src="assets/images/ncar-ral-wide-white.png"
-              alt="NCAR RAL"
-            />
-          </div>
+          <ncar-title-bar title="Pretty code blocks"></ncar-title-bar>
           <p class="intro">
             Syntax highlighted via highlight.js, with stepped line highlighting
             driven by reveal.js fragments.
@@ -579,19 +475,7 @@ def hot_stations(obs, threshold=30.0):
         <!-- 11. Fragments demo                                           -->
         <!-- ============================================================ -->
         <section class="slide-content slide-fragments">
-          <div class="brand-bar-wide">
-            <h2>Fragments</h2>
-            <img
-              class="logo-color"
-              src="assets/images/ncar-ral-wide-color.png"
-              alt="NCAR RAL"
-            />
-            <img
-              class="logo-white"
-              src="assets/images/ncar-ral-wide-white.png"
-              alt="NCAR RAL"
-            />
-          </div>
+          <ncar-title-bar title="Fragments"></ncar-title-bar>
           <p class="intro">
             Reveal content incrementally with <code>class="fragment"</code>.
           </p>
@@ -629,19 +513,11 @@ def hot_stations(obs, threshold=30.0):
         <!-- ============================================================ -->
         <section>
           <section data-auto-animate class="slide-content">
-            <div class="brand-bar-wide">
-              <h2 data-id="aa-title" style="font-size: 48px">Auto-Animate</h2>
-              <img
-                class="logo-color"
-                src="assets/images/ncar-ral-wide-color.png"
-                alt="NCAR RAL"
-              />
-              <img
-                class="logo-white"
-                src="assets/images/ncar-ral-wide-white.png"
-                alt="NCAR RAL"
-              />
-            </div>
+            <ncar-title-bar
+              title="Auto-Animate"
+              title-style="font-size: 48px"
+              title-data-id="aa-title"
+            ></ncar-title-bar>
             <p class="intro">Reveal's automatic element tweening.</p>
             <div class="auto-animate-stack">
               <div class="chip" data-id="chip-a">Data</div>
@@ -649,19 +525,11 @@ def hot_stations(obs, threshold=30.0):
           </section>
 
           <section data-auto-animate class="slide-content">
-            <div class="brand-bar-wide">
-              <h2 data-id="aa-title" style="font-size: 72px">Auto-Animate</h2>
-              <img
-                class="logo-color"
-                src="assets/images/ncar-ral-wide-color.png"
-                alt="NCAR RAL"
-              />
-              <img
-                class="logo-white"
-                src="assets/images/ncar-ral-wide-white.png"
-                alt="NCAR RAL"
-              />
-            </div>
+            <ncar-title-bar
+              title="Auto-Animate"
+              title-style="font-size: 72px"
+              title-data-id="aa-title"
+            ></ncar-title-bar>
             <p class="intro">
               Same <code>data-id</code> → smoothly tweened position, size, and
               color.
@@ -673,24 +541,11 @@ def hot_stations(obs, threshold=30.0):
           </section>
 
           <section data-auto-animate class="slide-content">
-            <div class="brand-bar-wide">
-              <h2
-                data-id="aa-title"
-                style="font-size: 96px; color: var(--ncar-cyan)"
-              >
-                Auto-Animate
-              </h2>
-              <img
-                class="logo-color"
-                src="assets/images/ncar-ral-wide-color.png"
-                alt="NCAR RAL"
-              />
-              <img
-                class="logo-white"
-                src="assets/images/ncar-ral-wide-white.png"
-                alt="NCAR RAL"
-              />
-            </div>
+            <ncar-title-bar
+              title="Auto-Animate"
+              title-style="font-size: 96px; color: var(--ncar-cyan)"
+              title-data-id="aa-title"
+            ></ncar-title-bar>
             <p class="intro">
               A third frame grows the stack and changes the title color.
             </p>
@@ -710,19 +565,7 @@ def hot_stations(obs, threshold=30.0):
             class="slide-content slide-transition-demo"
             data-transition="slide"
           >
-            <div class="brand-bar-wide">
-              <h2>Transitions</h2>
-              <img
-                class="logo-color"
-                src="assets/images/ncar-ral-wide-color.png"
-                alt="NCAR RAL"
-              />
-              <img
-                class="logo-white"
-                src="assets/images/ncar-ral-wide-white.png"
-                alt="NCAR RAL"
-              />
-            </div>
+            <ncar-title-bar title="Transitions"></ncar-title-bar>
             <p class="intro">
               Each slide in this stack uses a different
               <code>data-transition</code>.
@@ -734,19 +577,7 @@ def hot_stations(obs, threshold=30.0):
             class="slide-content slide-transition-demo"
             data-transition="fade"
           >
-            <div class="brand-bar-wide">
-              <h2>Fade</h2>
-              <img
-                class="logo-color"
-                src="assets/images/ncar-ral-wide-color.png"
-                alt="NCAR RAL"
-              />
-              <img
-                class="logo-white"
-                src="assets/images/ncar-ral-wide-white.png"
-                alt="NCAR RAL"
-              />
-            </div>
+            <ncar-title-bar title="Fade"></ncar-title-bar>
             <p class="label">data-transition="fade"</p>
           </section>
 
@@ -754,19 +585,7 @@ def hot_stations(obs, threshold=30.0):
             class="slide-content slide-transition-demo"
             data-transition="convex"
           >
-            <div class="brand-bar-wide">
-              <h2>Convex</h2>
-              <img
-                class="logo-color"
-                src="assets/images/ncar-ral-wide-color.png"
-                alt="NCAR RAL"
-              />
-              <img
-                class="logo-white"
-                src="assets/images/ncar-ral-wide-white.png"
-                alt="NCAR RAL"
-              />
-            </div>
+            <ncar-title-bar title="Convex"></ncar-title-bar>
             <p class="label">data-transition="convex"</p>
           </section>
 
@@ -774,19 +593,7 @@ def hot_stations(obs, threshold=30.0):
             class="slide-content slide-transition-demo"
             data-transition="concave"
           >
-            <div class="brand-bar-wide">
-              <h2>Concave</h2>
-              <img
-                class="logo-color"
-                src="assets/images/ncar-ral-wide-color.png"
-                alt="NCAR RAL"
-              />
-              <img
-                class="logo-white"
-                src="assets/images/ncar-ral-wide-white.png"
-                alt="NCAR RAL"
-              />
-            </div>
+            <ncar-title-bar title="Concave"></ncar-title-bar>
             <p class="label">data-transition="concave"</p>
           </section>
 
@@ -794,19 +601,7 @@ def hot_stations(obs, threshold=30.0):
             class="slide-content slide-transition-demo"
             data-transition="zoom"
           >
-            <div class="brand-bar-wide">
-              <h2>Zoom</h2>
-              <img
-                class="logo-color"
-                src="assets/images/ncar-ral-wide-color.png"
-                alt="NCAR RAL"
-              />
-              <img
-                class="logo-white"
-                src="assets/images/ncar-ral-wide-white.png"
-                alt="NCAR RAL"
-              />
-            </div>
+            <ncar-title-bar title="Zoom"></ncar-title-bar>
             <p class="label">data-transition="zoom"</p>
           </section>
 
@@ -814,19 +609,7 @@ def hot_stations(obs, threshold=30.0):
             class="slide-content slide-transition-demo"
             data-transition="slide-in fade-out"
           >
-            <div class="brand-bar-wide">
-              <h2>Mix: slide-in / fade-out</h2>
-              <img
-                class="logo-color"
-                src="assets/images/ncar-ral-wide-color.png"
-                alt="NCAR RAL"
-              />
-              <img
-                class="logo-white"
-                src="assets/images/ncar-ral-wide-white.png"
-                alt="NCAR RAL"
-              />
-            </div>
+            <ncar-title-bar title="Mix: slide-in / fade-out"></ncar-title-bar>
             <p class="label">data-transition="slide-in fade-out"</p>
           </section>
         </section>
@@ -840,19 +623,7 @@ def hot_stations(obs, threshold=30.0):
             data-background-transition="fade"
             class="slide-content slide-transition-demo"
           >
-            <div class="brand-bar-wide">
-              <h2>Background transitions</h2>
-              <img
-                class="logo-color"
-                src="assets/images/ncar-ral-wide-color.png"
-                alt="NCAR RAL"
-              />
-              <img
-                class="logo-white"
-                src="assets/images/ncar-ral-wide-white.png"
-                alt="NCAR RAL"
-              />
-            </div>
+            <ncar-title-bar title="Background transitions"></ncar-title-bar>
             <p class="intro">
               Each slide has a different
               <code>data-background-transition</code>.
@@ -865,19 +636,7 @@ def hot_stations(obs, threshold=30.0):
             data-background-transition="slide"
             class="slide-content slide-transition-demo"
           >
-            <div class="brand-bar-wide">
-              <h2>Slide</h2>
-              <img
-                class="logo-color"
-                src="assets/images/ncar-ral-wide-color.png"
-                alt="NCAR RAL"
-              />
-              <img
-                class="logo-white"
-                src="assets/images/ncar-ral-wide-white.png"
-                alt="NCAR RAL"
-              />
-            </div>
+            <ncar-title-bar title="Slide"></ncar-title-bar>
             <p class="label">data-background-transition="slide"</p>
           </section>
 
@@ -886,19 +645,7 @@ def hot_stations(obs, threshold=30.0):
             data-background-transition="convex"
             class="slide-content slide-transition-demo"
           >
-            <div class="brand-bar-wide">
-              <h2>Convex</h2>
-              <img
-                class="logo-color"
-                src="assets/images/ncar-ral-wide-color.png"
-                alt="NCAR RAL"
-              />
-              <img
-                class="logo-white"
-                src="assets/images/ncar-ral-wide-white.png"
-                alt="NCAR RAL"
-              />
-            </div>
+            <ncar-title-bar title="Convex"></ncar-title-bar>
             <p class="label">data-background-transition="convex"</p>
           </section>
 
@@ -907,19 +654,7 @@ def hot_stations(obs, threshold=30.0):
             data-background-transition="zoom"
             class="slide-content slide-transition-demo"
           >
-            <div class="brand-bar-wide">
-              <h2>Zoom</h2>
-              <img
-                class="logo-color"
-                src="assets/images/ncar-ral-wide-color.png"
-                alt="NCAR RAL"
-              />
-              <img
-                class="logo-white"
-                src="assets/images/ncar-ral-wide-white.png"
-                alt="NCAR RAL"
-              />
-            </div>
+            <ncar-title-bar title="Zoom"></ncar-title-bar>
             <p class="label">data-background-transition="zoom"</p>
           </section>
         </section>
@@ -933,19 +668,7 @@ def hot_stations(obs, threshold=30.0):
           data-background-interactive
         >
           <div class="card">
-            <div class="brand-bar-wide">
-              <h2>Iframe backgrounds</h2>
-              <img
-                class="logo-color"
-                src="assets/images/ncar-ral-wide-color.png"
-                alt="NCAR RAL"
-              />
-              <img
-                class="logo-white"
-                src="assets/images/ncar-ral-wide-white.png"
-                alt="NCAR RAL"
-              />
-            </div>
+            <ncar-title-bar title="Iframe backgrounds"></ncar-title-bar>
             <p>
               This slide's background is a live
               <code>&lt;iframe&gt;</code> pointing at

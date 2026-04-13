@@ -83,7 +83,6 @@
   --card-border: rgba(66, 192, 255, 0.35);
   --fragment-note-bg: rgba(66, 192, 255, 0.15);
   --shadow-code: rgba(0, 0, 0, 0.45);
-  --page-marker-color: rgba(241, 240, 238, 0.6);
 }
 
 /* ======================================================================
@@ -132,7 +131,6 @@
   --card-border: rgba(0, 87, 194, 0.2);
   --fragment-note-bg: rgba(0, 87, 194, 0.1);
   --shadow-code: rgba(0, 0, 0, 0.12);
-  --page-marker-color: rgba(0, 53, 122, 0.5);
 }
 
 /* ======================================================================
@@ -269,7 +267,10 @@
   width: auto;
 }
 
-.brand-bar-wide {
+/* Unified slide title bar — used on every non-cover slide.
+   Rendered by the <ncar-title-bar> custom element in assets/js/ncar-components.js.
+   Positioning flows from the --slide-pad-* tokens so every slide type aligns. */
+.slide-title-bar {
   position: relative;
   display: flex;
   align-items: center;
@@ -280,41 +281,54 @@
   border-bottom: 3px solid var(--ncar-blue);
 }
 
-.brand-bar-wide h2 {
+.slide-title-bar h2 {
   flex: 1;
   min-width: 0;
   margin-bottom: 0;
 }
 
-.brand-bar-wide img {
+.slide-title-bar img {
   height: 52px;
   width: auto;
+  flex-shrink: 0;
 }
 
-/* Corner logo — for slides where the title needs full width (r-fit-text, centered statements) */
-.slide-logo-corner {
-  position: absolute;
-  top: var(--slide-pad-top);
-  right: var(--slide-pad-x);
-  z-index: 5;
+/* Divider variant — same layout as default; keeps h2 stylable via .slide-section-divider h2 */
+
+/* Statement variant — no title, no underline; larger logo, right-aligned. */
+.slide-title-bar--statement {
+  border-bottom: none;
+  padding-bottom: 0;
+  justify-content: flex-end;
 }
 
-.slide-logo-corner img {
-  height: 52px;
-  width: auto;
+.slide-title-bar--statement h2 {
+  display: none;
 }
 
-/* Logo switching — shared by all bar/logo variants */
+.slide-title-bar--statement img {
+  height: 88px;
+}
+
+/* Logo switching — shared by the cover brand-bar and the unified title bar */
 .brand-bar .logo-color,
-.brand-bar-wide .logo-color,
-.slide-logo-corner .logo-color {
+.slide-title-bar .logo-color {
   display: var(--logo-color-display);
 }
 
 .brand-bar .logo-white,
-.brand-bar-wide .logo-white,
-.slide-logo-corner .logo-white {
+.slide-title-bar .logo-white {
   display: var(--logo-white-display);
+}
+
+/* Responsive: stack the logo above the title on narrow viewports.
+   column-reverse puts the logo (which follows h2 in DOM order) on top. */
+@media (max-width: 900px) {
+  .slide-title-bar {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    gap: 16px;
+  }
 }
 
 /* ======================================================================
@@ -329,7 +343,7 @@
 
 .slide-cover .contents {
   position: relative;
-  padding: 6px var(--slide-pad-x) 0 var(--slide-pad-x);
+  padding: var(--slide-pad-top) var(--slide-pad-x) 0 var(--slide-pad-x);
 }
 
 .slide-cover .eyebrow {
@@ -381,7 +395,9 @@
   text-transform: uppercase;
 }
 
-.slide-cover .funding-disclaimer {
+/* Footnote — shared style for cover-slide disclaimers/notes.
+   Use .slide-footnote--pinned to pin to the bottom of the slide. */
+.slide-cover .slide-footnote {
   color: var(--cover-disclaimer);
   opacity: 0.7;
   position: relative;
@@ -392,17 +408,12 @@
   z-index: 3;
 }
 
-.slide-cover .material-notes {
-  color: var(--cover-disclaimer);
-  opacity: 0.7;
+.slide-cover .slide-footnote--pinned {
   position: absolute;
-  left: 16px;
-  right: 16px;
-  bottom: 36px;
-  font-size: 11px;
-  line-height: 1.4;
-  max-width: 1000px;
-  z-index: 3;
+  left: var(--slide-pad-x);
+  right: var(--slide-pad-x);
+  bottom: var(--slide-pad-bottom);
+  padding-top: 0;
 }
 
 /* Photo-overlay cover (darkens a background image) */
@@ -511,11 +522,7 @@
   color: var(--text-primary);
 }
 
-/* Content + image — tighter padding to fit more */
-.slide-content.slide-with-image {
-  padding: var(--slide-pad-top) var(--slide-pad-x);
-}
-
+/* Content + image */
 .slide-content .with-image {
   display: grid;
   grid-template-columns: 1.4fr 1fr;
@@ -567,13 +574,9 @@
 
 .slide-section-divider {
   position: relative;
-  display: flex;
-  align-items: flex-start;
 }
 
 .slide-section-divider h2 {
-  font-size: 80px;
-  max-width: 1200px;
   color: var(--divider-heading);
 }
 
@@ -589,43 +592,27 @@
 .slide-bolder-statement {
   position: relative;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
   overflow: hidden;
+}
+
+.slide-bolder-statement > div {
+  margin: auto 0;
 }
 
 .slide-bolder-statement .statement-lead {
   font-family: var(--font-display);
-  font-size: 48px;
+  font-size: 100px;
   line-height: 1.1;
   color: var(--statement-lead);
-  font-weight: 600;
-  padding: 40px var(--slide-pad-x) 0 var(--slide-pad-x);
-}
-
-.slide-bolder-statement .statement-body {
-  font-family: var(--font-display);
-  max-width: 1500px;
-  line-height: 1.15;
-  color: var(--statement-body);
-  font-weight: 600;
+  font-weight: 700;
   margin-top: 100px;
-  max-width: 1200px;
+  padding: var(--slide-pad-top) var(--slide-pad-x) 0 var(--slide-pad-x);
 }
 
 /* ======================================================================
  * 11. Utility
  * ====================================================================== */
-
-.page-marker {
-  position: absolute;
-  right: 16px;
-  bottom: 28px;
-  font-size: 14px;
-  color: var(--page-marker-color);
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-}
 
 /* ======================================================================
  * 12. Demo / feature slides
