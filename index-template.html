@@ -29,6 +29,9 @@
 
     <!-- NCAR brand overrides -->
     <link rel="stylesheet" href="css/ncar-theme.css" />
+
+    <!-- NCAR custom elements (<ncar-title-bar>) -->
+    <script src="assets/js/ncar-components.js" defer></script>
   </head>
   <body>
     <div class="reveal">
@@ -67,7 +70,7 @@
               </div>
             </div>
 
-            <p class="funding-disclaimer">
+            <p class="slide-footnote">
               This material is based upon work supported by the NSF National
               Center for Atmospheric Research, a major facility sponsored by the
               U.S. National Science Foundation and managed by the University
@@ -101,7 +104,7 @@
                 Eiusmod Tempor, Incididunt Labore, Dolore Magna, Aliqua Enim,
                 Minim Veniam, Quis Nostrud
               </div>
-              <p class="material-notes">
+              <p class="slide-footnote slide-footnote--pinned">
                 Material notes duis aute irure in reprehenderit velit esse dolor
                 ex commodo magna lorem sit ipsum dolor nonummy aliquip cilum ut
                 labore et dolore. Mattis elementum gravida eget consequat
@@ -126,7 +129,7 @@
             <div class="presenter-block">
               <div class="name">Presenter Name(s) Here</div>
               <div class="title">Presenter Title nonummy cilum ut labore</div>
-              <p class="material-notes">
+              <p class="slide-footnote slide-footnote--pinned">
                 Material notes duis aute irure in reprehenderit velit esse dolor
                 ex commodo magna lorem sit ipsum dolor nonummy aliquip cilum ut
                 labore et dolore. Mattis elementum gravida eget consequat
@@ -141,7 +144,7 @@
               <img class="logo-color" src="assets/images/ncar-ral-wide-color.png" alt="NCAR RAL" />
               <img class="logo-white" src="assets/images/ncar-ral-wide-white.png" alt="NCAR RAL" />
             </div>
-            <p class="material-notes">
+            <p class="slide-footnote slide-footnote--pinned">
               Material notes duis aute irure in reprehenderit velit esse dolor
               ex commodo magna lorem sit ipsum dolor nonummy aliquip cilum ut
               labore et dolore. Mattis elementum gravida eget consequat
@@ -167,14 +170,14 @@
           data-background-opacity="0.5"
           data-background-transition="zoom"
         >
-          <h2 class="r-fit-text">Shorter page title lorem sit ipsum dolor</h2>
+          <ncar-title-bar variant="divider" title="Shorter page title lorem sit ipsum dolor" title-class="r-fit-text"></ncar-title-bar>
         </section>
 
         <!-- ============================================================ -->
         <!-- 3. Content + stat boxes + Derecho photo                      -->
         <!-- ============================================================ -->
         <section class="slide-content slide-with-image">
-          <h2>Shorter page title lorem sit ipsum dolor</h2>
+          <ncar-title-bar title="Shorter page title lorem sit ipsum dolor"></ncar-title-bar>
 
           <div class="with-image">
             <div>
@@ -220,10 +223,7 @@
         <!-- 4. Large-title content                                       -->
         <!-- ============================================================ -->
         <section class="slide-content">
-          <h2>
-            Longer page title lorem sit ipsum dolor
-            <span class="accent">amet nonummy aliquip cilum ornare fames</span>
-          </h2>
+          <ncar-title-bar title="Longer page title lorem sit ipsum dolor" accent="amet nonummy aliquip cilum ornare fames"></ncar-title-bar>
 
           <p class="intro">Lorem ipsum dolor sit amet consectetur</p>
 
@@ -253,7 +253,7 @@
         <!-- ============================================================ -->
         <section>
           <section class="slide-content two-col">
-            <h2>Shorter page title lorem sit ipsum dolor</h2>
+            <ncar-title-bar title="Shorter page title lorem sit ipsum dolor"></ncar-title-bar>
             <p class="intro">Lorem ipsum dolor amet consectetur</p>
 
             <div class="body">
@@ -306,7 +306,7 @@
             data-background-image="assets/images/behind_Derecho.jpg"
             data-background-opacity="0.12"
           >
-            <h2>Shorter page title lorem sit ipsum dolor</h2>
+            <ncar-title-bar title="Shorter page title lorem sit ipsum dolor"></ncar-title-bar>
             <p class="intro">Lorem ipsum dolor sit amet consectetur</p>
 
             <div class="body">
@@ -365,7 +365,7 @@
         <!-- 6. Three columns                                             -->
         <!-- ============================================================ -->
         <section class="slide-content three-col">
-          <h2>Shorter page title lorem sit ipsum dolor</h2>
+          <ncar-title-bar title="Shorter page title lorem sit ipsum dolor"></ncar-title-bar>
           <p class="intro">Lorem ipsum dolor sit amet consectetur</p>
 
           <div class="body">
@@ -423,7 +423,7 @@
           data-background-image="assets/images/4G4A1413-Pano.JPG"
           data-background-opacity="0.15"
         >
-          <h2>Shorter page title lorem sit ipsum dolor</h2>
+          <ncar-title-bar title="Shorter page title lorem sit ipsum dolor"></ncar-title-bar>
           <p class="intro">Lorem ipsum dolor amet consectetur</p>
           <p>
             Duis rhoncus facilisis enim sit venenatis diam ornare fames
@@ -437,7 +437,7 @@
         <!-- 8. Grid / list                                               -->
         <!-- ============================================================ -->
         <section class="slide-content">
-          <h2>Shorter page title lorem sit ipsum dolor</h2>
+          <ncar-title-bar title="Shorter page title lorem sit ipsum dolor"></ncar-title-bar>
 
           <div class="grid-list">
             <p>Lorem ipsum</p>
@@ -472,12 +472,12 @@
           data-background-opacity="0.2"
           data-background-size="cover"
         >
+          <ncar-title-bar variant="statement" title=""></ncar-title-bar>
           <div>
-            <p class="statement-lead">Bolder statement</p>
-            <p class="statement-body r-fit-text">
-              Tellus enim enim ut suspendisse augue ut et. Non vestibulum
-              pellentesque pulvinar sed. Sociis neque enim felis sodales sit
-              maecenas amet.
+            <p class="statement-lead">
+              Bolder statement tellus enim enim ut suspendisse augue ut et. Non
+              vestibulum pellentesque pulvinar sed. Sociis neque enim felis
+              sodales sit maecenas amet.
             </p>
           </div>
         </section>
@@ -497,7 +497,7 @@
         margin: 0.04,
         minScale: 0.2,
         maxScale: 2.0,
-        slideNumber: "c/t",
+        slideNumber: "h.v",
         controls: true,
         progress: true,
         transition: "slide",
