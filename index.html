@@ -6,16 +6,18 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
     />
-    <title>Before We Reproduce AI-Assisted Science, We Need to Make It Reproducible</title>
+    <title>
+      Before We Reproduce AI-Assisted Science, We Need to Make It Reproducible
+    </title>
 
     <!-- Reveal.js core + base theme from jsDelivr -->
     <link
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css"
+      href="https://cdn.jsdelivr.net/npm/reveal.js@6.0.1/dist/reveal.css"
     />
     <link
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/black.css"
+      href="https://cdn.jsdelivr.net/npm/reveal.js@6.0.1/dist/theme/black.css"
       id="theme"
     />
 
@@ -37,7 +39,6 @@
   <body>
     <div class="reveal">
       <div class="slides">
-
         <!-- ============================================================ -->
         <!-- 1. TITLE / COVER                                             -->
         <!-- ============================================================ -->
@@ -88,10 +89,12 @@
           </div>
 
           <aside class="notes">
-            TALKING POINTS (~1 min):
-            - Introduce yourself: Victor Weeks, software engineer at NCAR, 2026 BSSw Fellow.
-            - Frame the talk: We've been discussing how AI can help with computational reproducibility. I want to raise a complementary question — what happens when AI is building the computational artifacts we're trying to reproduce?
-            - Transition: Let me set the stage.
+            TALKING POINTS (~1 min): - Introduce yourself: Victor Weeks,
+            software engineer at NCAR, 2026 BSSw Fellow. - Frame the talk: We've
+            been discussing how AI can help with computational reproducibility.
+            I want to raise a complementary question — what happens when AI is
+            building the computational artifacts we're trying to reproduce? -
+            Transition: Let me set the stage.
           </aside>
         </section>
 
@@ -128,11 +131,14 @@
           </div>
 
           <aside class="notes">
-            TALKING POINTS (~1.5 min):
-            - This symposium is exploring the left side — how can AI help us reproduce computational artifacts? That's a great direction.
-            - But there's a parallel trend: AI is increasingly being used on the build side too.
-            - These are two sides of the same coin. If we don't get the build side right, we're producing artifacts that are harder to describe, evaluate, and reproduce — making the AD/AE process even more challenging.
-            - Transition: What does 'not getting it right' look like?
+            TALKING POINTS (~1.5 min): - This symposium is exploring the left
+            side — how can AI help us reproduce computational artifacts? That's
+            a great direction. - But there's a parallel trend: AI is
+            increasingly being used on the build side too. - These are two sides
+            of the same coin. If we don't get the build side right, we're
+            producing artifacts that are harder to describe, evaluate, and
+            reproduce — making the AD/AE process even more challenging. -
+            Transition: What does 'not getting it right' look like?
           </aside>
         </section>
 
@@ -142,7 +148,9 @@
         <section class="slide-content three-col" data-transition="slide">
           <div class="waves-bg"></div>
 
-          <ncar-title-bar title="The AI-Assisted Development Spectrum"></ncar-title-bar>
+          <ncar-title-bar
+            title="The AI-Assisted Development Spectrum"
+          ></ncar-title-bar>
 
           <div class="body">
             <div class="fragment fade-up">
@@ -167,13 +175,13 @@
           </div>
 
           <aside class="notes">
-            TALKING POINTS (~1 min):
-            - Quick tour of where AI-assisted dev is today.
-            - 'Vibe coding' — conversational, developer in the loop.
-            - MCP and tool use — agents interacting with external systems. Chameleon already has an MCP server — a great example of this pattern.
-            - Autonomous agents — multi-step decisions with less human oversight.
-            - Each step increases potential for undetected errors in artifacts.
-            - Transition: What kinds of errors?
+            TALKING POINTS (~1 min): - Quick tour of where AI-assisted dev is
+            today. - 'Vibe coding' — conversational, developer in the loop. -
+            MCP and tool use — agents interacting with external systems.
+            Chameleon already has an MCP server — a great example of this
+            pattern. - Autonomous agents — multi-step decisions with less human
+            oversight. - Each step increases potential for undetected errors in
+            artifacts. - Transition: What kinds of errors?
           </aside>
         </section>
 
@@ -184,7 +192,9 @@
           class="slide-content slide-with-image"
           data-transition="slide-in fade-out"
         >
-          <ncar-title-bar title="When AI Builds Scientific Software"></ncar-title-bar>
+          <ncar-title-bar
+            title="When AI Builds Scientific Software"
+          ></ncar-title-bar>
 
           <div class="with-image">
             <div>
@@ -224,13 +234,14 @@
           </div>
 
           <aside class="notes">
-            TALKING POINTS (~1.5 min):
-            - These aren't hypothetical — they're things I've encountered at NCAR.
-            - Precision: float32 vs float64, rounding that accumulates over simulations.
-            - Physics: code that doesn't conserve mass/energy/momentum and passes tests.
-            - Opaque decisions: commit history and PR reviews capture 'why' for human code; agent decisions can evaporate.
-            - Key: These pass CI/CD but corrupt the science — and complicate artifact evaluation.
-            - Transition: What do we do about it?
+            TALKING POINTS (~1.5 min): - These aren't hypothetical — they're
+            things I've encountered at NCAR. - Precision: float32 vs float64,
+            rounding that accumulates over simulations. - Physics: code that
+            doesn't conserve mass/energy/momentum and passes tests. - Opaque
+            decisions: commit history and PR reviews capture 'why' for human
+            code; agent decisions can evaporate. - Key: These pass CI/CD but
+            corrupt the science — and complicate artifact evaluation. -
+            Transition: What do we do about it?
           </aside>
         </section>
 
@@ -243,7 +254,9 @@
           data-background-image="assets/images/mammatus-clouds.jpg"
           data-background-opacity="0.10"
         >
-          <ncar-title-bar title="Scientific Agentic Engineering (SAE)"></ncar-title-bar>
+          <ncar-title-bar
+            title="Scientific Agentic Engineering (SAE)"
+          ></ncar-title-bar>
 
           <div class="body">
             <div class="fragment fade-up">
@@ -270,12 +283,13 @@
           </div>
 
           <aside class="notes">
-            TALKING POINTS (~1.5 min):
-            - My BSSw Fellowship is developing a methodology I'm calling Scientific Agentic Engineering, or SAE.
-            - Three pillars: validation loops, human oversight, standardized tooling.
-            - SAE is tool-agnostic — about principles, not any specific AI product.
-            - Fellowship just started — framework design phase. Deliverables over the next 12 months.
-            - Transition: Why does this matter for this audience?
+            TALKING POINTS (~1.5 min): - My BSSw Fellowship is developing a
+            methodology I'm calling Scientific Agentic Engineering, or SAE. -
+            Three pillars: validation loops, human oversight, standardized
+            tooling. - SAE is tool-agnostic — about principles, not any specific
+            AI product. - Fellowship just started — framework design phase.
+            Deliverables over the next 12 months. - Transition: Why does this
+            matter for this audience?
           </aside>
         </section>
 
@@ -288,7 +302,10 @@
           data-background-image="assets/images/MPAS-image.png"
           data-background-opacity="0.15"
         >
-          <ncar-title-bar title="Why Build-Time Discipline Matters for" accent="R&amp;R"></ncar-title-bar>
+          <ncar-title-bar
+            title="Why Build-Time Discipline Matters for"
+            accent="R&amp;R"
+          ></ncar-title-bar>
 
           <p class="fragment fade-in">
             If AI agents build computational artifacts without guardrails, those
@@ -314,13 +331,11 @@
           </p>
 
           <aside class="notes">
-            TALKING POINTS (~1 min):
-            - Connection to today's discussions.
-            - Undisciplined build-side produces artifacts harder for AD/AE.
-            - Reproduce-side AI agents also need guardrails.
-            - Same structural patterns serve both sides.
-            - Build-time discipline is upstream of reproduce-time reliability.
-            - Transition: Closing.
+            TALKING POINTS (~1 min): - Connection to today's discussions. -
+            Undisciplined build-side produces artifacts harder for AD/AE. -
+            Reproduce-side AI agents also need guardrails. - Same structural
+            patterns serve both sides. - Build-time discipline is upstream of
+            reproduce-time reliability. - Transition: Closing.
           </aside>
         </section>
 
@@ -334,11 +349,14 @@
           data-background-transition="zoom"
           data-background-color="#011837"
         >
-          <h2 style="font-size: 48px; margin-bottom: 24px">Scientific Agentic Engineering</h2>
+          <ncar-title-bar
+            title="Scientific Agentic Engineering Example"
+          ></ncar-title-bar>
+
           <img
             src="assets/images/agent-team-screenshot.jpg"
+            data-preview-image
             alt="Multi-agent AI workflow — scientific agentic engineering in action"
-            style="max-width: 85%; max-height: 720px; border-radius: 8px; box-shadow: 0 8px 40px rgba(0,0,0,0.5); cursor: zoom-in"
           />
         </section>
 
@@ -383,22 +401,21 @@
           </div>
 
           <aside class="notes">
-            TALKING POINTS (~30 sec):
-            - Fellowship just kicked off. All deliverables coming over the next 12 months.
-            - If interested — especially from R&R/AE perspective — project site will have resources.
-            - Interested in feedback on what guardrails would be most valuable for AD/AE.
-            - Thank you. Happy to take questions.
+            TALKING POINTS (~30 sec): - Fellowship just kicked off. All
+            deliverables coming over the next 12 months. - If interested —
+            especially from R&R/AE perspective — project site will have
+            resources. - Interested in feedback on what guardrails would be most
+            valuable for AD/AE. - Thank you. Happy to take questions.
           </aside>
         </section>
-
       </div>
     </div>
 
     <!-- reveal.js core -->
-    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@6.0.1/dist/reveal.js"></script>
     <!-- Plugins -->
-    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/notes/notes.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/zoom/zoom.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@6.0.1/dist/plugin/notes.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@6.0.1/dist/plugin/zoom.js"></script>
 
     <script>
       Reveal.initialize({

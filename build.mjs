@@ -52,12 +52,12 @@ for (const rel of ['dist/reveal.css', 'dist/reveal.js', 'dist/theme/black.css'])
   copyFile(path.join(REVEAL_SRC, rel), path.join(REVEAL_DEST, rel));
 }
 
-// plugin/ files
+// plugin/ files (reveal.js 6 flattened most plugin JS into dist/plugin/)
 for (const rel of [
-  'plugin/highlight/highlight.js',
-  'plugin/highlight/monokai.css',
-  'plugin/notes/notes.js',
-  'plugin/zoom/zoom.js',
+  'dist/plugin/highlight.js',
+  'dist/plugin/highlight/monokai.css',
+  'dist/plugin/notes.js',
+  'dist/plugin/zoom.js',
 ]) {
   copyFile(path.join(REVEAL_SRC, rel), path.join(REVEAL_DEST, rel));
 }
@@ -112,7 +112,7 @@ await downloadFonts();
 
 // ── 5. Rewrite HTML files ───────────────────────────────────────────
 
-const CDN_BASE = 'https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/';
+const CDN_BASE = 'https://cdn.jsdelivr.net/npm/reveal.js@6.0.1/';
 const LOCAL_BASE = 'vendor/reveal.js/';
 
 const HTML_FILES = ['index.html', 'index-template.html'];
