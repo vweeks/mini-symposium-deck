@@ -430,18 +430,17 @@
         controls: true,
         progress: true,
         transition: "slide",
-        transitionSpeed: "default",
         backgroundTransition: "fade",
         plugins: [RevealNotes, RevealZoom],
       });
 
       // Theme toggle: press T to switch dark ↔ light
-      (function () {
-        var html = document.documentElement;
-        var saved = localStorage.getItem("ncar-theme");
+      {
+        const html = document.documentElement;
+        const saved = localStorage.getItem("ncar-theme");
         if (saved) html.setAttribute("data-theme", saved);
 
-        document.addEventListener("keydown", function (e) {
+        document.addEventListener("keydown", (e) => {
           if (
             e.key === "t" &&
             !e.ctrlKey &&
@@ -449,13 +448,13 @@
             !e.altKey &&
             document.activeElement.tagName !== "INPUT"
           ) {
-            var next =
+            const next =
               html.getAttribute("data-theme") === "dark" ? "light" : "dark";
             html.setAttribute("data-theme", next);
             localStorage.setItem("ncar-theme", next);
           }
         });
-      })();
+      }
     </script>
   </body>
 </html>
