@@ -31,7 +31,7 @@
 }
 
 /* ======================================================================
- * 2. Semantic tokens — dark theme (default)
+ * 2a. Semantic tokens — dark theme (default)
  * ====================================================================== */
 
 :root,
@@ -74,7 +74,7 @@
 }
 
 /* ======================================================================
- * 3. Semantic tokens — light theme
+ * 2b. Semantic tokens — light theme
  * ====================================================================== */
 
 [data-theme="light"] {
@@ -113,6 +113,21 @@
   --card-border: rgba(0, 87, 194, 0.2);
   --fragment-note-bg: rgba(0, 87, 194, 0.1);
   --shadow-code: rgba(0, 0, 0, 0.12);
+}
+
+/* ======================================================================
+ * 3. Utils
+ * ====================================================================== */
+
+.h-separator {
+  margin: 36px 0 36px 0;
+  width: 128px;
+  border-bottom: 4px solid var(--cover-eyebrow);
+}
+
+.v-separator {
+  margin: 0 24px 0 20px;
+  border-left: 4px solid var(--cover-eyebrow);
 }
 
 /* ======================================================================
@@ -272,12 +287,6 @@ displaying the Optional Presentation Name */
   font-weight: 600;
 }
 
-.slide-cover .separator {
-  margin: 36px 0 36px 0;
-  width: 128px;
-  border-bottom: 4px solid var(--cover-eyebrow);
-}
-
 .slide-cover .presenter-block {
   font-weight: 300;
 }
@@ -286,14 +295,7 @@ displaying the Optional Presentation Name */
   font-weight: 700;
 }
 
-.slide-cover .credit-team {
-  margin-top: 28px;
-  font-size: 20px;
-  letter-spacing: 0.08em;
-  font-weight: 100;
-}
-
-.slide-cover .credit-intro {
+.slide-cover .subhead .subhead-intro {
   text-transform: uppercase;
 }
 
@@ -331,7 +333,7 @@ displaying the Optional Presentation Name */
 }
 
 .slide-content .intro {
-  font-size: 47px;
+  font-size: 64px;
   font-weight: 600;
   padding-top: 72px;
   margin-bottom: 28px;
@@ -348,17 +350,14 @@ displaying the Optional Presentation Name */
 
 .slide-content.two-col .body {
   grid-template-columns: 1fr 1fr;
-  font-size: 36px;
 }
 
 .slide-content.three-col .body {
   grid-template-columns: 1fr 1fr 1fr;
-  font-size: 30px;
 }
 
 .slide-content.four-col .body {
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  font-size: 24px;
 }
 
 .slide-content .body p,
@@ -367,10 +366,10 @@ displaying the Optional Presentation Name */
 }
 
 .slide-content .body h3 {
-  font-size: 30px;
   margin-bottom: 28px;
   border-left: 4px solid var(--ncar-orange);
   padding-left: 14px;
+  font-weight: 700;
 }
 
 /* Stat / label boxes */
@@ -415,19 +414,14 @@ displaying the Optional Presentation Name */
   border-radius: 4px;
 }
 
-.slide-content .with-image ul {
+.slide-content ul {
   margin: 0 0 0.4em 1.2em;
 }
 
-.slide-content .with-image li {
+.slide-content li {
   font-size: 40px;
   line-height: 1.35;
   margin-bottom: 4px;
-}
-
-.slide-content .with-image .intro {
-  font-size: 47px;
-  margin-bottom: 16px;
 }
 
 /* Table */

@@ -21,7 +21,7 @@
       id="theme"
     />
 
-    <!-- Poppins from Google Fonts -->
+    <!-- Poppins + JetBrains Mono from Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -29,7 +29,7 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap"
     />
 
-    <!-- NCAR brand overrides (load last so they win) -->
+    <!-- NCAR brand overrides (load last) -->
     <link rel="stylesheet" href="css/ncar-theme.css" />
 
     <!-- NCAR custom elements (<ncar-title-bar>) -->
@@ -61,20 +61,24 @@
             />
           </div>
           <div class="slide-cover contents">
-            <p class="eyebrow">April 16, 2026</p>
+            <p class="eyebrow">April 16, 2026 | 6th Chameleon User Meeting</p>
             <h1>
               Before We Reproduce AI-Assisted Science, We Need to Make It
               Reproducible
             </h1>
             <p class="subhead">
-              6th Chameleon User Meeting | Applying AI to Accelerate
-              Computational R&amp;R
+              <span class="subhead-intro">Mini-Symposium: </span>
+              Applying AI to Accelerate Computational Reproducibility and
+              Replicability
             </p>
+
+            <div class="h-separator"></div>
 
             <div class="presenter-block">
               <div class="name">Victor Weeks</div>
               <div class="title">
-                Software Engineer, NSF NCAR | 2026 BSSw Fellow
+                Software Engineer, NSF NCAR
+                <span class="v-separator"></span> 2026 BSSw Fellow
               </div>
             </div>
 
@@ -84,17 +88,21 @@
               U.S. National Science Foundation and managed by the University
               Corporation for Atmospheric Research. This work is also supported
               by the Better Scientific Software Fellowship Program, funded by
-              the U.S. Department of Energy and National Science Foundation.
+              the U.S. Department of Energy and the U.S. National Science
+              Foundation.
             </p>
           </div>
 
           <aside class="notes">
-            TALKING POINTS (~1 min): - Introduce yourself: Victor Weeks,
-            software engineer at NCAR, 2026 BSSw Fellow. - Frame the talk: We've
-            been discussing how AI can help with computational reproducibility.
-            I want to raise a complementary question — what happens when AI is
-            building the computational artifacts we're trying to reproduce? -
-            Transition: Let me set the stage.
+            TALKING POINTS (~1 min): <br />
+            - Introduce yourself: Victor Weeks, software engineer at NCAR, 2026
+            BSSw Fellow. <br />
+            - Frame the talk: We've been discussing how AI can help with
+            computational reproducibility. I want to raise a complementary
+            question <br />
+            — what happens when AI is building the computational artifacts we're
+            trying to reproduce? <br />
+            - Transition: Let me set the stage.
           </aside>
         </section>
 
@@ -103,9 +111,11 @@
         <!-- ============================================================ -->
         <section
           class="slide-content two-col"
-          data-transition="slide"
-          data-background-image="assets/images/behind_Derecho.jpg"
-          data-background-opacity="0.12"
+          data-background-image="assets/images/wave-graphics-ncar-colors/vert/NCAR-Waves_Lines-Only-3_RGB.png"
+          data-background-opacity="0.5"
+          data-background-size="contain"
+          data-background-position="right"
+          data-background-transition="convex"
         >
           <ncar-title-bar title="Two Sides of the Same Coin"></ncar-title-bar>
 
@@ -131,14 +141,17 @@
           </div>
 
           <aside class="notes">
-            TALKING POINTS (~1.5 min): - This symposium is exploring the left
-            side — how can AI help us reproduce computational artifacts? That's
-            a great direction. - But there's a parallel trend: AI is
-            increasingly being used on the build side too. - These are two sides
-            of the same coin. If we don't get the build side right, we're
-            producing artifacts that are harder to describe, evaluate, and
-            reproduce — making the AD/AE process even more challenging. -
-            Transition: What does 'not getting it right' look like?
+            TALKING POINTS (~1.5 min): <br />
+            - This symposium is exploring the left side <br />
+            — how can AI help us reproduce computational artifacts? That's a
+            great direction. <br />
+            - But there's a parallel trend: AI is increasingly being used on the
+            build side too. <br />
+            - These are two sides of the same coin. If we don't get the build
+            side right, we're producing artifacts that are harder to describe,
+            evaluate, and reproduce <br />
+            — making the AD/AE process even more challenging. <br />
+            - Transition: What does 'not getting it right' look like?
           </aside>
         </section>
 
@@ -175,13 +188,16 @@
           </div>
 
           <aside class="notes">
-            TALKING POINTS (~1 min): - Quick tour of where AI-assisted dev is
-            today. - 'Vibe coding' — conversational, developer in the loop. -
-            MCP and tool use — agents interacting with external systems.
-            Chameleon already has an MCP server — a great example of this
-            pattern. - Autonomous agents — multi-step decisions with less human
-            oversight. - Each step increases potential for undetected errors in
-            artifacts. - Transition: What kinds of errors?
+            TALKING POINTS (~1 min): <br />
+            - Quick tour of where AI-assisted dev is today. <br />
+            - 'Vibe coding' —- conversational, developer in the loop. <br />
+            - MCP and tool use -— agents interacting with external systems.
+            <br />
+            - Autonomous agents —- multi-step decisions with less human
+            oversight. <br />
+            - Each step increases potential for undetected errors in artifacts.
+            <br />
+            - Transition: What kinds of errors?
           </aside>
         </section>
 
@@ -234,14 +250,19 @@
           </div>
 
           <aside class="notes">
-            TALKING POINTS (~1.5 min): - These aren't hypothetical — they're
-            things I've encountered at NCAR. - Precision: float32 vs float64,
-            rounding that accumulates over simulations. - Physics: code that
-            doesn't conserve mass/energy/momentum and passes tests. - Opaque
-            decisions: commit history and PR reviews capture 'why' for human
-            code; agent decisions can evaporate. - Key: These pass CI/CD but
-            corrupt the science — and complicate artifact evaluation. -
-            Transition: What do we do about it?
+            TALKING POINTS (~1.5 min):
+            <br />
+            These aren't hypothetical — they're things I've encountered at NCAR.
+            <br />
+            - Precision: float32 vs float64, rounding that accumulates over
+            simulations. <br />
+            - Physics: code that doesn't conserve mass/energy/momentum and
+            passes tests. <br />
+            - Opaque decisions: commit history and PR reviews capture 'why' for
+            human code; agent decisions can evaporate. <br />
+            - Key: These pass CI/CD but corrupt the science — and complicate
+            artifact evaluation. <br />
+            - Transition: What do we do about it?
           </aside>
         </section>
 
@@ -251,7 +272,7 @@
         <section
           class="slide-content three-col"
           data-transition="convex"
-          data-background-image="assets/images/mammatus-clouds.jpg"
+          data-background-image="assets/images/behind_Derecho.jpg"
           data-background-opacity="0.10"
         >
           <ncar-title-bar
@@ -283,13 +304,16 @@
           </div>
 
           <aside class="notes">
-            TALKING POINTS (~1.5 min): - My BSSw Fellowship is developing a
-            methodology I'm calling Scientific Agentic Engineering, or SAE. -
-            Three pillars: validation loops, human oversight, standardized
-            tooling. - SAE is tool-agnostic — about principles, not any specific
-            AI product. - Fellowship just started — framework design phase.
-            Deliverables over the next 12 months. - Transition: Why does this
-            matter for this audience?
+            TALKING POINTS (~1.5 min): <br />
+            - My BSSw Fellowship is developing a methodology I'm calling
+            Scientific Agentic Engineering, or SAE. <br />
+            - Three pillars: validation loops, human oversight, standardized
+            tooling. <br />
+            - SAE is tool-agnostic -— about principles, not any specific AI
+            product. <br />
+            - Fellowship just started -— framework design phase. Deliverables
+            over the next 12 months. <br />
+            - Transition: Why does this matter for this audience?
           </aside>
         </section>
 
@@ -331,11 +355,15 @@
           </p>
 
           <aside class="notes">
-            TALKING POINTS (~1 min): - Connection to today's discussions. -
-            Undisciplined build-side produces artifacts harder for AD/AE. -
-            Reproduce-side AI agents also need guardrails. - Same structural
-            patterns serve both sides. - Build-time discipline is upstream of
-            reproduce-time reliability. - Transition: Closing.
+            TALKING POINTS (~1 min): <br />
+            - Connection to today's discussions. <br />
+            - Undisciplined build-side produces artifacts harder for AD/AE.
+            <br />
+            - Reproduce-side AI agents also need guardrails. <br />
+            - Same structural patterns serve both sides. <br />
+            - Build-time discipline is upstream of reproduce-time reliability.
+            <br />
+            - Transition: Closing.
           </aside>
         </section>
 
@@ -404,11 +432,14 @@
           </div>
 
           <aside class="notes">
-            TALKING POINTS (~30 sec): - Fellowship just kicked off. All
-            deliverables coming over the next 12 months. - If interested —
-            especially from R&R/AE perspective — project site will have
-            resources. - Interested in feedback on what guardrails would be most
-            valuable for AD/AE. - Thank you. Happy to take questions.
+            TALKING POINTS (~30 sec): <br />
+            - Fellowship just kicked off. All deliverables coming over the next
+            12 months. <br />
+            - If interested —- especially from R&R/AE perspective -— project
+            site will have resources. <br />
+            - Interested in feedback on what guardrails would be most valuable
+            for AD/AE. <br />
+            - Thank you. Happy to take questions.
           </aside>
         </section>
       </div>
@@ -426,7 +457,7 @@
         height: 1200, // 2160 | 1080
         center: true,
         margin: 0.08,
-        minScale: 0.2,
+        minScale: 0.1,
         maxScale: 2.0,
         //slideNumber: "h.v",
         slideNumber: (slide) => {
