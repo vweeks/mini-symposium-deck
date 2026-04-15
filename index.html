@@ -837,6 +837,11 @@ def hot_stations(obs, threshold=30.0):
         transitionSpeed: "default",
         backgroundTransition: "fade",
         plugins: [RevealHighlight, RevealNotes, RevealMath.KaTeX],
+        multiplex: {
+          secret: null /* MULTIPLEX_SECRET */,
+          id: "6e3c340afddcd9243aa098e04db291f3f55a7eed4d4600b8456c8b97f9ce079b",
+          url: "https://multiplex.up.railway.app/",
+        },
       });
 
       // Theme toggle: press T to switch dark ↔ light
@@ -864,5 +869,11 @@ def hot_stations(obs, threshold=30.0):
         });
       })();
     </script>
+
+    <!-- MULTIPLEX_SCRIPT: swapped to master.js by scripts/make-presenter.sh.
+         Must load AFTER Reveal.initialize() since client.js/master.js are
+         IIFEs that immediately call Reveal.getConfig() and Reveal.on(...). -->
+    <script src="https://multiplex.up.railway.app/socket.io/socket.io.js"></script>
+    <script src="https://multiplex.up.railway.app/client.js"></script>
   </body>
 </html>

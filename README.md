@@ -34,6 +34,54 @@ Then open <http://localhost:8000/> in a browser. The first load requires
 network access (jsDelivr for reveal.js, Google Fonts for Poppins and
 JetBrains Mono); subsequent loads are cached.
 
+### Live audience sync (multiplex)
+
+The deck integrates [reveal.js multiplex](https://github.com/reveal/multiplex)
+so a presenter can drive slide navigation for a remote audience in real
+time. The design assumes the deck is published via **GitHub Pages**:
+
+- `index.html` (GH Pages) acts as the **client** — audience members open it
+  and follow along read-only.
+- `presenter.html` (local, gitignored) acts as the **master** — you run
+  it on your laptop and advance slides normally.
+
+Both connect to the public Railway broker at
+`https://multiplex.up.railway.app/`. For production use you'll want to
+self-host the `reveal-multiplex` Node server.
+
+#### One-time setup
+
+1. Mint a `{secret, socketId}` token pair from the broker:
+   ```sh
+   curl -sS https://multiplex.up.railway.app/token
+   # => {"secret":"…","socketId":"…"}
+   ```
+   If this endpoint is unavailable, run `npx reveal-multiplex` to start a
+   local server and hit `http://localhost:1948/token` instead (but note
+   that tokens are tied to whichever server you connect to — master and
+   clients must all point at the same `url`).
+2. Paste the `socketId` value into `index.html` as the `multiplex.id`
+   field. `id` is public — commit it.
+3. Save the `secret` value into `multiplex-secret.txt` in the repo root
+   (one line). This file is gitignored; never commit it.
+
+Token pairs are durable — you only need to do this once per deck unless
+you want to rotate the secret.
+
+#### Presenting
+
+```sh
+./scripts/make-presenter.sh      # regenerate presenter.html from index.html
+python3 -m http.server 8000
+# open http://localhost:8000/presenter.html
+```
+
+Audience members open the GitHub Pages URL (`index.html`) — they connect
+as clients automatically and follow your navigation.
+
+> Any time you edit `index.html`, re-run `make-presenter.sh` so
+> `presenter.html` picks up the changes.
+
 ### Navigation
 
 | Action                  | Key                 |
