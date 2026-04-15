@@ -31,7 +31,7 @@
 }
 
 /* ======================================================================
- * 2. Semantic tokens — dark theme (default)
+ * 2a. Semantic tokens — dark theme (default)
  * ====================================================================== */
 
 :root,
@@ -74,7 +74,7 @@
 }
 
 /* ======================================================================
- * 3. Semantic tokens — light theme
+ * 2b. Semantic tokens — light theme
  * ====================================================================== */
 
 [data-theme="light"] {
@@ -113,6 +113,21 @@
   --card-border: rgba(0, 87, 194, 0.2);
   --fragment-note-bg: rgba(0, 87, 194, 0.1);
   --shadow-code: rgba(0, 0, 0, 0.12);
+}
+
+/* ======================================================================
+ * 3. Utils
+ * ====================================================================== */
+
+.h-separator {
+  margin: 36px 0 36px 0;
+  width: 128px;
+  border-bottom: 4px solid var(--cover-eyebrow);
+}
+
+.v-separator {
+  margin: 0 24px 0 20px;
+  border-left: 4px solid var(--cover-eyebrow);
 }
 
 /* ======================================================================
@@ -270,12 +285,6 @@ displaying the Optional Presentation Name */
   letter-spacing: 0.18em;
   text-transform: uppercase;
   font-weight: 600;
-}
-
-.slide-cover .separator {
-  margin: 36px 0 36px 0;
-  width: 128px;
-  border-bottom: 4px solid var(--cover-eyebrow);
 }
 
 .slide-cover .presenter-block {
