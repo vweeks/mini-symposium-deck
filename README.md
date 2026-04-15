@@ -213,6 +213,41 @@ deployed contents match a specific `main` commit.
 Either path produces an identical `gh-pages` branch; pick whichever
 your environment supports.
 
+## PDF export
+
+A flattened PDF of the deck is kept in the repo at `slides.pdf` and
+stays in sync with `index.html` automatically.
+
+We use [decktape](https://github.com/astefanutti/decktape) rather than
+reveal.js's built-in `?print-pdf` mode. Decktape drives a headless
+Chromium at the deck's true 2560×1440 canvas and captures one PDF page
+per slide, which avoids the dual-logo / spacing quirks that the browser
+print pipeline introduces.
+
+### Regenerate locally
+
+```sh
+./scripts/build-pdf.sh                # → slides.pdf (light theme)
+THEME=dark ./scripts/build-pdf.sh     # dark theme variant
+OUT=handout.pdf ./scripts/build-pdf.sh
+```
+
+Requires `node`/`npx` (decktape is pulled via `npx` on first run;
+Chromium comes bundled) and `python3` (for the temporary HTTP server).
+
+### Automatic rebuilds
+
+`.github/workflows/build-pdf.yml` rebuilds `slides.pdf` on every push
+to `main` that touches `index.html`, `css/`, `assets/`, or the build
+script, then commits the refreshed file back to `main` as
+`chore(pdf): rebuild slides.pdf [skip ci]`. The `paths:` filter
+excludes `slides.pdf` itself, so the auto-commit cannot retrigger the
+workflow.
+
+The workflow pins the light theme via the `?theme=light` URL override
+(`index.html` reads this query param at load time; it takes precedence
+over the browser's saved theme).
+
 ## Source
 
 Converted from the NSF NCAR / RAL PowerPoint slide template (16:9,

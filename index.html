@@ -799,6 +799,8 @@ def hot_stations(obs, threshold=30.0):
         margin: 0.08,
         minScale: 0.1,
         maxScale: 2.0,
+        pdfSeparateFragments: false,
+        pdfMaxPagesPerSlide: 1,
         //slideNumber: "h.v",
         slideNumber: (slide) => {
           let indices = Reveal.getIndices(slide);
@@ -849,15 +851,25 @@ def hot_stations(obs, threshold=30.0):
           id: "6e3c340afddcd9243aa098e04db291f3f55a7eed4d4600b8456c8b97f9ce079b",
           url: "https://multiplex.up.railway.app/",
         },
+        pdfMaxPagesPerSlide: 1,
+        pdfPageHeightOffset: -10,
       });
 
       // Theme toggle: press T to switch dark ↔ light
       (function () {
         var html = document.documentElement;
+        // URL override wins over localStorage — used by scripts/build-pdf.sh
+        // so the PDF build can pin a theme without polluting the user's
+        // browser state.
+        var urlTheme = new URLSearchParams(location.search).get("theme");
         //var saved = localStorage.getItem("ncar-theme");
         var saved = localStorage.getItem("ncar-theme");
 
-        if (saved) html.setAttribute("data-theme", saved);
+        if (urlTheme === "light" || urlTheme === "dark") {
+          html.setAttribute("data-theme", urlTheme);
+        } else if (saved) {
+          html.setAttribute("data-theme", saved);
+        }
 
         document.addEventListener("keydown", function (e) {
           if (
