@@ -11,18 +11,18 @@
     <!-- Reveal.js core + base theme from jsDelivr -->
     <link
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css"
+      href="https://cdn.jsdelivr.net/npm/reveal.js@6.0.1/dist/reveal.css"
     />
     <link
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/black.css"
+      href="https://cdn.jsdelivr.net/npm/reveal.js@6.0.1/dist/theme/black.css"
       id="theme"
     />
 
     <!-- highlight.js theme for pretty code blocks -->
     <link
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/monokai.css"
+      href="https://cdn.jsdelivr.net/npm/reveal.js@6.0.1/dist/plugin/highlight/monokai.css"
     />
 
     <!-- Poppins + JetBrains Mono from Google Fonts -->
@@ -30,7 +30,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap"
     />
 
     <!-- NCAR brand overrides (load last so they win) -->
@@ -43,68 +43,110 @@
   <body>
     <div class="reveal">
       <div class="slides">
+        <!-- ============================================================ -->
+        <!-- 1a. Longer title and cover slide      -->
+        <!-- ============================================================ -->
         <section
           class="slide-cover"
           data-transition="fade"
           data-background-image="assets/images/photo-cover.jpg"
           data-background-opacity="0.45"
         >
-          <div class="brand-bar">
-            <img
-              class="logo-color"
-              src="assets/images/ncar-ral-stack-color.png"
-              alt="NCAR RAL"
-            />
-            <img
-              class="logo-white"
-              src="assets/images/ncar-ral-stack-white.png"
-              alt="NCAR RAL"
-            />
-          </div>
-          <div class="slide-cover contents">
-            <p class="eyebrow">September 15, 2025</p>
-            <h1 class="h1">
-              Longer title and cover content lorem sit ipsum dolor nonummy
-              aliquip
-            </h1>
-            <p class="subhead">
-              Optional subhead duis aute irure reprehenderit velit esse dolor ex
-              commodo
-            </p>
-
-            <div class="presenter-block">
-              <div class="name">Presenter Name(s) Here</div>
-              <div class="title">Presenter Title nonummy cilum ut labore</div>
-              <div class="credit-team">
-                Optional credit team names: Lorem Ipsum, Consectetur Adipiscing,
-                Eiusmod Tempor, Incididunt Labore, Dolore Magna, Aliqua Enim,
-                Minim Veniam, Quis Nostrud
-              </div>
+          <section>
+            <div class="brand-bar">
+              <img
+                class="logo-color"
+                src="assets/images/ncar-ral-stack-color.png"
+                alt="NCAR RAL"
+              />
+              <img
+                class="logo-white"
+                src="assets/images/ncar-ral-stack-white.png"
+                alt="NCAR RAL"
+              />
             </div>
+            <div class="slide-cover contents">
+              <p class="eyebrow">September 15, 2025</p>
+              <h1>
+                Longer title and cover content lorem sit ipsum dolor nonummy
+                aliquip
+              </h1>
+              <p class="subhead">
+                Optional subhead duis aute irure reprehenderit velit esse dolor
+                ex commodo
+              </p>
 
-            <p class="slide-footnote">
-              This material is based upon work supported by the NSF National
-              Center for Atmospheric Research, a major facility sponsored by the
-              U.S. National Science Foundation and managed by the University
-              Corporation for Atmospheric Research. Any opinions, findings and
-              conclusions or recommendations expressed in this material do not
-              necessarily reflect the views of NSF.
-            </p>
-          </div>
+              <div class="separator"></div>
+
+              <div class="presenter-block">
+                <div class="name">Presenter Name(s) Here</div>
+                <div>Presenter Title nonummy cilum ut labore</div>
+                <div class="credit-team">
+                  <span class="credit-intro">Optional credit team names: </span
+                  >Lorem Ipsum, Consectetur Adipiscing, Eiusmod Tempor,
+                  Incididunt Labore, Dolore Magna, Aliqua Enim, Minim Veniam,
+                  Quis Nostrud
+                </div>
+              </div>
+
+              <p class="slide-footnote--pinned">
+                This material is based upon work supported by the NSF National
+                Center for Atmospheric Research, a major facility sponsored by
+                the U.S. National Science Foundation and managed by the
+                University Corporation for Atmospheric Research. Any opinions,
+                findings and conclusions or recommendations expressed in this
+                material do not necessarily reflect the views of NSF.
+              </p>
+            </div>
+          </section>
+
+          <!-- ============================================================ -->
+          <!-- 1b. Shorter title and cover slide      -->
+          <!-- ============================================================ -->
+          <section>
+            <div class="brand-bar">
+              <img
+                class="logo-color"
+                src="assets/images/ncar-ral-stack-color.png"
+                alt="NCAR RAL"
+              />
+              <img
+                class="logo-white"
+                src="assets/images/ncar-ral-stack-white.png"
+                alt="NCAR RAL"
+              />
+            </div>
+            <div class="slide-cover contents">
+              <p class="eyebrow">September 15, 2025</p>
+              <h1>Shorter title and cover content lorem sit ipsum</h1>
+              <div class="separator"></div>
+
+              <div class="presenter-block">
+                <div class="name">Presenter Name(s) Here</div>
+                <div>Presenter Title nonummy cilum ut labore</div>
+              </div>
+
+              <p class="slide-footnote--pinned">
+                Material notes duis aute irure in reprehenderit velit esse dolor
+                ex commodo magna lorem sit ipsum dolor nonummy aliquip cilum ut
+                labore et dolore. Mattis elementum gravida eget consequat
+                imperdiet sed. Mi erat hac urna facilisis facilisis.
+              </p>
+            </div>
+          </section>
         </section>
 
         <!-- ============================================================ -->
-        <!-- 2. Section divider — aurora photo       -->
+        <!-- 2. Section Slide — aurora photo       -->
         <!-- ============================================================ -->
 
         <section
-          class="slide-section-divider"
+          class="slide-content"
           data-background-image="assets/images/Aurora-in-Sweden_CAESAR.jpg"
           data-background-opacity="0.55"
           data-background-transition="zoom"
         >
           <ncar-title-bar
-            variant="divider"
             title="Shorter page title lorem sit ipsum dolor"
           ></ncar-title-bar>
         </section>
@@ -113,27 +155,28 @@
         <!-- 3. Content + stat boxes + Derecho photo (overflow fixed)     -->
         <!-- ============================================================ -->
         <section class="slide-content slide-with-image">
-          <div class="waves-bg"></div>
           <ncar-title-bar
             title="Shorter page title lorem sit ipsum dolor"
           ></ncar-title-bar>
 
           <div class="with-image">
             <div>
-              <p class="intro">Lorem ipsum dolor amet consectetur</p>
+              <h3 class="intro">Lorem ipsum dolor amet consectetur</h3>
+              <p>
+                Duis rhoncus facilisis enim sit venenatis diam ornare fames
+                molestie. Enim at molestie vestibulum. Id ridiculus sit et nisl
+                proin erat. Massa facilisi dignissim amet id lectus dis
+                scelerisque hendrerit.:
+              </p>
               <ul>
-                <li>
-                  Duis rhoncus facilisis enim sit venenatis diam ornare fames
-                  molestie. Enim at molestie vestibulum.
-                </li>
-                <li>
-                  Id ridiculus sit et nisl proin erat. Massa facilisi dignissim
-                  amet id lectus dis scelerisque hendrerit.
-                </li>
                 <li>Sed purus egestas elementum in dignissim.</li>
                 <li>Amet at laoreet morbi tellus mattis proin velit at.</li>
                 <li>Mi mi nunc lorem in diam convallis facilisis.</li>
-                <li>Id ridiculus sit et nisl proin erat.</li>
+                <ul>
+                  <li>Id ridiculus sit et nisl proin erat.</li>
+                  <li>Morbi tellus mattis proin velit</li>
+                  <li>Egestas elementum</li>
+                </ul>
               </ul>
 
               <div class="stat-boxes">
@@ -161,15 +204,17 @@
         <!-- ============================================================ -->
         <!-- 4. Large-title content                                       -->
         <!-- ============================================================ -->
-        <section class="slide-content">
-          <div class="waves-bg"></div>
-
+        <section
+          class="slide-content"
+          data-background-image="assets/images/wave-graphics-ncar-colors/NCAR-Waves_Fills-D-Color-3_RGB.png"
+          data-background-opacity="0.25"
+        >
           <ncar-title-bar
             title="Longer page title lorem sit ipsum dolor"
             accent="amet nonummy aliquip cilum ornare fames"
           ></ncar-title-bar>
 
-          <p class="intro">Lorem ipsum dolor sit amet consectetur</p>
+          <h3 class="intro">Lorem ipsum dolor sit amet consectetur</h3>
 
           <p>
             Venenatis diam ornare fames molestie. Enim at molestie vestibulum
@@ -193,19 +238,26 @@
         </section>
 
         <!-- ============================================================ -->
-        <!-- 5. Two-column variants — vertical stack                      -->
+        <!-- 5. Multi-column variants —                                   -->
         <!-- ============================================================ -->
-        <section>
+        <section
+          data-background-image="assets/images/wave-graphics-ncar-colors/vert/NCAR-Waves_Lines-Only-3_RGB.png"
+          data-background-opacity="0.5"
+          data-background-size="contain"
+          data-background-position="right"
+          data-background-transition="convex"
+        >
+          <!-- ========================================================== -->
+          <!-- 5a. Two Columns                                            -->
+          <!-- ========================================================== -->
           <section class="slide-content two-col">
-            <div class="waves-bg"></div>
-
             <ncar-title-bar
               title="Shorter page title lorem sit ipsum dolor"
             ></ncar-title-bar>
-            <p class="intro">Lorem ipsum dolor amet consectetur</p>
 
             <div class="body">
               <div>
+                <h3>Lorem ipsum dolor amet consectetur</h3>
                 <p>
                   Duis rhoncus facilisis enim sit venenatis diam ornare fames
                   molestie. Enim at molestie vestibulum nunc dictum quis nulla
@@ -217,11 +269,8 @@
                   laoreet morbi tellus mattis proin velit at. Mi mi nunc lorem
                   in diam convallis facilisis. Id ridiculus sit et nisl proin
                   erat. Massa facilisi dignissim amet id lectus dis scelerisque
-                  hendrerit.
-                </p>
-                <p>
-                  Aenean nulla aliquam nec sed. Diam venenatis vestibulum vitae
-                  ut sagittis ultricies molestie.
+                  hendrerit. Aenean nulla aliquam nec sed. Diam venenatis
+                  vestibulum vitae ut sagittis ultricies molestie.
                 </p>
               </div>
               <div>
@@ -234,11 +283,8 @@
                 <p>
                   Sed neque quam morbi lorem vel vehicula nullam augue. Mattis
                   elementum gravida eget non scelerisque consequat imperdiet
-                  sed.
-                </p>
-                <p>
-                  Aenean nulla aliquam nec sed. Diam venenatis vestibulum vitae
-                  ut sagittis ultricies molestie.
+                  sed. Aenean nulla aliquam nec sed. Diam venenatis vestibulum
+                  vitae ut sagittis ultricies molestie.
                 </p>
                 <p>
                   Mi erat hac urna facilisis facilisis. Cras eget morbi blandit
@@ -249,20 +295,17 @@
             </div>
           </section>
 
-          <section
-            class="slide-content two-col"
-            data-background-image="assets/images/behind_Derecho.jpg"
-            data-background-opacity="0.12"
-          >
-            <div class="waves-bg"></div>
-
+          <!-- ========================================================== -->
+          <!-- 5b. Three Columns                                          -->
+          <!-- ========================================================== -->
+          <section class="slide-content three-col">
             <ncar-title-bar
               title="Shorter page title lorem sit ipsum dolor"
             ></ncar-title-bar>
-            <p class="intro">Lorem ipsum dolor sit amet consectetur</p>
 
             <div class="body">
               <div>
+                <h3>Lorem ipsum dolor sit amet consectetur</h3>
                 <p>
                   Duis rhoncus facilisis enim sit venenatis diam ornare fames
                   molestie. Enim at molestie vestibulum nunc dictum quis nulla
@@ -276,7 +319,9 @@
                   erat. Massa facilisi dignissim amet id lectus dis scelerisque
                   hendrerit.
                 </p>
-                <h3>Metus sit posuere vitae nam</h3>
+              </div>
+              <div>
+                <h3>Metus sit posuere vitae</h3>
                 <p>
                   Erat tellus enim enim ut suspendisse augue ut et. Non
                   vestibulum pellentesque pulvinar sed. Sociis neque enim felis
@@ -288,13 +333,13 @@
                   sed. Aenean nulla aliquam nec sed. Diam venenatis vestibulum
                   vitae ut sagittis ultricies molestie.
                 </p>
-              </div>
-              <div>
                 <p>
                   Mi erat hac urna facilisis facilisis. Cras eget morbi blandit
                   arcu in purus arcu consectetur. Egestas tellus aenean augue
                   eget sed purus lacus pretium.
                 </p>
+              </div>
+              <div>
                 <h3>Sed purus egestas elementum in dignissim viverra</h3>
                 <p>
                   Amet at laoreet morbi tellus mattis proin velit at. Mi mi nunc
@@ -311,68 +356,73 @@
               </div>
             </div>
           </section>
+
+          <!-- ========================================================== -->
+          <!-- 5c. Four Columns                                            -->
+          <!-- ========================================================== -->
+          <section class="slide-content four-col">
+            <ncar-title-bar
+              title="Shorter page title lorem sit ipsum dolor"
+            ></ncar-title-bar>
+
+            <div class="body">
+              <div>
+                <h3>Lorem ipsum dolor sit amet consectetur</h3>
+                <p>
+                  Duis rhoncus facilisis enim sit venenatis diam ornare fames
+                  molestie. Enim at molestie vestibulum nunc dictum quis nulla
+                  bibendum. Aenean nulla aliquam nec sed. Diam venenatis
+                  vestibulum vitae ut sagittis ultricies molestie.
+                </p>
+                <p>Sed purus egestas elementum in dignissim viverra.</p>
+              </div>
+              <div>
+                <h3>Metus sit posuere vitae</h3>
+                <p>
+                  Erat tellus enim enim ut suspendisse augue ut et. Non
+                  vestibulum pellentesque pulvinar sed. Sociis neque enim felis
+                  sodales sit maecenas amet.
+                </p>
+                <p>
+                  Sed neque quam morbi lorem vel vehicula nullam augue. Mattis
+                  elementum gravida eget non scelerisque consequat imperdiet
+                  sed. Aenean nulla aliquam nec sed. Diam venenatis vestibulum
+                  vitae ut sagittis ultricies molestie.
+                </p>
+              </div>
+              <div>
+                <h3>Sed purus egestas elementum in dignissim viverra</h3>
+                <p>
+                  Amet at laoreet morbi tellus mattis proin velit at. Mi mi nunc
+                  lorem in diam convallis facilisis. Id ridiculus sit et nisl
+                  proin erat.
+                </p>
+                <p>
+                  Duis rhoncus facilisis enim sit venenatis diam ornare fames
+                  molestie. Enim at molestie vestibulum nunc dictum quis nulla
+                  bibendum. Aenean nulla aliquam nec sed.
+                </p>
+              </div>
+              <div>
+                <h3>Posuere vitae nam</h3>
+                <p>
+                  Erat tellus enim enim ut suspendisse augue ut et. Non
+                  vestibulum pellentesque pulvinar sed. Sociis neque enim felis
+                  sodales sit maecenas amet.
+                </p>
+                <p>
+                  Sed neque quam morbi lorem vel vehicula nullam augue. Mattis
+                  elementum gravida eget non scelerisque consequat imperdiet
+                  sed. Aenean nulla aliquam nec sed. Diam venenatis vestibulum
+                  vitae ut sagittis ultricies molestie.
+                </p>
+              </div>
+            </div>
+          </section>
         </section>
 
         <!-- ============================================================ -->
-        <!-- 6. Three columns                                             -->
-        <!-- ============================================================ -->
-        <section class="slide-content three-col">
-          <div class="waves-bg"></div>
-
-          <ncar-title-bar
-            title="Shorter page title lorem sit ipsum dolor"
-          ></ncar-title-bar>
-          <p class="intro">Lorem ipsum dolor sit amet consectetur</p>
-
-          <div class="body">
-            <div>
-              <p>
-                Duis rhoncus facilisis enim sit venenatis diam ornare fames
-                molestie. Enim at molestie vestibulum nunc dictum quis nulla
-                bibendum. Aenean nulla aliquam nec sed. Diam venenatis
-                vestibulum vitae ut sagittis ultricies molestie.
-              </p>
-              <p>Sed purus egestas elementum in dignissim viverra.</p>
-            </div>
-            <div>
-              <h3>Metus sit posuere vitae</h3>
-              <p>
-                Erat tellus enim enim ut suspendisse augue ut et. Non vestibulum
-                pellentesque pulvinar sed. Sociis neque enim felis sodales sit
-                maecenas amet.
-              </p>
-              <p>
-                Sed neque quam morbi lorem vel vehicula nullam augue. Mattis
-                elementum gravida eget non scelerisque consequat imperdiet sed.
-                Aenean nulla aliquam nec sed. Diam venenatis vestibulum vitae ut
-                sagittis ultricies molestie.
-              </p>
-              <h3>Sed purus egestas dignissim viverra</h3>
-              <p>
-                Amet at laoreet morbi tellus mattis proin velit at. Mi mi nunc
-                lorem in diam convallis facilisis. Id ridiculus sit et nisl
-                proin erat.
-              </p>
-            </div>
-            <div>
-              <h3>Posuere vitae nam</h3>
-              <p>
-                Erat tellus enim enim ut suspendisse augue ut et. Non vestibulum
-                pellentesque pulvinar sed. Sociis neque enim felis sodales sit
-                maecenas amet.
-              </p>
-              <p>
-                Sed neque quam morbi lorem vel vehicula nullam augue. Mattis
-                elementum gravida eget non scelerisque consequat imperdiet sed.
-                Aenean nulla aliquam nec sed. Diam venenatis vestibulum vitae ut
-                sagittis ultricies molestie.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        <!-- ============================================================ -->
-        <!-- 7. Content intro only — with Milky Way background            -->
+        <!-- 6. Content intro only — with Milky Way background            -->
         <!-- ============================================================ -->
         <section
           class="slide-content"
@@ -392,39 +442,58 @@
         </section>
 
         <!-- ============================================================ -->
-        <!-- 8. Grid / list                                               -->
+        <!-- 7. Table                                                     -->
         <!-- ============================================================ -->
-        <section class="slide-content">
+        <section
+          class="slide-table"
+          data-background-image="assets/images/wave-graphics-ncar-colors/NCAR-Waves_Lines-Only-3_RGB.png"
+          data-background-opacity="0.50"
+          data-background-size="cover"
+        >
           <ncar-title-bar
             title="Shorter page title lorem sit ipsum dolor"
           ></ncar-title-bar>
 
-          <div class="grid-list">
-            <p>Lorem ipsum</p>
-            <p>Metus sit posuere</p>
-            <p>Sed purus</p>
-            <p>Posuere vitae nam</p>
-            <p>Duis rhoncus facilisis enim sit venenatis diam ornare</p>
-            <p>Vel vehicula nullam augue.</p>
-            <p>Rhoncus facilisis enim sit venenatis diam ornare</p>
-            <p>Sed neque quam morbi lorem vel vehicula</p>
-            <p>Sed neque quam morbi lorem vel vehicula nullam</p>
-            <p>Facilisis enim sit venenatis diam ornare fames</p>
-            <p>Sed neque quam morbi lorem vel vehicula</p>
-            <p>Venenatis diam ornare fames molestie.</p>
-            <p>Duis rhoncus facilisis enim</p>
-            <p>Sed neque quam morbi lorem vel vehicula nullam</p>
-            <p>Facilisis enim sit venenatis diam ornare fames</p>
-            <p>Vel vehicula nullam augue</p>
-            <p>Sed neque quam morbi</p>
-            <p>Duis rhoncus facilisis enim sit venenatis diam ornare</p>
-            <p>Sed neque quam morbi lorem vel vehicula</p>
-            <p>Duis rhoncus facilisis enim sit venenatis diam</p>
-          </div>
+          <table>
+            <thead>
+              <tr>
+                <th>Lorem ipsum</th>
+                <th>Metus sit posuere</th>
+                <th>Sed purus</th>
+                <th>Posuere vitae nam</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Duis rhoncus facilisis enim sit venenatis diam ornare</td>
+                <td>Vel vehicula nullam augue.</td>
+                <td>Rhoncus facilisis enim sit venenatis diam ornare</td>
+                <td>Sed neque quam morbi lorem vel vehicula</td>
+              </tr>
+              <tr>
+                <td>Sed neque quam morbi lorem vel vehicula nullam</td>
+                <td>Facilisis enim sit venenatis diam ornare fames</td>
+                <td>Sed neque quam morbi lorem vel vehicula</td>
+                <td>Venenatis diam ornare fames molestie.</td>
+              </tr>
+              <tr>
+                <td>Duis rhoncus facilisis enim</td>
+                <td>Sed neque quam morbi lorem vel vehicula nullam</td>
+                <td>Facilisis enim sit venenatis diam ornare fames</td>
+                <td>Vel vehicula nullam augue</td>
+              </tr>
+              <tr>
+                <td>Sed neque quam morbi</td>
+                <td>Duis rhoncus facilisis enim sit venenatis diam ornare</td>
+                <td>Sed neque quam morbi lorem vel vehicula</td>
+                <td>Duis rhoncus facilisis enim sit venenatis diam</td>
+              </tr>
+            </tbody>
+          </table>
         </section>
 
         <!-- ============================================================ -->
-        <!-- 9. Bolder statement — overflow fixed, MPAS bg                -->
+        <!-- 8. Bolder statement — overflow fixed, MPAS bg                -->
         <!-- ============================================================ -->
         <section
           class="slide-bolder-statement"
@@ -443,7 +512,7 @@
         </section>
 
         <!-- ============================================================ -->
-        <!-- 10. Code block demo                                          -->
+        <!-- 9. Code block demo                                          -->
         <!-- ============================================================ -->
         <section class="slide-content slide-code">
           <ncar-title-bar title="Pretty code blocks"></ncar-title-bar>
@@ -452,7 +521,8 @@
             driven by reveal.js fragments.
           </p>
 
-          <pre><code class="language-python" data-trim data-line-numbers="|1-4|6-9|11-14|all"><script type="text/template">
+          <!-- Line Number Offset: data-ln-start-from="7" -->
+          <pre><code class="language-python" data-trim data-line-numbers="|1|3-7|9-13|all"><script type="text/template">
 from dataclasses import dataclass
 
 @dataclass
@@ -472,7 +542,7 @@ def hot_stations(obs, threshold=30.0):
         </section>
 
         <!-- ============================================================ -->
-        <!-- 11. Fragments demo                                           -->
+        <!-- 12. Fragments demo                                           -->
         <!-- ============================================================ -->
         <section class="slide-content slide-fragments">
           <ncar-title-bar title="Fragments"></ncar-title-bar>
@@ -509,13 +579,13 @@ def hot_stations(obs, threshold=30.0):
         </section>
 
         <!-- ============================================================ -->
-        <!-- 12. Auto-animate — vertical stack                            -->
+        <!-- 13. Auto-animate — vertical stack                            -->
         <!-- ============================================================ -->
         <section>
           <section data-auto-animate class="slide-content">
             <ncar-title-bar
               title="Auto-Animate"
-              title-style="font-size: 48px"
+              title-style="font-size: 96px"
               title-data-id="aa-title"
             ></ncar-title-bar>
             <p class="intro">Reveal's automatic element tweening.</p>
@@ -527,7 +597,7 @@ def hot_stations(obs, threshold=30.0):
           <section data-auto-animate class="slide-content">
             <ncar-title-bar
               title="Auto-Animate"
-              title-style="font-size: 72px"
+              title-style="font-size: 144px"
               title-data-id="aa-title"
             ></ncar-title-bar>
             <p class="intro">
@@ -543,7 +613,7 @@ def hot_stations(obs, threshold=30.0):
           <section data-auto-animate class="slide-content">
             <ncar-title-bar
               title="Auto-Animate"
-              title-style="font-size: 96px; color: var(--ncar-cyan)"
+              title-style="font-size: 192px; color: var(--ncar-cyan)"
               title-data-id="aa-title"
             ></ncar-title-bar>
             <p class="intro">
@@ -558,7 +628,7 @@ def hot_stations(obs, threshold=30.0):
         </section>
 
         <!-- ============================================================ -->
-        <!-- 13. Transitions demo — vertical stack                        -->
+        <!-- 14. Transitions demo — vertical stack                        -->
         <!-- ============================================================ -->
         <section>
           <section
@@ -615,7 +685,7 @@ def hot_stations(obs, threshold=30.0):
         </section>
 
         <!-- ============================================================ -->
-        <!-- 14. Background transitions demo                              -->
+        <!-- 15. Background transitions demo                              -->
         <!-- ============================================================ -->
         <section>
           <section
@@ -660,7 +730,32 @@ def hot_stations(obs, threshold=30.0):
         </section>
 
         <!-- ============================================================ -->
-        <!-- 15. Iframe background                                        -->
+        <!-- 16. Math (KaTeX)                                             -->
+        <!-- ============================================================ -->
+        <section class="slide-content slide-math">
+          <ncar-title-bar title="Math"></ncar-title-bar>
+          <p class="intro">
+            LaTeX typeset by the <code>RevealMath.KaTeX</code> plugin. Use
+            <code>$…$</code> inline or <code>\[…\]</code> for blocks.
+          </p>
+
+          <p>
+            Inline: the Navier–Stokes momentum balance \(\rho\left(\partial_t
+            \mathbf{u} + \mathbf{u}\cdot\nabla\mathbf{u}\right) = -\nabla p +
+            \mu\nabla^2\mathbf{u} + \mathbf{f}\).
+          </p>
+
+          <p>Block, aligned:</p>
+          \[ \begin{aligned} \nabla \cdot \mathbf{E} &=
+          \frac{\rho}{\varepsilon_0} &\quad \nabla \cdot \mathbf{B} &= 0 \\
+          \nabla \times \mathbf{E} &= -\frac{\partial \mathbf{B}}{\partial t}
+          &\quad \nabla \times \mathbf{B} &= \mu_0\mathbf{J} +
+          \mu_0\varepsilon_0\frac{\partial \mathbf{E}}{\partial t} \end{aligned}
+          \]
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- 17. Iframe background                                        -->
         <!-- ============================================================ -->
         <section
           class="slide-iframe-bg"
@@ -682,33 +777,74 @@ def hot_stations(obs, threshold=30.0):
     </div>
 
     <!-- reveal.js core -->
-    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@6.0.1/dist/reveal.js"></script>
     <!-- Plugins -->
-    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/highlight.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/notes/notes.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@6.0.1/dist/plugin/highlight.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@6.0.1/dist/plugin/notes.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@6.0.1/dist/plugin/math.js"></script>
 
     <script>
       Reveal.initialize({
         hash: true,
-        width: 1920,
-        height: 1080,
+        width: 2160, // 3840 | 1920
+        height: 1200, // 2160 | 1080
         center: true,
-        margin: 0.04,
+        margin: 0.08,
         minScale: 0.2,
         maxScale: 2.0,
-        slideNumber: "h.v",
+        //slideNumber: "h.v",
+        slideNumber: (slide) => {
+          let indices = Reveal.getIndices(slide);
+          if (indices.h === 0) return [""];
+
+          let sep = ".";
+          let presName = "Optional Presentation Name";
+
+          let value = [];
+
+          // Offset the current slide number by 1 to make it 1-indexed
+          let horizontalOffset =
+            slide && slide.dataset.visibility === "uncounted" ? 0 : 1;
+          value.push(indices.h + horizontalOffset);
+
+          if (this.Reveal.isVerticalSlide(slide))
+            value.push(sep, indices.v + 1);
+
+          if (presName === "") return value;
+
+          if (Reveal.isVerticalSlide(slide)) {
+            return [
+              `<a>
+              <span >${value[0]}</span>
+              <span >${sep}</span>
+            	<span >${indices.v + 1}</span>
+              <span class="opt-footer-name">${presName}</span>
+              </a>`,
+            ];
+          } else {
+            return [
+              `<a>
+              <span class="slide-number-a">${value[0]}</span>
+              <span class="opt-footer-name">${presName}</span>
+              </a>`,
+            ];
+          }
+        },
+        //showSlideNumber: "speaker",
         controls: true,
         progress: true,
         transition: "slide",
         transitionSpeed: "default",
         backgroundTransition: "fade",
-        plugins: [RevealHighlight, RevealNotes],
+        plugins: [RevealHighlight, RevealNotes, RevealMath.KaTeX],
       });
 
       // Theme toggle: press T to switch dark ↔ light
       (function () {
         var html = document.documentElement;
+        //var saved = localStorage.getItem("ncar-theme");
         var saved = localStorage.getItem("ncar-theme");
+
         if (saved) html.setAttribute("data-theme", saved);
 
         document.addEventListener("keydown", function (e) {
@@ -722,6 +858,7 @@ def hot_stations(obs, threshold=30.0):
             var next =
               html.getAttribute("data-theme") === "dark" ? "light" : "dark";
             html.setAttribute("data-theme", next);
+            //localStorage.setItem("ncar-theme", next);
             localStorage.setItem("ncar-theme", next);
           }
         });
