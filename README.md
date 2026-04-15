@@ -176,8 +176,42 @@ new deck:
    `gh repo create <org>/<new-deck> --template NCAR/ral-revealjs-slide-template --private`.
 2. Clone the new repo, edit `index.html` to replace placeholder text,
    and commit.
-3. Optional: publish via GitHub Pages (Settings → Pages → Deploy from
-   branch `main`, `/` root) to get a shareable URL.
+3. Publish via GitHub Pages — see below.
+
+## Publishing to GitHub Pages
+
+The site is published from a **`gh-pages`** branch (not `main`), which
+keeps presenter tooling, CI config, and the wave-graphics sources out of
+the deployed URL. Configure in your fork: **Settings → Pages → Deploy
+from a branch → `gh-pages` → `/ (root)`**.
+
+You can produce the `gh-pages` branch two ways:
+
+### Option A: GitHub Actions (recommended when available)
+
+The bundled workflow at `.github/workflows/gh-pages.yml` pushes the deck
+to `gh-pages` on every push to `main` (and on manual dispatch). It
+excludes `.github/`, `scripts/`, `presenter.html`, and
+`multiplex-secret.txt` from the deployment.
+
+Requires GitHub Actions to be enabled on the repo/org. Some
+organizations disable Actions — if you see "Workflows aren't being run"
+in the Actions tab, use Option B.
+
+### Option B: Manual deploy from your laptop
+
+```sh
+./scripts/deploy-gh-pages.sh
+```
+
+The script creates (or updates) the `gh-pages` branch using a temp
+worktree, `rsync`s the repo contents excluding the same dev-only files,
+adds a `.nojekyll` marker, commits, and pushes. Set `REMOTE=<name>` if
+your push remote isn't `origin`. Requires a clean working tree so the
+deployed contents match a specific `main` commit.
+
+Either path produces an identical `gh-pages` branch; pick whichever
+your environment supports.
 
 ## Source
 
