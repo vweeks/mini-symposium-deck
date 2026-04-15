@@ -57,7 +57,6 @@ for (const rel of [
   'dist/plugin/highlight.js',
   'dist/plugin/highlight/monokai.css',
   'dist/plugin/notes.js',
-  'dist/plugin/zoom.js',
 ]) {
   copyFile(path.join(REVEAL_SRC, rel), path.join(REVEAL_DEST, rel));
 }

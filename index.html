@@ -78,7 +78,7 @@
               </div>
             </div>
 
-            <p class="slide-footnote">
+            <p class="slide-footnote slide-footnote--pinned">
               This material is based upon work supported by the NSF National
               Center for Atmospheric Research, a major facility sponsored by the
               U.S. National Science Foundation and managed by the University
@@ -415,23 +415,59 @@
     <script src="https://cdn.jsdelivr.net/npm/reveal.js@6.0.1/dist/reveal.js"></script>
     <!-- Plugins -->
     <script src="https://cdn.jsdelivr.net/npm/reveal.js@6.0.1/dist/plugin/notes.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/reveal.js@6.0.1/dist/plugin/zoom.js"></script>
 
     <script>
       Reveal.initialize({
         hash: true,
-        width: 2160,
-        height: 1200,
+        width: 2160, // 3840 | 1920
+        height: 1200, // 2160 | 1080
         center: true,
         margin: 0.08,
         minScale: 0.2,
         maxScale: 2.0,
-        slideNumber: "c/t",
+        //slideNumber: "h.v",
+        slideNumber: (slide) => {
+          let indices = Reveal.getIndices(slide);
+          if (indices.h === 0) return [""];
+
+          let sep = ".";
+          let presName = ""; // set e.g. "Chameleon Mini-Symposium" for a footer label
+
+          let value = [];
+
+          let horizontalOffset =
+            slide && slide.dataset.visibility === "uncounted" ? 0 : 1;
+          value.push(indices.h + horizontalOffset);
+
+          if (this.Reveal.isVerticalSlide(slide))
+            value.push(sep, indices.v + 1);
+
+          if (presName === "") return value;
+
+          if (Reveal.isVerticalSlide(slide)) {
+            return [
+              `<a>
+                <span>${value[0]}</span>
+                <span>${sep}</span>
+                <span>${indices.v + 1}</span>
+                <span class="opt-footer-name">${presName}</span>
+              </a>`,
+            ];
+          } else {
+            return [
+              `<a>
+                <span class="slide-number-a">${value[0]}</span>
+                <span class="opt-footer-name">${presName}</span>
+              </a>`,
+            ];
+          }
+        },
+        //showSlideNumber: "speaker",
         controls: true,
         progress: true,
         transition: "slide",
         backgroundTransition: "fade",
-        plugins: [RevealNotes, RevealZoom],
+        plugins: [RevealNotes],
         multiplex: {
           secret: null /* MULTIPLEX_SECRET */,
           id: "6e3c340afddcd9243aa098e04db291f3f55a7eed4d4600b8456c8b97f9ce079b",
