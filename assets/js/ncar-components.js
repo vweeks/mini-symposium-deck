@@ -3,7 +3,7 @@
   var LOGO_WHITE = "assets/images/ncar-ral-wide-white.png";
   var LOGO_ALT = "NCAR RAL";
 
-  var VALID_VARIANTS = ["default", "divider", "statement"];
+  var VALID_VARIANTS = ["default", "statement"];
 
   function makeLogo(cls, src) {
     var img = document.createElement("img");
@@ -15,8 +15,10 @@
 
   class NcarTitleBar extends HTMLElement {
     connectedCallback() {
-      if (this._rendered) return;
-      this._rendered = true;
+      // Skip if we've already rendered into this element — either in this
+      // lifecycle (re-attach) or from a prior render that was preserved by
+      // cloneNode when reveal.js duplicates a slide during resize/layout.
+      if (this.querySelector(":scope > .slide-title-bar")) return;
 
       var title = this.getAttribute("title") || "";
       var accent = this.getAttribute("accent") || "";

@@ -26,7 +26,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap"
     />
 
     <!-- NCAR brand overrides (load last so they win) -->
@@ -344,7 +344,7 @@
         <!--    Alt+click (or Ctrl+click on Linux) to zoom into image     -->
         <!-- ============================================================ -->
         <section
-          class="slide-section-divider"
+          class="slide-content"
           data-transition="fade"
           data-background-transition="zoom"
           data-background-color="#011837"
@@ -432,6 +432,11 @@
         transition: "slide",
         backgroundTransition: "fade",
         plugins: [RevealNotes, RevealZoom],
+        multiplex: {
+          secret: null /* MULTIPLEX_SECRET */,
+          id: "6e3c340afddcd9243aa098e04db291f3f55a7eed4d4600b8456c8b97f9ce079b",
+          url: "https://multiplex.up.railway.app/",
+        },
       });
 
       // Theme toggle: press T to switch dark ↔ light
@@ -456,5 +461,11 @@
         });
       }
     </script>
+
+    <!-- MULTIPLEX_SCRIPT: swapped to master.js by scripts/make-presenter.sh.
+         Must load AFTER Reveal.initialize() since client.js/master.js are
+         IIFEs that immediately call Reveal.getConfig() and Reveal.on(...). -->
+    <script src="https://multiplex.up.railway.app/socket.io/socket.io.js"></script>
+    <script src="https://multiplex.up.railway.app/client.js"></script>
   </body>
 </html>

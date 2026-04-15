@@ -70,7 +70,7 @@ const FONTS_DIR = path.join(DIST, 'vendor', 'fonts');
 ensureDir(FONTS_DIR);
 
 const GOOGLE_FONTS_URL =
-  'https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap';
+  'https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap';
 
 // Use a modern browser UA so Google returns woff2 format
 const UA =
@@ -115,7 +115,7 @@ await downloadFonts();
 const CDN_BASE = 'https://cdn.jsdelivr.net/npm/reveal.js@6.0.1/';
 const LOCAL_BASE = 'vendor/reveal.js/';
 
-const HTML_FILES = ['index.html', 'index-template.html'];
+const HTML_FILES = ['index.html'];
 
 for (const file of HTML_FILES) {
   const srcPath = path.join(ROOT, file);
