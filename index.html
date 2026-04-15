@@ -786,8 +786,15 @@ def hot_stations(obs, threshold=30.0):
     <script>
       Reveal.initialize({
         hash: true,
-        width: 2160, // 3840 | 1920
-        height: 1200, // 2160 | 1080
+        /*
+        Sample Sizes: 
+        - Common laptop panels: 1920 x 1200
+        - HD: 1920 x 1080
+        - QHD: 2560 x 1440
+        - Ultrawide QHD: 3440 x 1440
+        */
+        width: 2560,
+        height: 1440,
         center: true,
         margin: 0.08,
         minScale: 0.2,
