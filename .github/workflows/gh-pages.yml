@@ -1,0 +1,37 @@
+name: Deploy to GitHub Pages
+
+# Publishes the repo root to the `gh-pages` branch on every push to
+# `main`. Use this when your account/org permits GitHub Actions. For
+# environments where Actions are blocked, fall back to
+# `./scripts/deploy-gh-pages.sh` from a local checkout.
+#
+# GH Pages must be configured as: Settings → Pages → Deploy from a
+# branch → gh-pages → / (root).
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: gh-pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Publish to gh-pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: .
+          publish_branch: gh-pages
+          exclude_assets: '.github,scripts,presenter.html,multiplex-secret.txt'
+          enable_jekyll: false
+          commit_message: "Deploy ${{ github.sha }}"

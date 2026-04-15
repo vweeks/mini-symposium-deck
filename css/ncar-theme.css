@@ -295,6 +295,14 @@ displaying the Optional Presentation Name */
   font-weight: 700;
 }
 
+.slide-cover .credit-team {
+  margin-top: 28px;
+  font-size: 20px;
+  letter-spacing: 0.08em;
+  font-weight: 100;
+}
+
+.slide-cover .credit-intro,
 .slide-cover .subhead .subhead-intro {
   text-transform: uppercase;
 }
@@ -334,7 +342,7 @@ displaying the Optional Presentation Name */
 
 .slide-content .intro {
   font-size: 64px;
-  font-weight: 600;
+  font-weight: 700;
   padding-top: 72px;
   margin-bottom: 28px;
 }

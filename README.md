@@ -176,8 +176,77 @@ new deck:
    `gh repo create <org>/<new-deck> --template NCAR/ral-revealjs-slide-template --private`.
 2. Clone the new repo, edit `index.html` to replace placeholder text,
    and commit.
-3. Optional: publish via GitHub Pages (Settings → Pages → Deploy from
-   branch `main`, `/` root) to get a shareable URL.
+3. Publish via GitHub Pages — see below.
+
+## Publishing to GitHub Pages
+
+The site is published from a **`gh-pages`** branch (not `main`), which
+keeps presenter tooling, CI config, and the wave-graphics sources out of
+the deployed URL. Configure in your fork: **Settings → Pages → Deploy
+from a branch → `gh-pages` → `/ (root)`**.
+
+You can produce the `gh-pages` branch two ways:
+
+### Option A: GitHub Actions (recommended when available)
+
+The bundled workflow at `.github/workflows/gh-pages.yml` pushes the deck
+to `gh-pages` on every push to `main` (and on manual dispatch). It
+excludes `.github/`, `scripts/`, `presenter.html`, and
+`multiplex-secret.txt` from the deployment.
+
+Requires GitHub Actions to be enabled on the repo/org. Some
+organizations disable Actions — if you see "Workflows aren't being run"
+in the Actions tab, use Option B.
+
+### Option B: Manual deploy from your laptop
+
+```sh
+./scripts/deploy-gh-pages.sh
+```
+
+The script creates (or updates) the `gh-pages` branch using a temp
+worktree, `rsync`s the repo contents excluding the same dev-only files,
+adds a `.nojekyll` marker, commits, and pushes. Set `REMOTE=<name>` if
+your push remote isn't `origin`. Requires a clean working tree so the
+deployed contents match a specific `main` commit.
+
+Either path produces an identical `gh-pages` branch; pick whichever
+your environment supports.
+
+## PDF export
+
+A flattened PDF of the deck is kept in the repo at `slides.pdf` and
+stays in sync with `index.html` automatically.
+
+We use [decktape](https://github.com/astefanutti/decktape) rather than
+reveal.js's built-in `?print-pdf` mode. Decktape drives a headless
+Chromium at the deck's true 2560×1440 canvas and captures one PDF page
+per slide, which avoids the dual-logo / spacing quirks that the browser
+print pipeline introduces.
+
+### Regenerate locally
+
+```sh
+./scripts/build-pdf.sh                # → slides.pdf (light theme)
+THEME=dark ./scripts/build-pdf.sh     # dark theme variant
+OUT=handout.pdf ./scripts/build-pdf.sh
+```
+
+Requires `node`/`npx` (decktape is pulled via `npx` on first run;
+Chromium comes bundled) and `python3` (for the temporary HTTP server).
+
+### Automatic rebuilds
+
+`.github/workflows/build-pdf.yml` rebuilds `slides.pdf` on every push
+to `main` that touches `index.html`, `css/`, `assets/`, or the build
+script, then commits the refreshed file back to `main` as
+`chore(pdf): rebuild slides.pdf [skip ci]`. The `paths:` filter
+excludes `slides.pdf` itself, so the auto-commit cannot retrigger the
+workflow.
+
+The workflow pins the light theme via the `?theme=light` URL override
+(`index.html` reads this query param at load time; it takes precedence
+over the browser's saved theme).
 
 ## Source
 
