@@ -9,9 +9,9 @@
 
 ## Narrative spine
 
-The symposium asks how AI can help us **reproduce** computational artifacts. I want to flip the coin: what happens when AI **builds** those artifacts in the first place? The fellowship I'm starting — **Scientific Agentic Engineering (SAE)** — is a tool-agnostic methodology for disciplining that build side: validation loops, human oversight, domain-specific safeguards. Build-time discipline is upstream of reproduce-time reliability; the same principles arm both sides.
+The symposium asks how AI can help us **reproduce** computational artifacts. I want to flip the coin: what happens when AI **builds** those artifacts in the first place? My BSSw Fellowship — **Maintaining Scientific Rigor in AI-Assisted Development: A Validation-Focused Methodology** — targets that build side. Its deliverable methodology, **Scientific Agentic Engineering (SAE)**, rests on validation loops, human oversight, and domain-specific safeguards. Build-time discipline is upstream of reproduce-time reliability; the same principles arm both sides.
 
-I'll illustrate one concrete facet — **tech-stack provenance** — using this very deck as a meta-demo (my first reveal.js + multiplex presentation, built with AI help, and the latest in a pile of scrapped drafts). That's one spoke of what SAE addresses, not the headline. The headline is SAE itself.
+I'll illustrate one concrete facet — **tech-stack provenance** — using this very deck as a meta-demo (my first reveal.js + multiplex presentation, built with AI help, and the latest in a pile of scrapped drafts). That's one spoke of what the methodology addresses, not the headline. The headline is the validation-focused frame itself.
 
 ---
 
@@ -38,11 +38,12 @@ Total ≈ **6:50**, leaving ≈ **1:00** of buffer/transition.
 
 **Talking points:**
 - "Hi, I'm Victor Weeks — software engineer at NSF NCAR's Research Applications Lab, and one of the 2026 BSSw Fellows."
-- "My fellowship project is called **Scientific Agentic Engineering**, and today I want to share where it sits relative to this symposium's focus on R&R."
+- "My fellowship is *Maintaining Scientific Rigor in AI-Assisted Development: A Validation-Focused Methodology* — and today I want to share where it sits relative to this symposium's focus on R&R."
 
 **On screen:**
-- Title: *Scientific Agentic Engineering: Disciplining AI on the Build Side of R&R*
-- Subtitle: *6th Chameleon User Meeting — Mini-Symposium on AI for R&R*
+- Title: *Maintaining Scientific Rigor in AI-Assisted Development*
+- Subtitle: *A Validation-Focused Methodology — sitting on the build side of R&R*
+- Context line: *6th Chameleon User Meeting — Mini-Symposium on AI for R&R*
 - Presenter line: Victor Weeks — NSF NCAR / RAL — 2026 BSSw Fellow
 - Date chip: April 16, 2026
 
@@ -58,7 +59,7 @@ Total ≈ **6:50**, leaving ≈ **1:00** of buffer/transition.
 
 **Talking points:**
 - "This symposium is about AI as an **adaptive infrastructure layer** for reproducing artifacts — rebuilding environments, resolving dependency conflicts, navigating testbed quirks. Downstream work: the artifact already exists."
-- "My fellowship sits on the other side of the same coin: AI **building** scientific software in the first place. Upstream work, before the artifact is ever handed to AD/AE."
+- "My fellowship sits on the other side of the same coin: AI **building** scientific software in the first place. Upstream work, before the artifact is ever handed to AD/AE. That's where *scientific rigor* has to be maintained — and where validation has to live."
 - "These aren't competing agendas — they're the same coin. And if we get the build side wrong, the reproduce side inherits the mess."
 
 **On screen:**
@@ -136,7 +137,7 @@ Total ≈ **6:50**, leaving ≈ **1:00** of buffer/transition.
 - "When I made this deck, if the AI picked a dubious library or a quirky layout, the cost is cosmetic."
 - "When an AI helps build scientific software, the AI might pick a numerical library, a quadrature method, a convergence tolerance, a random-seed scheme. Those decisions often **pass CI**. They can still corrupt the science."
 - "For R&R, the gap isn't 'explain the AI model' — that's a hard, maybe unsolvable problem. The tractable gap is: **explain the tech-stack decisions the AI made on your behalf.** Which library. Which method. Which tolerance. Captured, reviewable, reproducible."
-- "That's one concrete thing I want the fellowship's methodology to make routine — but it's just one spoke. Let me show the broader frame."
+- "That's one concrete thing I want the validation-focused methodology to make routine — but it's just one spoke. Let me show the broader frame."
 
 **On screen:**
 - Title bar: *One facet: tech-stack provenance*
@@ -152,28 +153,28 @@ Total ≈ **6:50**, leaving ≈ **1:00** of buffer/transition.
 
 ---
 
-## Beat 6 — Scientific Agentic Engineering (the frame) (~90s)
+## Beat 6 — The methodology (the frame) (~90s)
 
-**Intent:** Central slide. Name SAE. Name the three pillars. Name the deliverables. Promise depth.
+**Intent:** Central slide. Name the fellowship's full title, name the methodology (SAE), name the three pillars with validation in lead position. Promise depth.
 
 **Talking points:**
-- "Scientific Agentic Engineering is a **tool-agnostic** methodology for integrating AI agents into high-stakes scientific software workflows. It rests on three pillars."
-- *[reveal pillar 1]* "**Validation loops** — domain-specific checks at each decision point, not just end-of-pipeline. Unit checks, conservation checks, precision checks — where the science lives."
+- "The fellowship title is *Maintaining Scientific Rigor in AI-Assisted Development: A Validation-Focused Methodology*. The methodology it produces I'm calling **Scientific Agentic Engineering**. Tool-agnostic, principle-first. Three pillars — validation leads."
+- *[reveal pillar 1 — lead with this]* "**Validation loops** — domain-specific checks at *each decision point*, not just end-of-pipeline. Unit checks, conservation checks, precision checks, provenance checks. This is the pillar the fellowship title is pointing at."
 - *[reveal pillar 2]* "**Human-in-the-loop oversight** — defined review gates where a human must say yes before the agent keeps going. Not everywhere. At the decisions that matter."
-- *[reveal pillar 3]* "**Domain-specific safeguards** — the guardrails that encode what 'wrong' means for a given scientific domain. Includes tech-stack provenance, but also things like numerical-precision tests, physics-violation detectors, and scope-drift containment."
+- *[reveal pillar 3]* "**Domain-specific safeguards** — the guardrails that encode what 'wrong' means for a given scientific domain. Tech-stack provenance from the previous slide lives here; so do physics-violation detectors, precision tests, scope-drift containment."
 - "Tool-agnostic because the tools will change — MCP, agent frameworks, even models are shifting monthly. The **principles** are the durable part."
-- "Over the next 12 months the fellowship delivers: a framework draft, a reference workflow exercise, a community repo of MCP templates and scientific skills, an interactive tutorial series, and live workshops. I'll dig into each of those elsewhere — today this is the map."
+- "Over the next 12 months: a framework draft, a reference workflow exercise, a community repo of MCP templates and scientific skills, an interactive tutorial series, and live workshops. Today this is the map."
 
 **On screen:**
-- Title bar: *Scientific Agentic Engineering*
-- Three-column layout, each column a pillar with icon + 1-line description:
-  1. **Validation loops** — domain checks at each decision point
+- Title bar: *Maintaining Scientific Rigor in AI-Assisted Development* (with `accent` on "**Validation**" if we can split the title, e.g. subtitle reads *"A **Validation**-Focused Methodology — a.k.a. Scientific Agentic Engineering"*)
+- Three-column layout, validation visually weighted (larger column or accent color), each with 1-line description:
+  1. **Validation loops** *(lead pillar)* — domain checks at each decision point
   2. **Human-in-the-loop oversight** — review gates at decisions that matter
-  3. **Domain-specific safeguards** — the guardrails, incl. tech-stack provenance
+  3. **Domain-specific safeguards** — guardrails incl. tech-stack provenance
 - Fragment beneath: *Tool-agnostic. Principles over products.*
 - Small footer line (final fragment): *Deliverables: framework · reference workflow · community repo · tutorials · workshops · 12 months.*
 
-**Template features:** `.three-col`; fragment fade-in per column; `.accent` on "Scientific Agentic Engineering" in the title.
+**Template features:** `.three-col` with validation column given `.accent` styling or slightly wider; fragment fade-in per column in the order 1→2→3; `.accent` on the word **Validation** in the subtitle.
 
 **→ Transition:** "And here's how the build side and reproduce side connect."
 
@@ -233,8 +234,8 @@ Keep notes short enough to scan in presenter view under stage lights.
 
 ## Open questions for review
 
-1. **Title wording** on the cover slide — is *"Scientific Agentic Engineering: Disciplining AI on the Build Side of R&R"* right, or do you prefer something shorter / less academic?
-2. **Project URL and contact handles** on the closing slide — what's final?
-3. **Beat 4 visuals** — screenshot of the deck vs. a "you are here" arrow on a miniature of the current slide? The arrow is cuter; the screenshot is clearer.
-4. **Beat 6 pillar wording** — SOW uses "human oversight" and "domain-specific safeguards"; I tightened to "human-in-the-loop oversight" and kept "domain-specific safeguards." Any preferred phrasing?
+1. **Project URL and contact handles** on the closing slide — what's final?
+2. **Beat 4 visuals** — screenshot of the deck vs. a "you are here" arrow on a miniature of the current slide? The arrow is cuter; the screenshot is clearer.
+3. **Beat 6 pillar wording** — SOW uses "human oversight" and "domain-specific safeguards"; I tightened to "human-in-the-loop oversight" and kept "domain-specific safeguards." Any preferred phrasing?
+4. **Is SAE the right methodology name to surface publicly at this talk**, or do you want to hold SAE back and use only "validation-focused methodology" phrasing until the framework draft lands?
 5. **Is there a physical/hybrid component** — do I need a URL on every slide for multiplexed remote viewers, or is a single closing QR enough?
