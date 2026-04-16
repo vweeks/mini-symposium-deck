@@ -363,6 +363,13 @@ displaying the Optional Presentation Name */
   margin: 72px;
 }
 
+.subline {
+  text-align: center;
+  margin-top: 24px;
+  font-style: italic;
+  opacity: 0.85;
+}
+
 .slide-content h2 .accent {
   color: var(--text-accent);
   font-weight: 500;
