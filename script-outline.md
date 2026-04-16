@@ -68,7 +68,7 @@ _(Don't read the title aloud — the audience can see it. The fellowship name is
 
 - "This symposium is about AI as an **adaptive infrastructure layer** for reproducing artifacts — rebuilding environments, resolving dependency conflicts, navigating testbed quirks. The goal: help the community reproduce a given artifact."
 - "I want to ask the **mirror question**. When AI helps **build** that artifact in the first place — can the author still reproduce the author? That's the build side of R&R, and that's what my fellowship targets."
-- "Same coin, either way. If we get the build side wrong, the reproduce side inherits whatever we couldn't retrace ourselves."
+- "Same coin — different direction. If we get the build side wrong, the reproduce side inherits whatever we couldn't retrace ourselves."
 
 **On screen:**
 
@@ -235,7 +235,7 @@ _(Don't read the title aloud — the audience can see it. The fellowship name is
 
 - "I'll be building this all in public over the fellowship. Site is up — first-milestone framework draft lands this summer."
 - "If AI-assisted scientific software is something you're wrestling with, I'd love to hear from you."
-- "I want the author to still be able to reproduce the author. Follow along. Thanks."
+- "I want the author to still be able to reproduce the author. Thanks."
 
 **On screen:**
 

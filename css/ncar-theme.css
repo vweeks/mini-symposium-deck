@@ -311,6 +311,30 @@ displaying the Optional Presentation Name */
   text-transform: uppercase;
 }
 
+.slide-cover .cover-qr {
+  position: absolute;
+  right: 20px;
+  bottom: 120px;
+  width: 360px;
+  text-align: center;
+  z-index: 10;
+}
+
+.slide-cover .cover-qr .cover-qr-bg img {
+  height: 360px;
+  object-fit: contain;
+  display: block;
+}
+
+.slide-cover .cover-qr .cover-qr-url {
+  margin: 8px 0 0;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: 0.02em;
+  opacity: 0.9;
+}
+
 .slide-footnote--pinned {
   opacity: 0.7;
   font-size: 17px;
@@ -377,7 +401,7 @@ displaying the Optional Presentation Name */
 }
 
 .slide-content .body h3 {
-  margin-bottom: 28px;
+  margin: 54px 0 28px 0;
   border-left: 4px solid var(--ncar-orange);
   padding-left: 14px;
   font-weight: 700;
@@ -395,7 +419,8 @@ displaying the Optional Presentation Name */
   background: var(--box-bg);
   border: 1px solid var(--box-border);
   border-radius: 6px;
-  padding: 14px 18px;
+  margin-top: 54px;
+  padding: 24px 28px;
 }
 
 .stat-boxes .box .label {
@@ -403,11 +428,11 @@ displaying the Optional Presentation Name */
   font-weight: 600;
   display: block;
   margin-bottom: 4px;
-  font-size: xx-large;
+  font-size: 48px;
 }
 
 .stat-boxes .box .value {
-  font-size: medium;
+  font-size: 36px;
 }
 
 /* Content + image */
@@ -416,6 +441,14 @@ displaying the Optional Presentation Name */
   grid-template-columns: 1.4fr 1fr;
   gap: 36px;
   align-items: start;
+}
+
+.slide-content .with-image h3 {
+  font-size: 60px;
+  margin-bottom: 28px;
+  border-left: 4px solid var(--ncar-orange);
+  padding-left: 14px;
+  font-weight: 700;
 }
 
 .slide-content .with-image img {
@@ -463,7 +496,7 @@ displaying the Optional Presentation Name */
 
 .slide-bolder-statement .statement-lead {
   font-family: var(--font-display);
-  font-size: 96px;
+  font-size: 124px;
   line-height: 1.1;
   font-weight: 700;
   margin-top: 172px;
