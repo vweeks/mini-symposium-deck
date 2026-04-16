@@ -44,11 +44,20 @@ jobs:
         run: |
           python3 -m http.server 8765 >/dev/null 2>&1 &
           SERVER_PID=$!
+          # Wait for the static server. Loop tolerates early failures;
+          # the if/then avoids `set -e` tripping on curl's non-zero exit.
           for _ in 1 2 3 4 5 6 7 8 9 10; do
-            curl -sSf http://localhost:8765/ -o /dev/null && break
+            if curl -sSf http://localhost:8765/ -o /dev/null; then
+              break
+            fi
             sleep 0.3
           done
+          # --chrome-arg=--no-sandbox: GitHub Actions' ubuntu-latest runner
+          # disallows the Chromium SUID sandbox, so Chromium fails to launch
+          # without this flag. Safe here -- we only load a local static URL
+          # we fully control, no untrusted input involved.
           npx decktape reveal \
+            --chrome-arg=--no-sandbox \
             --size 2560x1440 \
             --load-pause 800 \
             "http://localhost:8765/index.html?theme=light" \
