@@ -1,0 +1,7 @@
+.DS_Store
+node_modules/
+dist/
+
+# multiplex: master HTML holds the presenter secret; never commit
+presenter.html
+multiplex-secret.txt
