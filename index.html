@@ -7,7 +7,7 @@
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
     />
     <title>
-      Before We Reproduce AI-Assisted Science, We Need to Make It Reproducible
+      Maintaining Reproducibility in AI-Assisted Scientific Software Development
     </title>
 
     <!-- Reveal.js core + base theme from jsDelivr -->
@@ -40,7 +40,7 @@
     <div class="reveal">
       <div class="slides">
         <!-- ============================================================ -->
-        <!-- 1. TITLE / COVER                                             -->
+        <!-- 1. COVER — preserved structure; text + notes reflect outline -->
         <!-- ============================================================ -->
         <section
           class="slide-cover"
@@ -63,14 +63,10 @@
           <div class="slide-cover contents">
             <p class="eyebrow">April 16, 2026 | 6th Chameleon User Meeting</p>
             <h1>
-              Before We Reproduce AI-Assisted Science, We Need to Make It
-              Reproducible
+              Maintaining Reproducibility in AI-Assisted Scientific Software
+              Development
             </h1>
-            <p class="subhead">
-              <span class="subhead-intro">Mini-Symposium: </span>
-              Applying AI to Accelerate Computational Reproducibility and
-              Replicability
-            </p>
+            <h2 class="subhead">A Build-Side View of R&amp;R</h2>
 
             <div class="h-separator"></div>
 
@@ -79,6 +75,10 @@
               <div class="title">
                 Software Engineer, NSF NCAR
                 <span class="v-separator"></span> 2026 BSSw Fellow
+              </div>
+              <div class="credit-team">
+                <span class="credit-intro">Mini-Symposium: </span>Applying AI to
+                Accelerate Computational Reproducibility and Replicability
               </div>
             </div>
 
@@ -94,20 +94,22 @@
           </div>
 
           <aside class="notes">
-            TALKING POINTS (~1 min): <br />
-            - Introduce yourself: Victor Weeks, software engineer at NCAR, 2026
-            BSSw Fellow. <br />
-            - Frame the talk: We've been discussing how AI can help with
-            computational reproducibility. I want to raise a complementary
-            question <br />
-            — what happens when AI is building the computational artifacts we're
-            trying to reproduce? <br />
-            - Transition: Let me set the stage.
+            BEAT 1 (~20s) — establish who, why-I'm-here, land the mirror
+            question. <br />
+            - Hi, I'm Victor Weeks — software engineer at NSF NCAR's Research
+            Applications Lab, 2026 Better Scientific Software Fellow. <br />
+            - Our community has invested a lot of energy into making sure OTHER
+            PEOPLE can reproduce our CS artifacts. I want to surface a
+            complementary question: when we use AI to help BUILD those
+            artifacts, how do we ensure we can reproduce them OURSELVES? <br />
+            - (Don't read the title aloud — audience sees it. Fellowship full
+            title is intentionally kept off the slide; saved for Beat 6.) <br />
+            - → Let me frame why I'm up here given today's agenda.
           </aside>
         </section>
 
         <!-- ============================================================ -->
-        <!-- 2. TWO SIDES OF THE SAME COIN                                -->
+        <!-- 2. TWO SIDES OF THE SAME COIN — mirror-question framing      -->
         <!-- ============================================================ -->
         <section
           class="slide-content two-col"
@@ -121,278 +123,498 @@
 
           <div class="body">
             <div>
-              <h3>AI to Reproduce Computational Artifacts</h3>
+              <h3>This Symposium</h3>
+              <p class="intro">
+                AI as adaptive infrastructure for
+                <strong>reproducing</strong> artifacts.
+              </p>
               <ul>
-                <li>Reconstruct software environments</li>
+                <li>Rebuild software environments</li>
                 <li>Resolve dependency conflicts</li>
-                <li>Navigate platform-specific quirks</li>
-                <li>Automate artifact evaluation</li>
+                <li>Navigate testbed quirks</li>
               </ul>
+              <p style="margin-top: 24px; font-style: italic; opacity: 0.85">
+                Help the community reproduce a given artifact.
+              </p>
             </div>
             <div class="fragment fade-in">
-              <h3>AI to Build Computational Artifacts</h3>
+              <h3>The Mirror Question</h3>
+              <p class="intro">
+                When AI helps <strong>build</strong> that artifact — can the
+                author still reproduce the author?
+              </p>
               <ul>
-                <li>Write scientific software</li>
-                <li>Configure computational experiments</li>
-                <li>Make architectural decisions</li>
-                <li>Generate analysis pipelines</li>
+                <li>AI writes the code</li>
+                <li>AI configures the experiment</li>
+                <li>AI picks the tech stack</li>
               </ul>
-            </div>
-          </div>
-
-          <aside class="notes">
-            TALKING POINTS (~1.5 min): <br />
-            - This symposium is exploring the left side <br />
-            — how can AI help us reproduce computational artifacts? That's a
-            great direction. <br />
-            - But there's a parallel trend: AI is increasingly being used on the
-            build side too. <br />
-            - These are two sides of the same coin. If we don't get the build
-            side right, we're producing artifacts that are harder to describe,
-            evaluate, and reproduce <br />
-            — making the AD/AE process even more challenging. <br />
-            - Transition: What does 'not getting it right' look like?
-          </aside>
-        </section>
-
-        <!-- ============================================================ -->
-        <!-- 3. THE AI-ASSISTED DEVELOPMENT SPECTRUM                      -->
-        <!-- ============================================================ -->
-        <section class="slide-content three-col" data-transition="slide">
-          <div class="waves-bg"></div>
-
-          <ncar-title-bar
-            title="The AI-Assisted Development Spectrum"
-          ></ncar-title-bar>
-
-          <div class="body">
-            <div class="fragment fade-up">
-              <h3>&ldquo;Vibe Coding&rdquo;</h3>
-              <p>
-                Conversational AI assists with code generation and refactoring
-              </p>
-            </div>
-            <div class="fragment fade-up">
-              <h3>MCP &amp; Tools</h3>
-              <p>
-                Agents access external tools, APIs, and platform infrastructure
-              </p>
-            </div>
-            <div class="fragment fade-up">
-              <h3>Autonomous Agents</h3>
-              <p>
-                AI makes multi-step decisions, configures systems, and executes
-                workflows
+              <p style="margin-top: 24px; font-style: italic; opacity: 0.85">
+                Same coin. Different direction.
               </p>
             </div>
           </div>
 
           <aside class="notes">
-            TALKING POINTS (~1 min): <br />
-            - Quick tour of where AI-assisted dev is today. <br />
-            - 'Vibe coding' —- conversational, developer in the loop. <br />
-            - MCP and tool use -— agents interacting with external systems.
+            BEAT 2 (~45s) — frame my contribution as the MIRROR QUESTION to
+            today's agenda. <br />
+            - [LEFT] This symposium is about AI as an adaptive infrastructure
+            layer for reproducing artifacts — rebuilding environments, resolving
+            conflicts, navigating testbed quirks. Goal: help the community
+            reproduce a given artifact. <br />
+            - [CLICK → RIGHT appears] I want to ask the MIRROR QUESTION. When AI
+            helps BUILD that artifact in the first place — can the author still
+            reproduce the author? That's the build side of R&R, and that's what
+            my fellowship targets. <br />
+            - Same coin, either way. If we get the build side wrong, the
+            reproduce side inherits whatever we couldn't retrace ourselves.
             <br />
-            - Autonomous agents —- multi-step decisions with less human
-            oversight. <br />
-            - Each step increases potential for undetected errors in artifacts.
-            <br />
-            - Transition: What kinds of errors?
+            - → So — where is "AI building scientific software" even at, in
+            April 2026?
           </aside>
         </section>
 
         <!-- ============================================================ -->
-        <!-- 4. WHEN AI BUILDS SCIENTIFIC SOFTWARE                        -->
+        <!-- 3. HOW AI-ASSISTED DEV HAS BEEN EVOLVING                     -->
+        <!--    Auto-animate across 2 sub-slides: 1 chip → 5-chip stack   -->
         <!-- ============================================================ -->
-        <section
-          class="slide-content slide-with-image"
-          data-transition="slide-in fade-out"
-        >
-          <ncar-title-bar
-            title="When AI Builds Scientific Software"
-          ></ncar-title-bar>
+        <section>
+          <section data-auto-animate class="slide-content">
+            <ncar-title-bar
+              title="How AI-assisted dev has been evolving"
+              title-data-id="b3-title"
+            ></ncar-title-bar>
+            <p class="intro">
+              A high-level look back — roughly the last couple of years.
+            </p>
+            <div class="auto-animate-stack">
+              <div class="chip" data-id="b3-chip-1">Tab-complete</div>
+            </div>
+
+            <aside class="notes">
+              BEAT 3 — frame 1 of 2 (~15s). <br />
+              - Zoom out. Here's a high-level look at what AI-assisted
+              development has LOOKED LIKE over roughly the last couple of years.
+              Not exhaustive — and not strictly a ladder. <br />
+              - Plenty of people haven't explored the later stages, and that's
+              fine. <br />
+              - → [click] Here are five patterns that have emerged.
+            </aside>
+          </section>
+
+          <section data-auto-animate class="slide-content">
+            <ncar-title-bar
+              title="How AI-assisted dev has been evolving"
+              title-data-id="b3-title"
+            ></ncar-title-bar>
+            <p class="intro">
+              A high-level look back — roughly the last couple of years.
+            </p>
+            <div class="auto-animate-stack">
+              <div class="chip light-blue" data-id="b3-chip-2">
+                Console copy/paste
+              </div>
+              <div class="chip" data-id="b3-chip-1">Tab-complete</div>
+            </div>
+          </section>
+
+          <section data-auto-animate class="slide-content">
+            <ncar-title-bar
+              title="How AI-assisted dev has been evolving"
+              title-data-id="b3-title"
+            ></ncar-title-bar>
+            <p class="intro">
+              A high-level look back — roughly the last couple of years.
+            </p>
+            <div class="auto-animate-stack">
+              <div class="chip light-blue" data-id="b3-chip-3">
+                MCP & tool use
+              </div>
+              <div class="chip light-blue" data-id="b3-chip-2">
+                Console copy/paste
+              </div>
+              <div class="chip" data-id="b3-chip-1">Tab-complete</div>
+            </div>
+          </section>
+
+          <section data-auto-animate class="slide-content">
+            <ncar-title-bar
+              title="How AI-assisted dev has been evolving"
+              title-data-id="b3-title"
+            ></ncar-title-bar>
+            <p class="intro">
+              A high-level look back — roughly the last couple of years.
+            </p>
+            <div class="auto-animate-stack">
+              <div class="chip dark-blue" data-id="b3-chip-4">
+                Planning mode
+              </div>
+              <div class="chip light-blue" data-id="b3-chip-3">
+                MCP & tool use
+              </div>
+              <div class="chip light-blue" data-id="b3-chip-2">
+                Console copy/paste
+              </div>
+              <div class="chip" data-id="b3-chip-1">Tab-complete</div>
+            </div>
+          </section>
+          <section data-auto-animate class="slide-content">
+            <ncar-title-bar
+              title="How AI-assisted dev has been evolving"
+              title-data-id="b3-title"
+            ></ncar-title-bar>
+            <p class="intro">
+              A high-level look back — roughly the last couple of years.
+            </p>
+            <div class="auto-animate-stack">
+              <div class="chip accent" data-id="b3-chip-5">
+                Autonomous agent teams
+              </div>
+              <div class="chip dark-blue" data-id="b3-chip-4">
+                Planning mode
+              </div>
+              <div class="chip light-blue" data-id="b3-chip-3">
+                MCP & tool use
+              </div>
+              <div class="chip light-blue" data-id="b3-chip-2">
+                Console copy/paste
+              </div>
+              <div class="chip" data-id="b3-chip-1">Tab-complete</div>
+            </div>
+            <p
+              class="fragment fade-in"
+              style="
+                text-align: center;
+                margin-top: 24px;
+                font-style: italic;
+                opacity: 0.85;
+              "
+            >
+              Not a ladder. Month-to-month, not year-to-year.
+            </p>
+
+            <aside class="notes">
+              BEAT 3 — frame 2 of 2 (~45s). <br />
+              - [Stack tweens in] <br />
+              - TWO things worth noticing. First: these stages COMPLEMENT each
+              other more than they replace each other. Ask one AI pass to polish
+              the prompt you're about to feed into a plan-mode workflow. Have
+              one LLM validate another's output — a nice manual way to get
+              cross-agent checking without a full multi-agent framework. <br />
+              - Second: every step toward more autonomy RISKS TRADING
+              TRANSPARENCY FOR THROUGHPUT. <br />
+              - [CLICK → footnote fragment] Timing note: this is month-to-month,
+              not year-to-year. A single feature release can reshape the
+              workflow. Anything I list today will need an asterisk in six
+              months — which is part of why the fellowship is principle-first,
+              not tool-first. <br />
+              - → Let me bring that down to one developer and one example — this
+              very deck.
+            </aside>
+          </section>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- 4. CASE IN POINT: THIS DECK — meta demo + credibility beat   -->
+        <!-- ============================================================ -->
+        <section class="slide-content slide-with-image" data-transition="slide">
+          <ncar-title-bar title="Case in point: this deck"></ncar-title-bar>
 
           <div class="with-image">
             <div>
-              <p class="intro">
-                Failure modes distinct from standard software bugs:
+              <p class="intro fragment fade-in">
+                First reveal.js presentation. First time with multiplex.
+              </p>
+              <p class="fragment fade-in">
+                AI didn't just find these tools — it <strong>built</strong> the
+                template, wired the multiplex broker, suggested the layouts.
+              </p>
+              <p class="fragment fade-in" style="opacity: 0.75">
+                And there's a scrap pile behind it.
               </p>
 
-              <div class="stat-boxes">
+              <div class="stat-boxes fragment fade-in" style="margin-top: 24px">
                 <div class="box">
-                  <span class="label">Numerical Precision Errors</span>
-                  <span class="value">
-                    AI agents may introduce floating-point assumptions that
-                    silently degrade accuracy in physical simulations
-                  </span>
+                  <span class="label">1st</span>
+                  <span class="value">reveal.js deck</span>
                 </div>
                 <div class="box">
-                  <span class="label">Subtle Physics Violations</span>
-                  <span class="value">
-                    Generated code can violate conservation laws or domain
-                    constraints not captured by standard test suites
-                  </span>
+                  <span class="label">1st</span>
+                  <span class="value">multiplex run</span>
                 </div>
                 <div class="box">
-                  <span class="label">Opaque Decision Histories</span>
-                  <span class="value">
-                    When an agent makes architectural choices, the rationale may
-                    not be recorded — making the artifact harder to describe and
-                    evaluate
-                  </span>
+                  <span class="label">N</span>
+                  <span class="value">drafts scrapped</span>
                 </div>
               </div>
             </div>
+            <!-- TODO (placeholder asset): "you are here" arrow pointing at a
+                 miniature render of the current slide. Replace the src below
+                 with the final asset when ready. -->
             <img
-              src="assets/images/hurricane-satellite.jpg"
-              alt="Satellite image of hurricane — atmospheric science"
+              src="assets/images/you-are-here-placeholder.png"
+              alt="You are here: this deck, built with AI assistance"
             />
           </div>
 
           <aside class="notes">
-            TALKING POINTS (~1.5 min):
-            <br />
-            These aren't hypothetical — they're things I've encountered at NCAR.
-            <br />
-            - Precision: float32 vs float64, rounding that accumulates over
-            simulations. <br />
-            - Physics: code that doesn't conserve mass/energy/momentum and
-            passes tests. <br />
-            - Opaque decisions: commit history and PR reviews capture 'why' for
-            human code; agent decisions can evaporate. <br />
-            - Key: These pass CI/CD but corrupt the science — and complicate
-            artifact evaluation. <br />
-            - Transition: What do we do about it?
+            BEAT 4 (~70s) — concrete example + credibility beat. <br />
+            - Quick meta moment: these slides are my FIRST reveal.js
+            presentation, and they're running over multiplex — a protocol I'd
+            never used before. Two weeks ago I didn't know either tool. <br />
+            - AI-assisted development is how I got here fast. It didn't just
+            find these tools — it BUILT the template, wired the multiplex
+            broker, suggested the layouts. Genuinely useful — a great example of
+            how AI lets you wield tech you don't yet fully understand. <br />
+            - [SLOW DOWN] I'll be honest: what you're looking at is the LATEST
+            ITERATION. Earlier drafts of this deck, and plenty of other
+            artifacts in my fellowship warm-up, have been scrapped entirely. The
+            expertise I'm bringing to this fellowship comes as much from what
+            I've learned NOT to do as from what I've kept. The scrap pile is the
+            classroom. <br />
+            - And — this is low-stakes. A wrong layout choice is aesthetic debt.
+            Even so: next time I touch this deck, THE AUTHOR WILL HAVE TO
+            RE-UNDERSTAND THE AUTHOR. Now imagine the stakes are scientific, not
+            cosmetic. <br />
+            - → So — what happens when we move this same workflow into science?
           </aside>
         </section>
 
         <!-- ============================================================ -->
-        <!-- 5. SCIENTIFIC AGENTIC ENGINEERING (SAE)                      -->
+        <!-- 5. ONE FACET: TECH-STACK PROVENANCE                          -->
         <!-- ============================================================ -->
-        <section
-          class="slide-content three-col"
-          data-transition="convex"
-          data-background-image="assets/images/behind_Derecho.jpg"
-          data-background-opacity="0.10"
-        >
+        <section class="slide-content two-col" data-transition="convex">
           <ncar-title-bar
-            title="Scientific Agentic Engineering (SAE)"
+            title="One facet: tech-stack provenance"
           ></ncar-title-bar>
 
           <div class="body">
-            <div class="fragment fade-up">
-              <h3>Validation Loops</h3>
-              <p>
-                Domain-specific checks integrated into agent workflows — not
-                just at the end, but at each decision point
-              </p>
+            <div>
+              <h3>Slides</h3>
+              <p class="intro">Wrong choice →</p>
+              <p>aesthetic debt.</p>
             </div>
-            <div class="fragment fade-up">
-              <h3>Human Oversight</h3>
+            <div class="fragment fade-in">
+              <h3>Science</h3>
+              <p class="intro">Wrong choice →</p>
               <p>
-                Defined points where humans review agent decisions, especially
-                for choices with scientific implications
-              </p>
-            </div>
-            <div class="fragment fade-up">
-              <h3>Standardized Tooling</h3>
-              <p>
-                Reusable MCP server templates, scientific skills, and agent
-                configurations that encode domain knowledge
+                corrupted results that
+                <strong>still pass CI</strong>.
               </p>
             </div>
           </div>
 
+          <div class="h-separator" style="margin: 32px auto 0"></div>
+
+          <p
+            class="fragment fade-in"
+            style="text-align: center; margin-top: 24px"
+          >
+            The gap isn't <em>"explain the AI"</em> — it's
+            <span class="accent"
+              ><strong>trace what the AI chose for you</strong></span
+            >.
+          </p>
+          <p
+            class="fragment fade-in"
+            style="
+              text-align: center;
+              font-style: italic;
+              opacity: 0.75;
+              margin-top: 12px;
+            "
+          >
+            One spoke. Now the hub.
+          </p>
+
           <aside class="notes">
-            TALKING POINTS (~1.5 min): <br />
-            - My BSSw Fellowship is developing a methodology I'm calling
-            Scientific Agentic Engineering, or SAE. <br />
-            - Three pillars: validation loops, human oversight, standardized
-            tooling. <br />
-            - SAE is tool-agnostic -— about principles, not any specific AI
-            product. <br />
-            - Fellowship just started -— framework design phase. Deliverables
-            over the next 12 months. <br />
-            - Transition: Why does this matter for this audience?
+            BEAT 5 (~55s) — introduce the novel illustration as an EXAMPLE, not
+            the thesis. Pivot to Beat 6. <br />
+            - When I made this deck, if the AI picked a dubious library or a
+            quirky layout, the cost is cosmetic. <br />
+            - Not every AI-assisted workflow involves the AI choosing your tech
+            stack — sometimes you specify it yourself. But when you DON'T, and
+            the AI picks a numerical library, a quadrature method, a convergence
+            tolerance, a random-seed scheme — those decisions can PASS CI and
+            still corrupt the science. <br />
+            - For R&R, the gap isn't "explain the AI model" — that's a hard,
+            maybe unsolvable problem. The tractable gap is: when the AI DID make
+            choices on your behalf, can you TRACE them? Which library. Which
+            method. Which tolerance. Captured, reviewable, reproducible — first
+            by us, then by everyone else. <br />
+            - That's one concrete thing the validation-focused methodology
+            should make routine — but it's just one spoke. Let me show the
+            broader frame. <br />
+            - → Here's the frame that spoke lives in.
           </aside>
         </section>
 
         <!-- ============================================================ -->
-        <!-- 6. WHY BUILD-TIME DISCIPLINE MATTERS FOR R&R                 -->
+        <!-- 6. METHODOLOGY — the central slide + Karpathy attribution    -->
         <!-- ============================================================ -->
         <section
           class="slide-content"
-          data-transition="fade"
-          data-background-image="assets/images/MPAS-image.png"
-          data-background-opacity="0.15"
+          data-transition="convex"
+          data-background-image="assets/images/behind_Derecho.jpg"
+          data-background-opacity="0.12"
         >
           <ncar-title-bar
-            title="Why Build-Time Discipline Matters for"
-            accent="R&amp;R"
+            title="Maintaining Scientific Rigor in AI-Assisted Development"
           ></ncar-title-bar>
 
-          <p class="fragment fade-in">
-            If AI agents build computational artifacts without guardrails, those
-            artifacts become harder to describe in an Artifact Description and
-            harder to validate in an Artifact Evaluation.
+          <p class="intro" style="text-align: center">
+            A <span class="accent">Validation</span>-Focused Methodology
           </p>
-          <p class="fragment fade-in">
-            On the reproduce side, AI agents reconstructing environments and
-            running evaluations also need the same kinds of guardrails —
-            validation that the reconstructed environment actually matches,
-            domain-aware checks on whether the reproduction is scientifically
-            valid.
+          <p
+            style="
+              text-align: center;
+              font-size: 0.78em;
+              opacity: 0.85;
+              margin-top: 4px;
+            "
+          >
+            Applying <strong>Agentic Engineering</strong><sup>1</sup> to
+            scientific software →
+            <strong
+              ><span class="accent"
+                >Scientific Agentic Engineering</span
+              ></strong
+            >
           </p>
-          <p class="fragment fade-in">
-            The same structural patterns that SAE defines — validation loops,
-            domain-specific safeguards, and standardized tooling — serve both
-            sides of this coin.
+
+          <div class="three-col body" style="margin-top: 24px">
+            <div class="fragment fade-up">
+              <h3><span class="accent">Validation Loops</span></h3>
+              <p>
+                Domain checks at each decision point — units, conservation,
+                precision, provenance.
+              </p>
+            </div>
+            <div class="fragment fade-up">
+              <h3>Human-in-the-Loop Oversight</h3>
+              <p>Review gates at decisions that matter. Not everywhere.</p>
+            </div>
+            <div class="fragment fade-up">
+              <h3>Domain-Specific Safeguards</h3>
+              <p>
+                Physics checks, precision tests, scope-drift containment,
+                tech-stack provenance.
+              </p>
+            </div>
+          </div>
+
+          <p
+            class="fragment fade-in"
+            style="
+              text-align: center;
+              margin-top: 16px;
+              font-style: italic;
+              opacity: 0.9;
+            "
+          >
+            Tool-agnostic. Principles over products.
           </p>
-          <p class="fragment fade-in" style="font-weight: 600">
-            <span class="accent">
-              Build-time discipline is upstream of reproduce-time reliability.
-            </span>
+          <p
+            class="fragment fade-in"
+            style="
+              text-align: center;
+              font-size: 0.8em;
+              opacity: 0.8;
+              margin-top: 8px;
+            "
+          >
+            Deliverables: framework · reference workflow · community repo ·
+            tutorials · workshops — 12 months.
+          </p>
+
+          <p class="slide-footnote slide-footnote--pinned">
+            <sup>1</sup> <em>"Agentic engineering"</em> — Andrej Karpathy, 2026
+            — successor to <em>"vibe coding"</em> (Karpathy, 2025).
           </p>
 
           <aside class="notes">
-            TALKING POINTS (~1 min): <br />
-            - Connection to today's discussions. <br />
-            - Undisciplined build-side produces artifacts harder for AD/AE.
-            <br />
-            - Reproduce-side AI agents also need guardrails. <br />
-            - Same structural patterns serve both sides. <br />
-            - Build-time discipline is upstream of reproduce-time reliability.
-            <br />
-            - Transition: Closing.
+            BEAT 6 (~90s) — central slide, the methodology. <br />
+            - OPENER: The reproduce side relies on transparency. Here's how my
+            fellowship aims to preserve it on the build side. <br />
+            - Fellowship title: Maintaining Scientific Rigor in AI-Assisted
+            Development — A Validation-Focused Methodology. <br />
+            - Andrej Karpathy — who gave us "vibe coding" — coined AGENTIC
+            ENGINEERING as its successor: orchestrated agents writing code, a
+            human overseeing and validating, with enough engineering expertise
+            that quality doesn't slip. OVERSIGHT AND VALIDATION ARE ALREADY IN
+            HIS DEFINITION. <br />
+            - My fellowship asks what it takes to meet that bar for SCIENTIFIC
+            software — where "quality" includes physics, precision, and
+            provenance. That's SCIENTIFIC AGENTIC ENGINEERING. Tool-agnostic.
+            Principle-first. Three pillars — validation leads. <br />
+            - [CLICK pillar 1] VALIDATION LOOPS — domain-specific checks at EACH
+            decision point, not just end-of-pipeline. Unit checks, conservation
+            checks, precision checks, provenance checks. This is the pillar the
+            fellowship title is pointing at. <br />
+            - [CLICK pillar 2] HUMAN-IN-THE-LOOP OVERSIGHT — defined review
+            gates where a human must say yes before the agent keeps going. Not
+            everywhere. At the decisions that matter. <br />
+            - [CLICK pillar 3] DOMAIN-SPECIFIC SAFEGUARDS — guardrails that
+            encode what "wrong" means for a given scientific domain. Tech-stack
+            provenance from the previous slide lives here; so do
+            physics-violation detectors, precision tests, scope-drift
+            containment. <br />
+            - [CLICK] Tool-agnostic because the tools will change — MCP, agent
+            frameworks, even models are shifting monthly. The PRINCIPLES are the
+            durable part. <br />
+            - [CLICK] Over the next 12 months: framework draft, reference
+            workflow exercise, community repo of MCP templates and scientific
+            skills, interactive tutorial series, live workshops. Today this is
+            the map. <br />
+            - → And here's how the build side and reproduce side connect.
           </aside>
         </section>
 
         <!-- ============================================================ -->
-        <!-- 7. SECTION DIVIDER — penultimate (agent screenshot + zoom)   -->
-        <!--    Alt+click (or Ctrl+click on Linux) to zoom into image     -->
+        <!-- 7. UPSTREAM / DOWNSTREAM — bolder statement                  -->
         <!-- ============================================================ -->
         <section
-          class="slide-content"
-          data-transition="fade"
-          data-background-transition="zoom"
+          class="slide-bolder-statement"
           data-background-image="assets/images/wave-graphics-ncar-colors/NCAR-Waves_Fills-D-Color-3_RGB.png"
-          data-background-opacity="0.25"
+          data-background-opacity="0.35"
+          data-background-size="cover"
+          data-transition="convex"
         >
-          <ncar-title-bar
-            title="Scientific Agentic Engineering Example"
-          ></ncar-title-bar>
-
-          <div class="screengrab">
-            <img
-              src="assets/images/agent-team-screenshot.jpg"
-              data-preview-image
-              alt="Multi-agent AI workflow — scientific agentic engineering in action"
-            />
+          <ncar-title-bar variant="statement" title=""></ncar-title-bar>
+          <div>
+            <p class="statement-lead">
+              <span class="accent">Build-time discipline</span> is upstream of
+              <span class="accent">reproduce-time reliability</span>.
+            </p>
+            <p
+              class="fragment fade-in"
+              style="
+                text-align: center;
+                margin-top: 24px;
+                font-style: italic;
+                opacity: 0.9;
+              "
+            >
+              Same pillars serve both sides of the coin.
+            </p>
           </div>
+
+          <aside class="notes">
+            BEAT 7 (~45s) — close the loop with the symposium, one memorable
+            line. <br />
+            - If we take one idea from this talk, take this: BUILD-TIME
+            DISCIPLINE IS UPSTREAM OF REPRODUCE-TIME RELIABILITY. <br />
+            - The same three pillars — validation loops, oversight, domain
+            safeguards — also apply to the REPRODUCE-SIDE agents the rest of
+            this symposium is about. Same pillars serve both sides of the coin.
+            <br />
+            - → Where to follow along.
+          </aside>
         </section>
 
         <!-- ============================================================ -->
-        <!-- 8. FOLLOW THE PROJECT — closing                              -->
+        <!-- 8. FOLLOW THE PROJECT — preserved structure; contacts + QR   -->
+        <!--    updated per outline. Replace sae-qr-code.png with the     -->
+        <!--    NCAR-blue personalized QR (error-correction H + logo).    -->
         <!-- ============================================================ -->
         <section
           class="slide-content"
@@ -402,26 +624,31 @@
         >
           <ncar-title-bar title="Follow the Project"></ncar-title-bar>
 
-          <p class="intro">Scientific Agentic Engineering (SAE)</p>
-
           <div class="with-image">
             <div>
-              <ul>
-                <li>Framework &amp; methodology</li>
-                <li>Community repository of scientific MCP templates</li>
-                <li>Reference workflow &amp; tutorials</li>
-                <li>Workshops</li>
-              </ul>
-              <p style="margin-top: 24px">
-                All coming over the next 12 months.
-              </p>
-              <p style="margin-top: 32px; font-size: 28px; font-weight: 600">
+              <div class="stat-boxes">
+                <div class="box">
+                  <span class="label">Site</span>
+                  <span class="value"
+                    >vweeks.github.io/scientific-agentic-engineering</span
+                  >
+                </div>
+                <div class="box">
+                  <span class="label">GitHub</span>
+                  <span class="value">github.com/vweeks</span>
+                </div>
+                <div class="box">
+                  <span class="label">Email</span>
+                  <span class="value">vweeks@ucar.edu</span>
+                </div>
+              </div>
+              <p style="margin-top: 32px; font-size: 0.82em; opacity: 0.8">
+                BSSw Fellowship profile:
                 <a
-                  href="https://vweeks.github.io/scientific-agentic-engineering"
+                  href="https://bssw.io/fellows/victor-weeks"
                   style="color: var(--text-link)"
+                  >bssw.io/fellows/victor-weeks</a
                 >
-                  vweeks.github.io/scientific-agentic-engineering
-                </a>
               </p>
             </div>
             <img
@@ -432,14 +659,13 @@
           </div>
 
           <aside class="notes">
-            TALKING POINTS (~30 sec): <br />
-            - Fellowship just kicked off. All deliverables coming over the next
-            12 months. <br />
-            - If interested —- especially from R&R/AE perspective -— project
-            site will have resources. <br />
-            - Interested in feedback on what guardrails would be most valuable
-            for AD/AE. <br />
-            - Thank you. Happy to take questions.
+            BEAT 8 (~25s) — clean close, callback to the cover. <br />
+            - I'll be building this all in public over the fellowship. Site is
+            up — first-milestone framework draft lands this summer. <br />
+            - If AI-assisted scientific software is something you're wrestling
+            with, I'd love to hear from you. <br />
+            - [CALLBACK to cover] I want the author to still be able to
+            reproduce the author. Follow along. Thanks.
           </aside>
         </section>
       </div>

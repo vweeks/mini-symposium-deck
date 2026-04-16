@@ -166,6 +166,10 @@
   font-family: var(--font-display);
   color: var(--text-primary);
   text-transform: none;
+  font-weight: 600;
+}
+
+.reveal h1 {
   font-weight: 700;
 }
 
@@ -281,7 +285,7 @@ displaying the Optional Presentation Name */
 .slide-cover .eyebrow {
   color: var(--cover-eyebrow);
   padding-top: 72px;
-  font-size: 27px;
+  font-size: 30px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   font-weight: 600;
@@ -293,17 +297,17 @@ displaying the Optional Presentation Name */
 
 .slide-cover .presenter-block .name {
   font-weight: 700;
+  margin-bottom: 12px;
 }
 
 .slide-cover .credit-team {
-  margin-top: 28px;
-  font-size: 20px;
+  margin-top: 36px;
+  font-size: 28px;
   letter-spacing: 0.08em;
   font-weight: 100;
 }
 
-.slide-cover .credit-intro,
-.slide-cover .subhead .subhead-intro {
+.slide-cover .credit-intro {
   text-transform: uppercase;
 }
 
@@ -341,9 +345,8 @@ displaying the Optional Presentation Name */
 }
 
 .slide-content .intro {
-  font-size: 64px;
+  font-size: 48px;
   font-weight: 700;
-  padding-top: 72px;
   margin-bottom: 28px;
 }
 
